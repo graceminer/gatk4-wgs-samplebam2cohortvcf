@@ -1,0 +1,38 @@
+__default__:
+  project: acc_MMAAAS
+  queue: premium
+  cores: 4
+  mem: 8000
+  himem: ''
+  time: '04:00'
+align_bam_bwa:
+  time: '10:00'
+mark_duplicates:
+  time: '08:00'
+  cores: 5
+sort_bam:
+  mem: '200G'
+  cores: 7
+  himem: '-R himem'
+check_contamination:
+  time: '02:00'
+crosscheck_fingerprints:
+  time: '09:00'
+base_recalibrator_report:
+  time: '02:00'
+apply_bqsr:
+  time: '04:00'
+collect_aggregated_metrics:
+  time: '05:00'
+collect_wgs_metrics:
+  time: '05:00'
+collect_raw_wgs_metrics:
+  time: '05:00'
+convert_to_cram:
+  time: '08:00'
+validate_cram:
+  time: '3:45'
+#genotype_gvcfs:
+#  time: '8:00'
+hard_filter_make_sites_only_vcf:
+  time: '10:00'

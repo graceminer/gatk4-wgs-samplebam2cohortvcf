@@ -1,7 +1,6 @@
 output/**
 resources/**
 logs/**
-refs/**
 .snakemake
 .snakemake/**
 input/**

@@ -1,0 +1,111 @@
+configfile: "config/config.yaml"
+# Singularity with conda wrappers
+
+singularity: "docker://continuumio/miniconda3:4.5.11"
+from snakemake.utils import min_version
+
+min_version("5.4")
+
+import glob
+import os
+
+AXIOMPOLY_RESOURCE_VCF=config["AXIOMPOLY_RESOURCE_VCF"]
+BATCH_SIZE=config["BATCH_SIZE"]
+BREAK_BANDS_AT_MULTIPLES_OF=config["BREAK_BANDS_AT_MULTIPLES_OF"]
+BWA_VERSION = config["BWA_VERSION"]
+CALLING_INTERVAL_LIST=config["CALLING_INTERVAL_LIST"]
+CALLSET_NAME=config["CALLSET_NAME"]
+COMPRESSION_LEVEL=config["COMPRESSION_LEVEL"]
+CONTAMINATION_SITES_PREFIX=config["CONTAMINATION_SITES_PREFIX"]
+CONTAMINATION_UNDERESTIMATION_FACTOR=config["CONTAMINATION_UNDERESTIMATION_FACTOR"]
+CROSSCHECK_BY=config["CROSSCHECK_BY"]
+DBSNP_VCF=config["DBSNP_VCF"]
+EVALUATION_INTERVAL_LIST=config["EVALUATION_INTERVAL_LIST"]
+EXCESS_HET_THRESHOLD=config["EXCESS_HET_THRESHOLD"]
+GENOTYPES_FINGERPRINT_FILE=["GENOTYPES_FINGERPRINT_FILE"]
+HAPLOTYPE_DATABASE_FILE=["HAPLOTYPE_DATABASE_FILE"]
+HAPLOTYPE_SCATTER_COUNT=config["HAPLOTYPE_SCATTER_COUNT"]
+HAPMAP_RESOURCE_VCF=config["HAPMAP_RESOURCE_VCF"]
+INDEL_FILTER_LEVEL=config["INDEL_FILTER_LEVEL"]
+INDEL_MAX_GAUSSIANS=config["INDEL_MAX_GAUSSIANS"]
+INDEL_RECALIBRATION_ANNOTATION_VALUES=config["INDEL_RECALIBRATION_ANNOTATION_VALUES"]
+INDEL_RECALIBRATION_TRANCHE_VALUES=config["INDEL_RECALIBRATION_TRANCHE_VALUES"]
+KNOWN_SITES_HOMOSAPIENS=config["KNOWN_SITES_HOMOSAPIENS"]
+KNOWN_SITES_MILLS1000G=config["KNOWN_SITES_MILLS1000G"]
+LOD_THRESHOLD=config["LOD_THRESHOLD"]
+MAX_CHIMERISM_IN_REASONABLE_SAMPLE=config["MAX_CHIMERISM_IN_REASONABLE_SAMPLE"]
+MAX_DUPLICATION_IN_REASONABLE_SAMPLE=config["MAX_DUPLICATION_IN_REASONABLE_SAMPLE"]
+OMNI_RESOURCE_VCF=config["OMNI_RESOURCE_VCF"]
+ONE_THOUSAND_GENOMES_RESOURCE_VCF=config["ONE_THOUSAND_GENOMES_RESOURCE_VCF"]
+READ_LENGTH=config["READ_LENGTH"]
+REF_DICT=config["REF_DICT"]
+REF_FASTA = config["REF_FASTA"]
+SAMPLE_NAME=config["SAMPLE_NAME"]
+SAMPLE_NUM_THRESHOLD=config["SAMPLE_NUM_THRESHOLD"]
+SCATTER_MODE=config["SCATTER_MODE"]
+SNP_FILTER_LEVEL=config["SNP_FILTER_LEVEL"]
+SNP_MAX_GAUSSIANS=config["SNP_MAX_GAUSSIANS"]
+SNP_RECALIBRATION_ANNOTATION_VALUES=config["SNP_RECALIBRATION_ANNOTATION_VALUES"]
+SNP_RECALIBRATION_TRANCHE_VALUES=config["SNP_RECALIBRATION_TRANCHE_VALUES"]
+UNBOUNDED_SCATTER_COUNT_SCALE_FACTOR=config["UNBOUNDED_SCATTER_COUNT_SCALE_FACTOR"]
+UNPADDED_INTERVAL_FILE=config["UNPADDED_INTERVAL_FILE"]
+VerifyBamID = config["VerifyBamID"]
+WGS_COVERAGE_INTERVAL_LIST=config["WGS_COVERAGE_INTERVAL_LIST"]
+
+#INTERVAL_LIST = glob.glob("input/scatter_interval_list/*/*.interval_list")
+#INTERVAL_RANGE=range(1,51)
+#INTERVALS =  glob.glob("input/intervals/sequence_grouping_unmapped_newline/sequence_grouping.unmapped_*.list")
+#INTERVALS,= glob_wildcards("output/variant_calling_scatter_interval/{interval}.interval_list")
+#######################################################################################################################################
+
+#########################################################################################################################
+localrules: all, bqsr_intervalreport_aggregate
+
+SAMPLES, = glob_wildcards("input/{sample}.final.bam")
+#(SAMPLES,RGS) = glob_wildcards("output/split_rg/{sample}/{rg}.bam")
+
+rule all:
+    input:
+#        expand("input/{sample}.final.bam", sample=SAMPLES),
+#        expand("output/split_rg/{sample}/", sample=SAMPLES),
+#        expand("output/aligned_bam/{sample}/", sample=SAMPLE),
+#        expand("output/sorted_bam/{sample}/{sample}.aligned.duplicates_marked.sorted.crosscheck", zip, sample=SAMPLE),
+        expand("output/sorted_bam/{sample}/{sample}.aligned.duplicates_marked.sorted.preBqsr.selfSM", zip, sample=SAMPLES),
+#	expand("output/recalibrated_bam/{sample}.interval_bam_list.txt", sample=SAMPLES),
+#        #expand("output/recalibrated_bam/{sample}/{rg}.aligned.duplicates_marked.recalibrated.bam", zip, sample=SAMPLE, rg=RG),
+#        #expand("output/recalibrated_bam/{sample}/{rg}.recal_data.csv", zip, sample=SAMPLE, rg=RG),
+#
+#        #expand("output/recalibrated_bam/{sample}.recal_data_{interval}.csv", sample=SAMPLE, interval=INTERVALS),
+#        #expand("output/recalibrated_bam/{sample}.recal_data.csv", sample=SAMPLE),
+#        #expand("output/recalibrated_bam/{sample}.aligned.duplicates_marked.recalibrated_{interval}.bam", sample=SAMPLE, interval=INTERVALS),
+#        #expand("output/final_bam/{sample}.final.bam", sample=SAMPLE),
+        expand("output/final_bam/{sample}.final_bam.collect_aggregated_metrics.{metrics}", sample=SAMPLES, metrics=["alignment_summary_metrics","bait_bias_detail_metrics","bait_bias_summary_metrics","gc_bias.detail_metrics","gc_bias.pdf","gc_bias.summary_metrics","insert_size_histogram.pdf","insert_size_metrics","pre_adapter_detail_metrics", "pre_adapter_summary_metrics","quality_distribution.pdf","quality_distribution_metrics", "error_summary_metrics"]),
+        expand("output/final_bam/{sample}.final_bam.collect_rg_metrics.{metrics}", sample=SAMPLES, metrics=["alignment_summary_metrics","gc_bias.detail_metrics","gc_bias.pdf","gc_bias.summary_metrics"]),
+        expand("output/final_bam/{sample}.final_bam.{ext}", sample=SAMPLES,ext=["duplication.csv","chimerism.csv","fingerprinting_detail_metrics","fingerprinting_summary_metrics","read_group_md5","wgs_metrics","raw_wgs_metrics"]),
+        expand("output/final_cram/{sample}.final_cram.{ext}", sample=SAMPLES, ext=["validation_report"]),
+#        #expand("output/gvcf/{sample}.{intervals}.g.vcf.gz", sample=SAMPLE, intervals=INTERVALS),
+#        expand("output/merge_gvcf_metrics/{sample}.g.vcf.variant_calling_summary_metrics", sample=SAMPLES),
+#        expand("output/merge_gvcf_metrics/{sample}.validate_gvcf.metrics", sample=SAMPLES),
+#        expand("output/merge_gvcf_metrics/{sample}.g.vcf.variant_calling_detail_metrics", sample=SAMPLES),
+#        "output/merge_gvcf_metrics/check_unique.gvcf.txt",
+#        "output/variant_calling_scatter_interval/",
+#
+#        #expand("output/variant_calling_scatter_interval/{intervals}.interval_list", intervals=INTERVALS),
+#        #expand("output/{callset_name}_{intervals}.txt", callset_name=CALLSET_NAME, intervals=INTERVALS),
+#        #expand("output/genomicsdb/{interval}", interval=INTERVALS),
+#        #expand("output/genotype_gvcfs/{interval}.cohort.vcf.gz", interval=INTERVALS),
+#        #expand("output/interval_vcfs/{interval}.cohort.variant_filtered.vcf.gz", interval=INTERVALS),
+#        #expand("output/interval_vcfs/{interval}.cohort.variant_filtered_sites_only.vcf.gz", interval=INTERVALS),
+#        #expand("output/gather_vcfs/cohort.variant_filtered_sites_only.vcf.gz", interval=INTERVALS),
+#        #"output/gather_vcfs/cohort.indels.recal","output/gather_vcfs/cohort.indels.tranches",
+#        #"output/gather_vcfs/cohort.snps.recal","output/gather_vcfs/cohort.snps.tranches",
+#        #expand("output/recalibrated_vcf_interval/cohort.filtered.{interval}.vcf.gz", interval=INTERVALS),
+#        "output/final_vcf_metrics/cohort.variant_calling_detail_metrics", "output/final_vcf_metrics/cohort.variant_calling_summary_metrics","output/final_vcf_metrics/cohort.fingerprintcheck"
+
+
+
+
+
+include: "rules/samplebam2sampleubam.smk"
+include: "rules/sampleubam2samplegvcf.smk"
+#include: "rules/samplegvcf2cohortvcf.smk"
