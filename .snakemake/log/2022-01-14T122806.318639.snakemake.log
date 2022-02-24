@@ -1,4 +1,0 @@
-CreateRuleException in line 75 of /sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/smk/snakefilecurrent:
-The name main is already used by another rule
-  File "/sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/Snakefile", line 66, in <module>
-  File "/sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/smk/snakefilecurrent", line 75, in <module>

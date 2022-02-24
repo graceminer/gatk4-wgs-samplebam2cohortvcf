@@ -1,4 +1,0 @@
-The flag 'directory' used in rule mark_duplicates is only valid for outputs, not inputs.
-Building DAG of jobs...
-Nothing to be done.
-Complete log: /sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/.snakemake/log/2022-01-18T214156.988972.snakemake.log

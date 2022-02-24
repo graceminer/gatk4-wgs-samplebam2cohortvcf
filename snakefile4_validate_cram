@@ -221,14 +221,14 @@ import csv
 with open('{output.duplication}') as dupfile:
   reader = csv.DictReader(dupfile, delimiter='\t')
   for row in reader:
-    with open("duplication_value.txt","w") as file:
+    with open("output/final_bam/{wildcards.sample}.duplication_value.txt","w") as file:
       file.write(row['PERCENT_DUPLICATION'])
       file.close()
 
 with open('{output.chimerism}') as chimfile:
   reader = csv.DictReader(chimfile, delimiter='\t')
   for row in reader:
-    with open("chimerism_value.txt","w") as file:
+    with open("output/final_bam/{wildcards.sample}.chimerism_value.txt","w") as file:
       file.write(row['PCT_CHIMERAS'])
       file.close()
 CODE

@@ -29,3 +29,8 @@ COVAR_NAMES: PC1,PC2,PC3,PC4,PC5,PC6,PC7,PC8,PC9,PC10,SCBroad,SCWashU
 NIND: 243
 MAC_MIN: 0 # applies to single analyses only!
 MAF_MAX: 1 # applies to burden/kernel analyses only!
+
+SMALL_DISK: 100
+MEDIUM_DISK: 200
+LARGE_DISK: 1000
+HUGE_DISK: 2000

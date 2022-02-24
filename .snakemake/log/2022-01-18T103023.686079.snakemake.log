@@ -1,6 +1,0 @@
-The flag 'directory' used in rule base_recalibrator_report is only valid for outputs, not inputs.
-Building DAG of jobs...
-MissingInputException in line 77 of /sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/snakefilecurrent:
-Missing input files for rule main:
-output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_['23', '13', '04', '24', '25', '21', '11', '18', '15', '20', '06', '12', '07', '08', '02', '09', '00', '10', '03', '22', '05', '16', '14', '01', '19', '17'].bam
-output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_['23', '13', '04', '24', '25', '21', '11', '18', '15', '20', '06', '12', '07', '08', '02', '09', '00', '10', '03', '22', '05', '16', '14', '01', '19', '17'].bam

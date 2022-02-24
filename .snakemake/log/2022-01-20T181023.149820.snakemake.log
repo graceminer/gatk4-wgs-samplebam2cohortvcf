@@ -1,4 +1,0 @@
-Building DAG of jobs...
-MissingInputException in line 63 of /sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/snakefilecurrent:
-Missing input files for rule gatk4_haplotype_caller:
-output/final_bam/1102781231.input/scatter_interval_list/temp_0001_of_50/1scattered.final.bam

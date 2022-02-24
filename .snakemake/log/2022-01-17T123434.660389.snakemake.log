@@ -1,4 +1,0 @@
-The flag 'directory' used in rule base_recalibrator_report is only valid for outputs, not inputs.
-NameError in line 113 of /sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/snakefilecurrent:
-name 'bam' is not defined
-  File "/sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/snakefilecurrent", line 113, in <module>

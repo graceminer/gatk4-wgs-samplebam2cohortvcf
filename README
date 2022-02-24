@@ -1,0 +1,8 @@
+This is the first full run of the  pipeline with two bams.
+
+This pipeline follows best practices workflow from reverting a final bam to an unmapped state then reprocessses the bam while generating various metric files.  Then the bams are converted to gvcf files for joint variant genotyping, application of VQSR, and outputs a final cohort level vcf file and various metrics
+
+
+The GATK best practices outlines some optional workflows depending on the size of the cohort. As of this workflow, the pipeline is set up to only accomodate a small callset, ie under 20,000 samples.  If more samples are proceessed in the future, additional interval based scatter gather processes need to be applied which are delineated in the broad pipeline but not in this workflow.
+
+

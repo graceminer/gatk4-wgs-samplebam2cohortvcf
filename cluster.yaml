@@ -29,5 +29,7 @@ convert_to_cram:
   time: '08:00'
 validate_cram:
   time: '3:45'
-#gatk4_haplotype_caller:
-#  time: '6:00'
+#genotype_gvcfs:
+#  time: '8:00'
+hard_filter_make_sites_only_vcf:
+  time: '10:00'

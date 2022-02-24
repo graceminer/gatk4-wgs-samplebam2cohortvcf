@@ -1,4 +1,0 @@
-Building DAG of jobs...
-WildcardError in line 63 of /sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/snakefilecurrent:
-Wildcards in input files cannot be determined from output files:
-'dir'

@@ -1,5 +1,0 @@
-Building DAG of jobs...
-MissingInputException in line 58 of /sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/snakefilecurrent:
-Missing input files for rule main:
-output/merge_vcf/1102777134/
-output/merge_vcf/1102781231/

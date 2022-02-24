@@ -1,3 +1,0 @@
-SyntaxError:
-Not all output, log and benchmark files of rule validate_vcf contain the same wildcards. This is crucial though, in order to avoid that two or more jobs write to the same file.
-  File "/sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/snakefilecurrent", line 108, in <module>

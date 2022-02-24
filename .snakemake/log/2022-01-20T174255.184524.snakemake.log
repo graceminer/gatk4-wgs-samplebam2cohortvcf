@@ -1,4 +1,0 @@
-ValueError in line 51 of /sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/snakefilecurrent:
-Encountered duplicate field name: 'intervals'
-  File "/sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/snakefilecurrent", line 51, in <module>
-  File "/hpc/packages/minerva-centos7/python/3.7.3/lib/python3.7/collections/__init__.py", line 373, in namedtuple
