@@ -1,0 +1,145 @@
+The flag 'directory' used in rule base_recalibrator_report is only valid for outputs, not inputs.
+The flag 'directory' used in rule apply_bqsr is only valid for outputs, not inputs.
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 300
+Job counts:
+	count	jobs
+	2	check_prevalidation
+	2	collect_raw_wgs_metrics
+	2	collect_wgs_metrics
+	2	convert_to_cram
+	1	main
+	2	validate_cram
+	11
+
+[Thu Jan 20 00:52:55 2022]
+rule check_prevalidation:
+    input: output/final_bam/1102777134.final_bam.collect_aggregated_metrics.alignment_summary_metrics
+    output: output/final_bam/1102777134.final_bam.duplication.csv, output/final_bam/1102777134.final_bam.chimerism.csv
+    jobid: 14
+    benchmark: benchmarks/final_bam/1102777134.check_prevalidation.txt
+    wildcards: sample=1102777134
+
+
+[Thu Jan 20 00:52:55 2022]
+rule convert_to_cram:
+    input: output/final_bam/1102781231.final.bam
+    output: output/final_cram/1102781231.final.cram, output/final_cram/1102781231.final.cram.md5
+    jobid: 19
+    benchmark: benchmarks/final_cram/1102781231.final.cram.txt
+    wildcards: sample=1102781231
+
+
+[Thu Jan 20 00:52:55 2022]
+rule collect_wgs_metrics:
+    input: output/final_bam/1102781231.final.bam
+    output: output/final_bam/1102781231.final_bam.wgs_metrics
+    jobid: 7
+    benchmark: benchmarks/final_bam/1102781231.final_bam.wgs_metrics.txt
+    wildcards: sample=1102781231
+
+
+[Thu Jan 20 00:52:55 2022]
+rule check_prevalidation:
+    input: output/final_bam/1102781231.final_bam.collect_aggregated_metrics.alignment_summary_metrics
+    output: output/final_bam/1102781231.final_bam.duplication.csv, output/final_bam/1102781231.final_bam.chimerism.csv
+    jobid: 9
+    benchmark: benchmarks/final_bam/1102781231.check_prevalidation.txt
+    wildcards: sample=1102781231
+
+
+[Thu Jan 20 00:52:55 2022]
+rule collect_raw_wgs_metrics:
+    input: output/final_bam/1102777134.final.bam
+    output: output/final_bam/1102777134.final_bam.raw_wgs_metrics
+    jobid: 13
+    benchmark: benchmarks/final_bam/1102777134.final_bam.raw_wgs_metrics.txt
+    wildcards: sample=1102777134
+
+
+[Thu Jan 20 00:52:55 2022]
+rule convert_to_cram:
+    input: output/final_bam/1102777134.final.bam
+    output: output/final_cram/1102777134.final.cram, output/final_cram/1102777134.final.cram.md5
+    jobid: 20
+    benchmark: benchmarks/final_cram/1102777134.final.cram.txt
+    wildcards: sample=1102777134
+
+
+[Thu Jan 20 00:52:55 2022]
+rule collect_raw_wgs_metrics:
+    input: output/final_bam/1102781231.final.bam
+    output: output/final_bam/1102781231.final_bam.raw_wgs_metrics
+    jobid: 8
+    benchmark: benchmarks/final_bam/1102781231.final_bam.raw_wgs_metrics.txt
+    wildcards: sample=1102781231
+
+
+[Thu Jan 20 00:52:55 2022]
+rule collect_wgs_metrics:
+    input: output/final_bam/1102777134.final.bam
+    output: output/final_bam/1102777134.final_bam.wgs_metrics
+    jobid: 12
+    benchmark: benchmarks/final_bam/1102777134.final_bam.wgs_metrics.txt
+    wildcards: sample=1102777134
+
+[Thu Jan 20 00:53:05 2022]
+Finished job 14.
+1 of 11 steps (9%) done
+[Thu Jan 20 00:53:05 2022]
+Finished job 9.
+2 of 11 steps (18%) done
+[Thu Jan 20 00:53:05 2022]
+Error in rule collect_raw_wgs_metrics:
+    jobid: 13
+    output: output/final_bam/1102777134.final_bam.raw_wgs_metrics
+    shell:
+        
+        module load R/3.5.3  gatk/4.2.0.0 java/1.8.0_211 python/3.7.3 picard/2.22.3
+        java -Xms2000m -jar /usr/gitc/picard.jar           CollectRawWgsMetrics           INPUT=output/final_bam/1102777134.final.bam           VALIDATION_STRINGENCY=SILENT           REFERENCE_SEQUENCE=/sc/arion/projects/MMAAAS/src/gatk-resources/hg38_20201116/hg38/v0/resources-broad-hg38-v0-Homo_sapiens_assembly38.fasta           INCLUDE_BQ_HISTOGRAM=true           INTERVALS=/sc/arion/projects/MMAAAS/src/gatk-resources/hg38_20201116/hg38/v0/intervals_wgs_coverage_regions.hg38.interval_list           OUTPUT=output/final_bam/1102777134.final_bam.raw_wgs_metrics           USE_FAST_ALGORITHM=true           READ_LENGTH=250
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Error executing rule collect_raw_wgs_metrics on cluster (jobid: 13, external: 415000, jobscript: /sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/.snakemake/tmp.9cugs6gx/snakejob.collect_raw_wgs_metrics.13.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Jan 20 00:53:05 2022]
+Error in rule collect_raw_wgs_metrics:
+    jobid: 8
+    output: output/final_bam/1102781231.final_bam.raw_wgs_metrics
+    shell:
+        
+        module load R/3.5.3  gatk/4.2.0.0 java/1.8.0_211 python/3.7.3 picard/2.22.3
+        java -Xms2000m -jar /usr/gitc/picard.jar           CollectRawWgsMetrics           INPUT=output/final_bam/1102781231.final.bam           VALIDATION_STRINGENCY=SILENT           REFERENCE_SEQUENCE=/sc/arion/projects/MMAAAS/src/gatk-resources/hg38_20201116/hg38/v0/resources-broad-hg38-v0-Homo_sapiens_assembly38.fasta           INCLUDE_BQ_HISTOGRAM=true           INTERVALS=/sc/arion/projects/MMAAAS/src/gatk-resources/hg38_20201116/hg38/v0/intervals_wgs_coverage_regions.hg38.interval_list           OUTPUT=output/final_bam/1102781231.final_bam.raw_wgs_metrics           USE_FAST_ALGORITHM=true           READ_LENGTH=250
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Error executing rule collect_raw_wgs_metrics on cluster (jobid: 8, external: 415009, jobscript: /sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/.snakemake/tmp.9cugs6gx/snakejob.collect_raw_wgs_metrics.8.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Jan 20 00:53:15 2022]
+Error in rule collect_wgs_metrics:
+    jobid: 7
+    output: output/final_bam/1102781231.final_bam.wgs_metrics
+    shell:
+        
+        module load R/3.5.3  gatk/4.2.0.0 java/1.8.0_211 python/3.7.3 picard/2.22.3
+
+        java -Xms2000m -jar $PICARD           CollectWgsMetrics           INPUT=output/final_bam/1102781231.final.bam           VALIDATION_STRINGENCY=SILENT           REFERENCE_SEQUENCE=/sc/arion/projects/MMAAAS/src/gatk-resources/hg38_20201116/hg38/v0/resources-broad-hg38-v0-Homo_sapiens_assembly38.fasta           INCLUDE_BQ_HISTOGRAM=true           INTERVALS=/sc/arion/projects/MMAAAS/src/gatk-resources/hg38_20201116/hg38/v0/intervals_wgs_coverage_regions.hg38.interval_list           OUTPUT=output/final_bam/1102781231.final_bam.wgs_metrics           USE_FAST_ALGORITHM=true           READ_LENGTH=250
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Error executing rule collect_wgs_metrics on cluster (jobid: 7, external: 414990, jobscript: /sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/.snakemake/tmp.9cugs6gx/snakejob.collect_wgs_metrics.7.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Jan 20 00:53:15 2022]
+Error in rule collect_wgs_metrics:
+    jobid: 12
+    output: output/final_bam/1102777134.final_bam.wgs_metrics
+    shell:
+        
+        module load R/3.5.3  gatk/4.2.0.0 java/1.8.0_211 python/3.7.3 picard/2.22.3
+
+        java -Xms2000m -jar $PICARD           CollectWgsMetrics           INPUT=output/final_bam/1102777134.final.bam           VALIDATION_STRINGENCY=SILENT           REFERENCE_SEQUENCE=/sc/arion/projects/MMAAAS/src/gatk-resources/hg38_20201116/hg38/v0/resources-broad-hg38-v0-Homo_sapiens_assembly38.fasta           INCLUDE_BQ_HISTOGRAM=true           INTERVALS=/sc/arion/projects/MMAAAS/src/gatk-resources/hg38_20201116/hg38/v0/intervals_wgs_coverage_regions.hg38.interval_list           OUTPUT=output/final_bam/1102777134.final_bam.wgs_metrics           USE_FAST_ALGORITHM=true           READ_LENGTH=250
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Error executing rule collect_wgs_metrics on cluster (jobid: 12, external: 415013, jobscript: /sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/.snakemake/tmp.9cugs6gx/snakejob.collect_wgs_metrics.12.sh). For error details see the cluster log and the log files of the involved rule(s).
+Terminating processes on user request, this might take some time.
+Will exit after finishing currently running jobs.
+Complete log: /sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/.snakemake/log/2022-01-20T005255.236935.snakemake.log

@@ -1,0 +1,70 @@
+The flag 'directory' used in rule base_recalibrator_report is only valid for outputs, not inputs.
+The flag 'directory' used in rule apply_bqsr is only valid for outputs, not inputs.
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 300
+Job counts:
+	count	jobs
+	2	collect_raw_wgs_metrics
+	2	collect_wgs_metrics
+	2	convert_to_cram
+	1	main
+	2	validate_cram
+	9
+
+[Thu Jan 20 01:05:38 2022]
+rule collect_raw_wgs_metrics:
+    input: output/final_bam/1102777134.final.bam
+    output: output/final_bam/1102777134.final_bam.raw_wgs_metrics
+    jobid: 14
+    benchmark: benchmarks/final_bam/1102777134.final_bam.raw_wgs_metrics.txt
+    wildcards: sample=1102777134
+
+
+[Thu Jan 20 01:05:38 2022]
+rule convert_to_cram:
+    input: output/final_bam/1102781231.final.bam
+    output: output/final_cram/1102781231.final.cram, output/final_cram/1102781231.final.cram.md5
+    jobid: 19
+    benchmark: benchmarks/final_cram/1102781231.final.cram.txt
+    wildcards: sample=1102781231
+
+
+[Thu Jan 20 01:05:38 2022]
+rule collect_raw_wgs_metrics:
+    input: output/final_bam/1102781231.final.bam
+    output: output/final_bam/1102781231.final_bam.raw_wgs_metrics
+    jobid: 9
+    benchmark: benchmarks/final_bam/1102781231.final_bam.raw_wgs_metrics.txt
+    wildcards: sample=1102781231
+
+
+[Thu Jan 20 01:05:38 2022]
+rule collect_wgs_metrics:
+    input: output/final_bam/1102777134.final.bam
+    output: output/final_bam/1102777134.final_bam.wgs_metrics
+    jobid: 13
+    benchmark: benchmarks/final_bam/1102777134.final_bam.wgs_metrics.txt
+    wildcards: sample=1102777134
+
+
+[Thu Jan 20 01:05:38 2022]
+rule convert_to_cram:
+    input: output/final_bam/1102777134.final.bam
+    output: output/final_cram/1102777134.final.cram, output/final_cram/1102777134.final.cram.md5
+    jobid: 20
+    benchmark: benchmarks/final_cram/1102777134.final.cram.txt
+    wildcards: sample=1102777134
+
+
+[Thu Jan 20 01:05:38 2022]
+rule collect_wgs_metrics:
+    input: output/final_bam/1102781231.final.bam
+    output: output/final_bam/1102781231.final_bam.wgs_metrics
+    jobid: 8
+    benchmark: benchmarks/final_bam/1102781231.final_bam.wgs_metrics.txt
+    wildcards: sample=1102781231
+
+Terminating processes on user request, this might take some time.
+Will exit after finishing currently running jobs.
+Cancelling snakemake on user request.

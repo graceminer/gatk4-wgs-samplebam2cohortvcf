@@ -1,0 +1,7 @@
+The flag 'directory' used in rule base_recalibrator_report is only valid for outputs, not inputs.
+The flag 'directory' used in rule apply_bqsr is only valid for outputs, not inputs.
+Building DAG of jobs...
+MissingInputException in line 67 of /sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/snakefilecurrent:
+Missing input files for rule main:
+output/final_bam/1102781231.final_bam.collect_aggregated_metrics.bait_bias_detail_metrics
+output/final_bam/1102781231.final_bam.collect_aggregated_metrics.alignment_summary_metrics

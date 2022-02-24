@@ -1,0 +1,8 @@
+The flag 'directory' used in rule base_recalibrator_report is only valid for outputs, not inputs.
+The flag 'directory' used in rule apply_bqsr is only valid for outputs, not inputs.
+The flag 'directory' used in rule gather_sorted_bams is only valid for outputs, not inputs.
+Building DAG of jobs...
+MissingInputException in line 83 of /sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/snakefilecurrent:
+Missing input files for rule base_recalibrator_report:
+input/intervals/sequence_grouping_unmapped_newline/sequence_grouping.unmapped_['23', '13', '04', '24', '25', '21', '11', '18', '15', '20', '06', '12', '07', '08', '02', '09', '00', '10', '03', '22', '05', '16', '14', '01', '19', '17'].list
+output/sorted_bam/1102781231/

@@ -1,0 +1,13 @@
+Building DAG of jobs...
+MissingInputException in line 58 of /sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/snakefilecurrent:
+Missing input files for rule main:
+output/gvcf/1102781231.temp_0034_of_50_34.g.vcf.gz
+output/gvcf/1102781231.temp_0027_of_50_27.g.vcf.gz
+output/gvcf/1102777134.temp_0049_of_50_49.g.vcf.gz
+output/gvcf/1102777134.temp_0035_of_50_35.g.vcf.gz
+output/gvcf/1102781231.temp_0031_of_50_31.g.vcf.gz
+output/gvcf/1102777134.temp_0011_of_50_11.g.vcf.gz
+output/gvcf/1102781231.temp_0045_of_50_45.g.vcf.gz
+output/gvcf/1102777134.temp_0006_of_50_6.g.vcf.gz
+output/gvcf/1102777134.temp_0047_of_50_47.g.vcf.gz
+output/gvcf/1102781231.temp_0029_of_50_29.g.vcf.gz

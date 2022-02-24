@@ -1,0 +1,31 @@
+The flag 'directory' used in rule base_recalibrator_report is only valid for outputs, not inputs.
+The flag 'directory' used in rule apply_bqsr is only valid for outputs, not inputs.
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 300
+Job counts:
+	count	jobs
+	1	main
+	2	validate_cram
+	3
+
+[Thu Jan 20 10:08:08 2022]
+rule validate_cram:
+    input: output/final_cram/1102777134.final.cram
+    output: output/final_cram/1102777134.final_cram.validation_report
+    jobid: 16
+    benchmark: benchmarks/final_cram/1102777134.validate_cram.txt
+    wildcards: sample=1102777134
+
+
+[Thu Jan 20 10:08:08 2022]
+rule validate_cram:
+    input: output/final_cram/1102781231.final.cram
+    output: output/final_cram/1102781231.final_cram.validation_report
+    jobid: 15
+    benchmark: benchmarks/final_cram/1102781231.validate_cram.txt
+    wildcards: sample=1102781231
+
+Terminating processes on user request, this might take some time.
+Will exit after finishing currently running jobs.
+Cancelling snakemake on user request.

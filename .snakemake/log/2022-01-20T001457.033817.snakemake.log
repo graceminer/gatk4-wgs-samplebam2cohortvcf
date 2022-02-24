@@ -1,0 +1,52 @@
+The flag 'directory' used in rule base_recalibrator_report is only valid for outputs, not inputs.
+The flag 'directory' used in rule apply_bqsr is only valid for outputs, not inputs.
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	2	check_fingerprint
+	2	check_prevalidation
+	2	collect_raw_wgs_metrics
+	2	collect_wgs_metrics
+	2	convert_to_cram
+	1	main
+	2	validate_cram
+	13
+
+[Thu Jan 20 00:14:57 2022]
+rule check_fingerprint:
+    input: output/final_bam/1102781231.final.bam
+    output: output/final_bam/1102781231.final_bam.fingerprinting_detail_metrics, output/final_bam/1102781231.final_bam.fingerprinting_summary_metrics
+    jobid: 5
+    benchmark: benchmarks/final_bam/1102781231.check_fingerprint.txt
+    wildcards: sample=1102781231
+
+[Thu Jan 20 00:15:46 2022]
+Finished job 5.
+1 of 13 steps (8%) done
+
+[Thu Jan 20 00:15:46 2022]
+rule collect_wgs_metrics:
+    input: output/final_bam/1102781231.final.bam
+    output: output/final_bam/1102781231.final_bam.wgs_metrics
+    jobid: 7
+    benchmark: benchmarks/final_bam/1102781231.final_bam.wgs_metrics.txt
+    wildcards: sample=1102781231
+
+[Thu Jan 20 00:15:54 2022]
+Error in rule collect_wgs_metrics:
+    jobid: 7
+    output: output/final_bam/1102781231.final_bam.wgs_metrics
+    shell:
+        
+        module load R/3.5.3  gatk/4.2.0.0 java/1.8.0_211 python/3.7.3 picard/2.22.3
+
+        java -Xms2000m -jar $PICARD           CollectWgsMetrics           INPUT=output/final_bam/1102781231.final.bam           VALIDATION_STRINGENCY=SILENT           REFERENCE_SEQUENCE=/sc/arion/projects/MMAAAS/src/gatk-resources/hg38_20201116/hg38/v0/resources-broad-hg38-v0-Homo_sapiens_assembly38.fasta           INCLUDE_BQ_HISTOGRAM=true           INTERVALS=/sc/arion/projects/MMAAAS/src/gatk-resources/hg38_20201116/hg38/v0/intervals_wgs_coverage_regions.hg38.interval_list           OUTPUT=output/final_bam/1102781231.final_bam.wgs_metrics           USE_FAST_ALGORITHM=true           READ_LENGTH=250
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/.snakemake/log/2022-01-20T001457.033817.snakemake.log

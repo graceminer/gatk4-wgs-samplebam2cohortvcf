@@ -1,0 +1,42 @@
+The flag 'directory' used in rule base_recalibrator_report is only valid for outputs, not inputs.
+The flag 'directory' used in rule apply_bqsr is only valid for outputs, not inputs.
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	2	check_fingerprint
+	2	check_prevalidation
+	2	collect_raw_wgs_metrics
+	2	collect_wgs_metrics
+	2	convert_to_cram
+	1	main
+	2	validate_cram
+	13
+
+[Thu Jan 20 00:10:35 2022]
+rule check_fingerprint:
+    input: output/final_bam/1102781231.final.bam
+    output: output/final_bam/1102781231.final_bam.fingerprinting_detail_metrics, output/final_bam/1102781231.final_bam.fingerprinting_summary_metrics
+    jobid: 5
+    benchmark: benchmarks/final_bam/1102781231.check_fingerprint.txt
+    wildcards: sample=1102781231
+
+[Thu Jan 20 00:10:38 2022]
+Error in rule check_fingerprint:
+    jobid: 5
+    output: output/final_bam/1102781231.final_bam.fingerprinting_detail_metrics, output/final_bam/1102781231.final_bam.fingerprinting_summary_metrics
+    shell:
+        
+        module load R/3.5.3  gatk/4.2.0.0 java/1.8.0_211 python/3.7.3 picard/2.22.3
+
+        java -Dsamjdk.buffer_size=131072           -XX:GCTimeLimit=50 -XX:GCHeapFreeLimit=10 -Xms2g            -jar $PICARD           CheckFingerprint           INPUT=output/final_bam/1102781231.final.bam           SUMMARY_OUTPUT=output/final_bam/1102781231.final_bam.fingerprinting_summary_metrics           DETAIL_OUTPUT=output/final_bam/1102781231.final_bam.fingerprinting_detail_metrics           GENOTYPES=/sc/arion/projects/MMAAAS/src/gatk-resources/hg38_20201116/hg38/v0/NA12878_NA12878.hg38.reference.fingerprint.vcf           HAPLOTYPE_MAP=/sc/arion/projects/MMAAAS/src/gatk-resources/hg38_20201116/hg38/v0/references-hg38-v0-Homo_sapiens_assembly38.haplotype_database.txt           SAMPLE_ALIAS="1102781231"           IGNORE_READ_GROUPS=true
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job check_fingerprint since they might be corrupted:
+output/final_bam/1102781231.final_bam.fingerprinting_detail_metrics, output/final_bam/1102781231.final_bam.fingerprinting_summary_metrics
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/.snakemake/log/2022-01-20T001034.816368.snakemake.log

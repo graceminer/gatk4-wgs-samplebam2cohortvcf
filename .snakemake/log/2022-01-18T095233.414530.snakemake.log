@@ -1,0 +1,4 @@
+The flag 'directory' used in rule base_recalibrator_report is only valid for outputs, not inputs.
+TypeError in line 115 of /sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/snakefilecurrent:
+sequence item 0: expected str instance, list found
+  File "/sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/snakefilecurrent", line 115, in <module>

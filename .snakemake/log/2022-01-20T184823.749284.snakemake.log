@@ -1,0 +1,927 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 300
+Job counts:
+	count	jobs
+	100	gatk4_haplotype_caller
+	1	main
+	101
+
+[Thu Jan 20 18:48:23 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.28.g.vcf.gz
+    jobid: 28
+    benchmark: benchmarks/gvcf/1102781231.gvcf.28.txt
+    wildcards: sample=1102781231, intervals=28
+
+
+[Thu Jan 20 18:48:23 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.43.g.vcf.gz
+    jobid: 43
+    benchmark: benchmarks/gvcf/1102781231.gvcf.43.txt
+    wildcards: sample=1102781231, intervals=43
+
+
+[Thu Jan 20 18:48:23 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.8.g.vcf.gz
+    jobid: 58
+    benchmark: benchmarks/gvcf/1102777134.gvcf.8.txt
+    wildcards: sample=1102777134, intervals=8
+
+
+[Thu Jan 20 18:48:23 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.23.g.vcf.gz
+    jobid: 73
+    benchmark: benchmarks/gvcf/1102777134.gvcf.23.txt
+    wildcards: sample=1102777134, intervals=23
+
+
+[Thu Jan 20 18:48:23 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.29.g.vcf.gz
+    jobid: 29
+    benchmark: benchmarks/gvcf/1102781231.gvcf.29.txt
+    wildcards: sample=1102781231, intervals=29
+
+
+[Thu Jan 20 18:48:23 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.44.g.vcf.gz
+    jobid: 44
+    benchmark: benchmarks/gvcf/1102781231.gvcf.44.txt
+    wildcards: sample=1102781231, intervals=44
+
+
+[Thu Jan 20 18:48:23 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.9.g.vcf.gz
+    jobid: 59
+    benchmark: benchmarks/gvcf/1102777134.gvcf.9.txt
+    wildcards: sample=1102777134, intervals=9
+
+
+[Thu Jan 20 18:48:23 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.24.g.vcf.gz
+    jobid: 74
+    benchmark: benchmarks/gvcf/1102777134.gvcf.24.txt
+    wildcards: sample=1102777134, intervals=24
+
+
+[Thu Jan 20 18:48:23 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.25.g.vcf.gz
+    jobid: 75
+    benchmark: benchmarks/gvcf/1102777134.gvcf.25.txt
+    wildcards: sample=1102777134, intervals=25
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.2.g.vcf.gz
+    jobid: 2
+    benchmark: benchmarks/gvcf/1102781231.gvcf.2.txt
+    wildcards: sample=1102781231, intervals=2
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.30.g.vcf.gz
+    jobid: 30
+    benchmark: benchmarks/gvcf/1102781231.gvcf.30.txt
+    wildcards: sample=1102781231, intervals=30
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.45.g.vcf.gz
+    jobid: 45
+    benchmark: benchmarks/gvcf/1102781231.gvcf.45.txt
+    wildcards: sample=1102781231, intervals=45
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.10.g.vcf.gz
+    jobid: 60
+    benchmark: benchmarks/gvcf/1102777134.gvcf.10.txt
+    wildcards: sample=1102777134, intervals=10
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.31.g.vcf.gz
+    jobid: 31
+    benchmark: benchmarks/gvcf/1102781231.gvcf.31.txt
+    wildcards: sample=1102781231, intervals=31
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.46.g.vcf.gz
+    jobid: 46
+    benchmark: benchmarks/gvcf/1102781231.gvcf.46.txt
+    wildcards: sample=1102781231, intervals=46
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.11.g.vcf.gz
+    jobid: 61
+    benchmark: benchmarks/gvcf/1102777134.gvcf.11.txt
+    wildcards: sample=1102777134, intervals=11
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.26.g.vcf.gz
+    jobid: 76
+    benchmark: benchmarks/gvcf/1102777134.gvcf.26.txt
+    wildcards: sample=1102777134, intervals=26
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.27.g.vcf.gz
+    jobid: 77
+    benchmark: benchmarks/gvcf/1102777134.gvcf.27.txt
+    wildcards: sample=1102777134, intervals=27
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.1.g.vcf.gz
+    jobid: 1
+    benchmark: benchmarks/gvcf/1102781231.gvcf.1.txt
+    wildcards: sample=1102781231, intervals=1
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.32.g.vcf.gz
+    jobid: 32
+    benchmark: benchmarks/gvcf/1102781231.gvcf.32.txt
+    wildcards: sample=1102781231, intervals=32
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.47.g.vcf.gz
+    jobid: 47
+    benchmark: benchmarks/gvcf/1102781231.gvcf.47.txt
+    wildcards: sample=1102781231, intervals=47
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.12.g.vcf.gz
+    jobid: 62
+    benchmark: benchmarks/gvcf/1102777134.gvcf.12.txt
+    wildcards: sample=1102777134, intervals=12
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.3.g.vcf.gz
+    jobid: 3
+    benchmark: benchmarks/gvcf/1102781231.gvcf.3.txt
+    wildcards: sample=1102781231, intervals=3
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.33.g.vcf.gz
+    jobid: 33
+    benchmark: benchmarks/gvcf/1102781231.gvcf.33.txt
+    wildcards: sample=1102781231, intervals=33
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.48.g.vcf.gz
+    jobid: 48
+    benchmark: benchmarks/gvcf/1102781231.gvcf.48.txt
+    wildcards: sample=1102781231, intervals=48
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.13.g.vcf.gz
+    jobid: 63
+    benchmark: benchmarks/gvcf/1102777134.gvcf.13.txt
+    wildcards: sample=1102777134, intervals=13
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.28.g.vcf.gz
+    jobid: 78
+    benchmark: benchmarks/gvcf/1102777134.gvcf.28.txt
+    wildcards: sample=1102777134, intervals=28
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.4.g.vcf.gz
+    jobid: 4
+    benchmark: benchmarks/gvcf/1102781231.gvcf.4.txt
+    wildcards: sample=1102781231, intervals=4
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.34.g.vcf.gz
+    jobid: 34
+    benchmark: benchmarks/gvcf/1102781231.gvcf.34.txt
+    wildcards: sample=1102781231, intervals=34
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.49.g.vcf.gz
+    jobid: 49
+    benchmark: benchmarks/gvcf/1102781231.gvcf.49.txt
+    wildcards: sample=1102781231, intervals=49
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.14.g.vcf.gz
+    jobid: 64
+    benchmark: benchmarks/gvcf/1102777134.gvcf.14.txt
+    wildcards: sample=1102777134, intervals=14
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.29.g.vcf.gz
+    jobid: 79
+    benchmark: benchmarks/gvcf/1102777134.gvcf.29.txt
+    wildcards: sample=1102777134, intervals=29
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.35.g.vcf.gz
+    jobid: 35
+    benchmark: benchmarks/gvcf/1102781231.gvcf.35.txt
+    wildcards: sample=1102781231, intervals=35
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.50.g.vcf.gz
+    jobid: 50
+    benchmark: benchmarks/gvcf/1102781231.gvcf.50.txt
+    wildcards: sample=1102781231, intervals=50
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.15.g.vcf.gz
+    jobid: 65
+    benchmark: benchmarks/gvcf/1102777134.gvcf.15.txt
+    wildcards: sample=1102777134, intervals=15
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.5.g.vcf.gz
+    jobid: 5
+    benchmark: benchmarks/gvcf/1102781231.gvcf.5.txt
+    wildcards: sample=1102781231, intervals=5
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.30.g.vcf.gz
+    jobid: 80
+    benchmark: benchmarks/gvcf/1102777134.gvcf.30.txt
+    wildcards: sample=1102777134, intervals=30
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.6.g.vcf.gz
+    jobid: 6
+    benchmark: benchmarks/gvcf/1102781231.gvcf.6.txt
+    wildcards: sample=1102781231, intervals=6
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.36.g.vcf.gz
+    jobid: 36
+    benchmark: benchmarks/gvcf/1102781231.gvcf.36.txt
+    wildcards: sample=1102781231, intervals=36
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.1.g.vcf.gz
+    jobid: 51
+    benchmark: benchmarks/gvcf/1102777134.gvcf.1.txt
+    wildcards: sample=1102777134, intervals=1
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.16.g.vcf.gz
+    jobid: 66
+    benchmark: benchmarks/gvcf/1102777134.gvcf.16.txt
+    wildcards: sample=1102777134, intervals=16
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.31.g.vcf.gz
+    jobid: 81
+    benchmark: benchmarks/gvcf/1102777134.gvcf.31.txt
+    wildcards: sample=1102777134, intervals=31
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.7.g.vcf.gz
+    jobid: 7
+    benchmark: benchmarks/gvcf/1102781231.gvcf.7.txt
+    wildcards: sample=1102781231, intervals=7
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.37.g.vcf.gz
+    jobid: 37
+    benchmark: benchmarks/gvcf/1102781231.gvcf.37.txt
+    wildcards: sample=1102781231, intervals=37
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.2.g.vcf.gz
+    jobid: 52
+    benchmark: benchmarks/gvcf/1102777134.gvcf.2.txt
+    wildcards: sample=1102777134, intervals=2
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.17.g.vcf.gz
+    jobid: 67
+    benchmark: benchmarks/gvcf/1102777134.gvcf.17.txt
+    wildcards: sample=1102777134, intervals=17
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.32.g.vcf.gz
+    jobid: 82
+    benchmark: benchmarks/gvcf/1102777134.gvcf.32.txt
+    wildcards: sample=1102777134, intervals=32
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.8.g.vcf.gz
+    jobid: 8
+    benchmark: benchmarks/gvcf/1102781231.gvcf.8.txt
+    wildcards: sample=1102781231, intervals=8
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.38.g.vcf.gz
+    jobid: 38
+    benchmark: benchmarks/gvcf/1102781231.gvcf.38.txt
+    wildcards: sample=1102781231, intervals=38
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.3.g.vcf.gz
+    jobid: 53
+    benchmark: benchmarks/gvcf/1102777134.gvcf.3.txt
+    wildcards: sample=1102777134, intervals=3
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.18.g.vcf.gz
+    jobid: 68
+    benchmark: benchmarks/gvcf/1102777134.gvcf.18.txt
+    wildcards: sample=1102777134, intervals=18
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.33.g.vcf.gz
+    jobid: 83
+    benchmark: benchmarks/gvcf/1102777134.gvcf.33.txt
+    wildcards: sample=1102777134, intervals=33
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.9.g.vcf.gz
+    jobid: 9
+    benchmark: benchmarks/gvcf/1102781231.gvcf.9.txt
+    wildcards: sample=1102781231, intervals=9
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.39.g.vcf.gz
+    jobid: 39
+    benchmark: benchmarks/gvcf/1102781231.gvcf.39.txt
+    wildcards: sample=1102781231, intervals=39
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.4.g.vcf.gz
+    jobid: 54
+    benchmark: benchmarks/gvcf/1102777134.gvcf.4.txt
+    wildcards: sample=1102777134, intervals=4
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.19.g.vcf.gz
+    jobid: 69
+    benchmark: benchmarks/gvcf/1102777134.gvcf.19.txt
+    wildcards: sample=1102777134, intervals=19
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.34.g.vcf.gz
+    jobid: 84
+    benchmark: benchmarks/gvcf/1102777134.gvcf.34.txt
+    wildcards: sample=1102777134, intervals=34
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.10.g.vcf.gz
+    jobid: 10
+    benchmark: benchmarks/gvcf/1102781231.gvcf.10.txt
+    wildcards: sample=1102781231, intervals=10
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.40.g.vcf.gz
+    jobid: 40
+    benchmark: benchmarks/gvcf/1102781231.gvcf.40.txt
+    wildcards: sample=1102781231, intervals=40
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.5.g.vcf.gz
+    jobid: 55
+    benchmark: benchmarks/gvcf/1102777134.gvcf.5.txt
+    wildcards: sample=1102777134, intervals=5
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.20.g.vcf.gz
+    jobid: 70
+    benchmark: benchmarks/gvcf/1102777134.gvcf.20.txt
+    wildcards: sample=1102777134, intervals=20
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.35.g.vcf.gz
+    jobid: 85
+    benchmark: benchmarks/gvcf/1102777134.gvcf.35.txt
+    wildcards: sample=1102777134, intervals=35
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.11.g.vcf.gz
+    jobid: 11
+    benchmark: benchmarks/gvcf/1102781231.gvcf.11.txt
+    wildcards: sample=1102781231, intervals=11
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.41.g.vcf.gz
+    jobid: 41
+    benchmark: benchmarks/gvcf/1102781231.gvcf.41.txt
+    wildcards: sample=1102781231, intervals=41
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.6.g.vcf.gz
+    jobid: 56
+    benchmark: benchmarks/gvcf/1102777134.gvcf.6.txt
+    wildcards: sample=1102777134, intervals=6
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.21.g.vcf.gz
+    jobid: 71
+    benchmark: benchmarks/gvcf/1102777134.gvcf.21.txt
+    wildcards: sample=1102777134, intervals=21
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.36.g.vcf.gz
+    jobid: 86
+    benchmark: benchmarks/gvcf/1102777134.gvcf.36.txt
+    wildcards: sample=1102777134, intervals=36
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.12.g.vcf.gz
+    jobid: 12
+    benchmark: benchmarks/gvcf/1102781231.gvcf.12.txt
+    wildcards: sample=1102781231, intervals=12
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.42.g.vcf.gz
+    jobid: 42
+    benchmark: benchmarks/gvcf/1102781231.gvcf.42.txt
+    wildcards: sample=1102781231, intervals=42
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.7.g.vcf.gz
+    jobid: 57
+    benchmark: benchmarks/gvcf/1102777134.gvcf.7.txt
+    wildcards: sample=1102777134, intervals=7
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.22.g.vcf.gz
+    jobid: 72
+    benchmark: benchmarks/gvcf/1102777134.gvcf.22.txt
+    wildcards: sample=1102777134, intervals=22
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.37.g.vcf.gz
+    jobid: 87
+    benchmark: benchmarks/gvcf/1102777134.gvcf.37.txt
+    wildcards: sample=1102777134, intervals=37
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.13.g.vcf.gz
+    jobid: 13
+    benchmark: benchmarks/gvcf/1102781231.gvcf.13.txt
+    wildcards: sample=1102781231, intervals=13
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.38.g.vcf.gz
+    jobid: 88
+    benchmark: benchmarks/gvcf/1102777134.gvcf.38.txt
+    wildcards: sample=1102777134, intervals=38
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.14.g.vcf.gz
+    jobid: 14
+    benchmark: benchmarks/gvcf/1102781231.gvcf.14.txt
+    wildcards: sample=1102781231, intervals=14
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.39.g.vcf.gz
+    jobid: 89
+    benchmark: benchmarks/gvcf/1102777134.gvcf.39.txt
+    wildcards: sample=1102777134, intervals=39
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.15.g.vcf.gz
+    jobid: 15
+    benchmark: benchmarks/gvcf/1102781231.gvcf.15.txt
+    wildcards: sample=1102781231, intervals=15
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.40.g.vcf.gz
+    jobid: 90
+    benchmark: benchmarks/gvcf/1102777134.gvcf.40.txt
+    wildcards: sample=1102777134, intervals=40
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.16.g.vcf.gz
+    jobid: 16
+    benchmark: benchmarks/gvcf/1102781231.gvcf.16.txt
+    wildcards: sample=1102781231, intervals=16
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.41.g.vcf.gz
+    jobid: 91
+    benchmark: benchmarks/gvcf/1102777134.gvcf.41.txt
+    wildcards: sample=1102777134, intervals=41
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.17.g.vcf.gz
+    jobid: 17
+    benchmark: benchmarks/gvcf/1102781231.gvcf.17.txt
+    wildcards: sample=1102781231, intervals=17
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.42.g.vcf.gz
+    jobid: 92
+    benchmark: benchmarks/gvcf/1102777134.gvcf.42.txt
+    wildcards: sample=1102777134, intervals=42
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.18.g.vcf.gz
+    jobid: 18
+    benchmark: benchmarks/gvcf/1102781231.gvcf.18.txt
+    wildcards: sample=1102781231, intervals=18
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.43.g.vcf.gz
+    jobid: 93
+    benchmark: benchmarks/gvcf/1102777134.gvcf.43.txt
+    wildcards: sample=1102777134, intervals=43
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.19.g.vcf.gz
+    jobid: 19
+    benchmark: benchmarks/gvcf/1102781231.gvcf.19.txt
+    wildcards: sample=1102781231, intervals=19
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.44.g.vcf.gz
+    jobid: 94
+    benchmark: benchmarks/gvcf/1102777134.gvcf.44.txt
+    wildcards: sample=1102777134, intervals=44
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.20.g.vcf.gz
+    jobid: 20
+    benchmark: benchmarks/gvcf/1102781231.gvcf.20.txt
+    wildcards: sample=1102781231, intervals=20
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.45.g.vcf.gz
+    jobid: 95
+    benchmark: benchmarks/gvcf/1102777134.gvcf.45.txt
+    wildcards: sample=1102777134, intervals=45
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.21.g.vcf.gz
+    jobid: 21
+    benchmark: benchmarks/gvcf/1102781231.gvcf.21.txt
+    wildcards: sample=1102781231, intervals=21
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.46.g.vcf.gz
+    jobid: 96
+    benchmark: benchmarks/gvcf/1102777134.gvcf.46.txt
+    wildcards: sample=1102777134, intervals=46
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.22.g.vcf.gz
+    jobid: 22
+    benchmark: benchmarks/gvcf/1102781231.gvcf.22.txt
+    wildcards: sample=1102781231, intervals=22
+
+
+[Thu Jan 20 18:48:24 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.47.g.vcf.gz
+    jobid: 97
+    benchmark: benchmarks/gvcf/1102777134.gvcf.47.txt
+    wildcards: sample=1102777134, intervals=47
+
+
+[Thu Jan 20 18:48:25 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.23.g.vcf.gz
+    jobid: 23
+    benchmark: benchmarks/gvcf/1102781231.gvcf.23.txt
+    wildcards: sample=1102781231, intervals=23
+
+
+[Thu Jan 20 18:48:25 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.48.g.vcf.gz
+    jobid: 98
+    benchmark: benchmarks/gvcf/1102777134.gvcf.48.txt
+    wildcards: sample=1102777134, intervals=48
+
+
+[Thu Jan 20 18:48:25 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.24.g.vcf.gz
+    jobid: 24
+    benchmark: benchmarks/gvcf/1102781231.gvcf.24.txt
+    wildcards: sample=1102781231, intervals=24
+
+
+[Thu Jan 20 18:48:25 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.49.g.vcf.gz
+    jobid: 99
+    benchmark: benchmarks/gvcf/1102777134.gvcf.49.txt
+    wildcards: sample=1102777134, intervals=49
+
+
+[Thu Jan 20 18:48:25 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.25.g.vcf.gz
+    jobid: 25
+    benchmark: benchmarks/gvcf/1102781231.gvcf.25.txt
+    wildcards: sample=1102781231, intervals=25
+
+
+[Thu Jan 20 18:48:25 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102777134.final.bam
+    output: output/gvcf/1102777134.50.g.vcf.gz
+    jobid: 100
+    benchmark: benchmarks/gvcf/1102777134.gvcf.50.txt
+    wildcards: sample=1102777134, intervals=50
+
+
+[Thu Jan 20 18:48:25 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.26.g.vcf.gz
+    jobid: 26
+    benchmark: benchmarks/gvcf/1102781231.gvcf.26.txt
+    wildcards: sample=1102781231, intervals=26
+
+
+[Thu Jan 20 18:48:25 2022]
+rule gatk4_haplotype_caller:
+    input: output/final_bam/1102781231.final.bam
+    output: output/gvcf/1102781231.27.g.vcf.gz
+    jobid: 27
+    benchmark: benchmarks/gvcf/1102781231.gvcf.27.txt
+    wildcards: sample=1102781231, intervals=27
+
+Terminating processes on user request, this might take some time.
+Will exit after finishing currently running jobs.
+[Thu Jan 20 18:54:55 2022]
+Error in rule gatk4_haplotype_caller:
+    jobid: 30
+    output: output/gvcf/1102781231.30.g.vcf.gz
+    shell:
+        
+        module load R/3.5.3  gatk/4.2.0.0 java/1.8.0_211 python/3.7.3 picard/2.22.3
+        #this also works and uses $interval_file as opposed to params
+        #interval_file=$(ls input/scatter_interval_list/*/30scattered.interval_list)
+        set -e
+        gatk --java-options "-Xms6000m -XX:GCTimeLimit=50 -XX:GCHeapFreeLimit=10"           HaplotypeCaller           -R /sc/arion/projects/MMAAAS/src/gatk-resources/hg38_20201116/hg38/v0/resources-broad-hg38-v0-Homo_sapiens_assembly38.fasta           -I output/final_bam/1102781231.final.bam           -L input/scatter_interval_list/*/30scattered.interval_list           -O output/gvcf/1102781231.30.g.vcf.gz           -contamination 0.0           -G StandardAnnotation -G StandardHCAnnotation -G AS_StandardAnnotation           -new-qual           -GQB 10 -GQB 20 -GQB 30 -GQB 40 -GQB 50 -GQB 60 -GQB 70 -GQB 80 -GQB 90           -ERC GVCF 
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Error executing rule gatk4_haplotype_caller on cluster (jobid: 30, external: 186550, jobscript: /sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/.snakemake/tmp.l2jcm2hx/snakejob.gatk4_haplotype_caller.30.sh). For error details see the cluster log and the log files of the involved rule(s).
+Waiting at most 5 seconds for missing files.
+Cancelling snakemake on user request.

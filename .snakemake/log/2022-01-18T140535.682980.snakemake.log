@@ -1,0 +1,6 @@
+The flag 'directory' used in rule base_recalibrator_report is only valid for outputs, not inputs.
+The flag 'directory' used in rule apply_bqsr is only valid for outputs, not inputs.
+The flag 'directory' used in rule gather_recal_bams is only valid for outputs, not inputs.
+NameError in line 167 of /sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/snakefilecurrent:
+name 'output' is not defined
+  File "/sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/snakefilecurrent", line 167, in <module>

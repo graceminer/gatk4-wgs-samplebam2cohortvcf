@@ -1,0 +1,7 @@
+output/**
+resources/**
+logs/**
+.snakemake
+.snakemake/**
+input/**
+benchmarks/**

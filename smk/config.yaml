@@ -1,0 +1,31 @@
+
+### resources ###
+
+REF_FASTA: /sc/arion/projects/MMAAAS/src/gatk-resources/hg38_20201116/hg38/v0/resources-broad-hg38-v0-Homo_sapiens_assembly38.fasta
+REF_DICT: /sc/arion/projects/MMAAAS/src/gatk-resources/hg38_20201116/hg38/v0/resources-broad-hg38-v0-Homo_sapiens_assembly38.dict
+DBSNP_VCF: /sc/arion/projects/MMAAAS/src/gatk-resources/hg38_20201116/hg38/v0/resources-broad-hg38-v0-Homo_sapiens_assembly38.dbsnp138.vcf
+VerifyBamID: /sc/arion/projects/MMAAAS/src/VerifyBamID/bin/VerifyBamID
+# downloaded and compiled usiing : git clone https://github.com/Griffan/VerifyBamID.git
+# cd VerifyBamID \ mkdir build \ cd build \ cmake .. \ make \make test 
+# then add bin file to .bashrc Path
+
+
+#PICARD: /hpc/users/marcoe02/src/picard/picard.jar
+SNPEFF: /sc/orga/projects/MMAAAS/src/snpeff/snpEff/snpEff.jar
+SNPEFFc: /hpc/users/minerg01/src/snpEff/snpEff.config
+SNPSIFT: /sc/orga/projects/MMAAAS/src/snpeff/snpEff/SnpSift.jar
+#DBNSFP: /sc/orga/projects/MMAAAS/src/dbNSFP/dbNSFPv3/hg19/dbNSFP3.5a_hg19.txt.gz
+DBNSFP: /sc/orga/projects/MMAAAS/src/dbNSFP/dbNSFPv2.9/dbNSFP2.9.txt.gz
+GNOMAD: /sc/orga/projects/MMAAAS/gnomad_data/vcf/genomes
+MAGMA: /sc/orga/projects/MMAAAS/src/magma_v1.06b/magma
+
+GENOME: GRCh37.75
+
+PHENO_COVARS_ALL: input/pheno_covars/adsp.pv.wes.nhw_ind.apoe_all.10418.pheno_covars.tsv
+PHENO_COVARS_EXTREMES: input/pheno_covars/adsp.pv.wes.nhw_ind.apoe33_extremes.2606.pheno_covars.tsv
+COVAR_NAMES: PC1,PC2,PC3,PC4,PC5,PC6,PC7,PC8,PC9,PC10,SCBroad,SCWashU
+
+#STRATUM: apoe33_extremes
+NIND: 243
+MAC_MIN: 0 # applies to single analyses only!
+MAF_MAX: 1 # applies to burden/kernel analyses only!

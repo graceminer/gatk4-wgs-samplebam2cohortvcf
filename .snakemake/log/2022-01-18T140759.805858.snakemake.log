@@ -1,0 +1,6 @@
+The flag 'directory' used in rule base_recalibrator_report is only valid for outputs, not inputs.
+The flag 'directory' used in rule apply_bqsr is only valid for outputs, not inputs.
+The flag 'directory' used in rule gather_recal_bams is only valid for outputs, not inputs.
+TypeError in line 231 of /sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/snakefilecurrent:
+benchmark() missing 1 required positional argument: 'benchmark'
+  File "/sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/snakefilecurrent", line 231, in <module>

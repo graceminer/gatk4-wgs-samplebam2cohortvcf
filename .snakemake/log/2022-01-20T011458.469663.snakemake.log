@@ -1,0 +1,110 @@
+The flag 'directory' used in rule base_recalibrator_report is only valid for outputs, not inputs.
+The flag 'directory' used in rule apply_bqsr is only valid for outputs, not inputs.
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 300
+Job counts:
+	count	jobs
+	2	collect_raw_wgs_metrics
+	2	collect_wgs_metrics
+	2	convert_to_cram
+	1	main
+	2	validate_cram
+	9
+
+[Thu Jan 20 01:14:59 2022]
+rule collect_raw_wgs_metrics:
+    input: output/final_bam/1102777134.final.bam
+    output: output/final_bam/1102777134.final_bam.raw_wgs_metrics
+    jobid: 14
+    benchmark: benchmarks/final_bam/1102777134.final_bam.raw_wgs_metrics.txt
+    wildcards: sample=1102777134
+
+
+[Thu Jan 20 01:14:59 2022]
+rule convert_to_cram:
+    input: output/final_bam/1102781231.final.bam
+    output: output/final_cram/1102781231.final.cram, output/final_cram/1102781231.final.cram.md5
+    jobid: 19
+    benchmark: benchmarks/final_cram/1102781231.final.cram.txt
+    wildcards: sample=1102781231
+
+
+[Thu Jan 20 01:14:59 2022]
+rule collect_raw_wgs_metrics:
+    input: output/final_bam/1102781231.final.bam
+    output: output/final_bam/1102781231.final_bam.raw_wgs_metrics
+    jobid: 9
+    benchmark: benchmarks/final_bam/1102781231.final_bam.raw_wgs_metrics.txt
+    wildcards: sample=1102781231
+
+
+[Thu Jan 20 01:14:59 2022]
+rule collect_wgs_metrics:
+    input: output/final_bam/1102777134.final.bam
+    output: output/final_bam/1102777134.final_bam.wgs_metrics
+    jobid: 13
+    benchmark: benchmarks/final_bam/1102777134.final_bam.wgs_metrics.txt
+    wildcards: sample=1102777134
+
+
+[Thu Jan 20 01:14:59 2022]
+rule convert_to_cram:
+    input: output/final_bam/1102777134.final.bam
+    output: output/final_cram/1102777134.final.cram, output/final_cram/1102777134.final.cram.md5
+    jobid: 20
+    benchmark: benchmarks/final_cram/1102777134.final.cram.txt
+    wildcards: sample=1102777134
+
+
+[Thu Jan 20 01:14:59 2022]
+rule collect_wgs_metrics:
+    input: output/final_bam/1102781231.final.bam
+    output: output/final_bam/1102781231.final_bam.wgs_metrics
+    jobid: 8
+    benchmark: benchmarks/final_bam/1102781231.final_bam.wgs_metrics.txt
+    wildcards: sample=1102781231
+
+[Thu Jan 20 02:29:33 2022]
+Finished job 20.
+1 of 9 steps (11%) done
+
+[Thu Jan 20 02:29:33 2022]
+rule validate_cram:
+    input: output/final_cram/1102777134.final.cram, output/final_cram/1102777134.final.cram.md5
+    output: output/final_cram/1102777134.final_cram.validation_report
+    jobid: 16
+    benchmark: benchmarks/final_cram/1102777134.validate_cram.txt
+    wildcards: sample=1102777134
+
+[Thu Jan 20 02:29:53 2022]
+Error in rule validate_cram:
+    jobid: 16
+    output: output/final_cram/1102777134.final_cram.validation_report
+    shell:
+        
+        module load R/3.5.3  gatk/4.2.0.0 java/1.8.0_211 python/3.7.3 picard/2.22.3
+
+        java -Xms2g -jar $PICARD           ValidateSamFile           INPUT=output/final_cram/1102777134.final.cram output/final_cram/1102777134.final.cram.md5           OUTPUT=output/final_cram/1102777134.final_cram.validation_report           REFERENCE_SEQUENCE=/sc/arion/projects/MMAAAS/src/gatk-resources/hg38_20201116/hg38/v0/resources-broad-hg38-v0-Homo_sapiens_assembly38.fasta           MAX_OUTPUT=1000000000           IGNORE=["MISSING_TAG_NM"]           MODE=VERBOSE           SKIP_MATE_VALIDATION=false           IS_BISULFITE_SEQUENCED=false
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Error executing rule validate_cram on cluster (jobid: 16, external: 434028, jobscript: /sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/.snakemake/tmp.61o3lra5/snakejob.validate_cram.16.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Jan 20 02:32:43 2022]
+Finished job 19.
+2 of 9 steps (22%) done
+[Thu Jan 20 03:01:55 2022]
+Finished job 13.
+3 of 9 steps (33%) done
+[Thu Jan 20 03:05:55 2022]
+Finished job 8.
+4 of 9 steps (44%) done
+[Thu Jan 20 03:08:15 2022]
+Finished job 14.
+5 of 9 steps (56%) done
+[Thu Jan 20 03:17:36 2022]
+Finished job 9.
+6 of 9 steps (67%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/.snakemake/log/2022-01-20T011458.469663.snakemake.log

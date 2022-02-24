@@ -1,0 +1,49 @@
+The flag 'directory' used in rule base_recalibrator_report is only valid for outputs, not inputs.
+The flag 'directory' used in rule apply_bqsr is only valid for outputs, not inputs.
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	2	collect_raw_wgs_metrics
+	2	collect_wgs_metrics
+	2	convert_to_cram
+	1	main
+	2	validate_cram
+	9
+
+[Thu Jan 20 00:29:17 2022]
+rule convert_to_cram:
+    input: output/final_bam/1102781231.final.bam
+    output: output/final_cram/1102781231.final.cram, output/final_cram/1102781231.final.cram.md5
+    jobid: 19
+    benchmark: benchmarks/final_cram/1102781231.final.cram.txt
+    wildcards: sample=1102781231
+
+Terminating processes on user request, this might take some time.
+[Thu Jan 20 00:31:16 2022]
+Error in rule convert_to_cram:
+    jobid: 19
+    output: output/final_cram/1102781231.final.cram, output/final_cram/1102781231.final.cram.md5
+    shell:
+        
+        module load R/3.5.3  gatk/4.2.0.0 java/1.8.0_211 python/3.7.3 picard/2.22.3 samtools/1.9
+        set -e
+        set -o pipefail
+
+        samtools view -C -T /sc/arion/projects/MMAAAS/src/gatk-resources/hg38_20201116/hg38/v0/resources-broad-hg38-v0-Homo_sapiens_assembly38.fasta output/final_bam/1102781231.final.bam |         tee output/final_cram/1102781231.final.cram |         md5sum | awk '{print $1}' > output/final_cram/1102781231.final.cram.md5
+
+        # Create REF_CACHE. Used when indexing a CRAM
+        seq_cache_populate.pl -root ./ref/cache /sc/arion/projects/MMAAAS/src/gatk-resources/hg38_20201116/hg38/v0/resources-broad-hg38-v0-Homo_sapiens_assembly38.fasta
+        export REF_PATH=:
+        export REF_CACHE=./ref/cache/%2s/%2s/%s
+
+        samtools index output/final_cram/1102781231.final.cram
+        
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job convert_to_cram since they might be corrupted:
+output/final_cram/1102781231.final.cram, output/final_cram/1102781231.final.cram.md5
+Complete log: /sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/.snakemake/log/2022-01-20T002916.659759.snakemake.log

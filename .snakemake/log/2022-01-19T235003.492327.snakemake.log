@@ -1,0 +1,43 @@
+The flag 'directory' used in rule base_recalibrator_report is only valid for outputs, not inputs.
+The flag 'directory' used in rule apply_bqsr is only valid for outputs, not inputs.
+Building DAG of jobs...
+Job counts:
+	count	jobs
+	2	check_fingerprint
+	2	check_prevalidation
+	2	collect_raw_wgs_metrics
+	2	collect_wgs_metrics
+	2	convert_to_cram
+	1	main
+	2	validate_cram
+	13
+
+[Wed Jan 19 23:50:04 2022]
+rule check_fingerprint:
+    input: output/final_bam/1102781231.final.bam
+    output: output/final_bam/1102781231.final_bam.fingerprinting_detail_metrics, output/final_bam/1102781231.final_bam.fingerprinting_summary_metrics
+    jobid: 5
+    benchmark: benchmarks/final_bam/1102781231.check_fingerprint.txt
+    wildcards: sample=1102781231
+
+
+        module load R/3.5.3  gatk/4.2.0.0 java/1.8.0_211 python/3.7.3 picard/2.22.3
+
+        java -Dsamjdk.buffer_size=131072           -XX:GCTimeLimit=50 -XX:GCHeapFreeLimit=10 -Xms2g            -jar $PICARD           CheckFingerprint           INPUT=output/final_bam/1102781231.final.bam           SUMMARY_OUTPUT=output/final_bam/1102781231.final_bam.fingerprinting_summary_metrics           DETAIL_OUTPUT=output/final_bam/1102781231.final_bam.fingerprinting_detail_metrics           GENOTYPES=/sc/arion/projects/MMAAAS/src/gatk-resources/hg38_20201116/hg38/v0/NA12878_NA12878.hg38.reference.fingerprint.vcf           HAPLOTYPE_MAP=/sc/arion/projects/MMAAAS/src/gatk-resources/hg38_20201116/hg38/v0/references-hg38-v0-Homo_sapiens_assembly38.haplotype_database.txt           SAMPLE_ALIAS="1102781231"           IGNORE_READ_GROUPS=true
+        
+
+[Wed Jan 19 23:50:04 2022]
+rule collect_wgs_metrics:
+    input: output/final_bam/1102781231.final.bam
+    output: output/final_bam/1102781231.final_bam.wgs_metrics
+    jobid: 7
+    benchmark: benchmarks/final_bam/1102781231.final_bam.wgs_metrics.txt
+    wildcards: sample=1102781231
+
+RuleException in line 337 of /sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/snakefilecurrent:
+NameError: The name 'WGS_COVERAGE_INTERVALS_LIST' is unknown in this context. Please make sure that you defined that variable. Also note that braces not used for variable access have to be escaped by repeating them, i.e. {{print $1}}
+  File "/hpc/packages/minerva-centos7/py_packages/3.7/lib/python3.7/site-packages/snakemake/executors/__init__.py", line 133, in run_jobs
+  File "/hpc/packages/minerva-centos7/py_packages/3.7/lib/python3.7/site-packages/snakemake/executors/__init__.py", line 138, in run
+  File "/hpc/packages/minerva-centos7/py_packages/3.7/lib/python3.7/site-packages/snakemake/executors/__init__.py", line 149, in _run
+  File "/hpc/packages/minerva-centos7/py_packages/3.7/lib/python3.7/site-packages/snakemake/executors/__init__.py", line 169, in printjob
+  File "/hpc/packages/minerva-centos7/py_packages/3.7/lib/python3.7/site-packages/snakemake/executors/__init__.py", line 155, in printjob

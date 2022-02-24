@@ -1,0 +1,36 @@
+The flag 'directory' used in rule base_recalibrator_report is only valid for outputs, not inputs.
+The flag 'directory' used in rule apply_bqsr is only valid for outputs, not inputs.
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	main
+	2	validate_cram
+	3
+
+[Thu Jan 20 09:47:20 2022]
+rule validate_cram:
+    input: output/final_cram/1102781231.final.cram
+    output: output/final_cram/1102781231.final_cram.validation_report
+    jobid: 15
+    benchmark: benchmarks/final_cram/1102781231.validate_cram.txt
+    wildcards: sample=1102781231
+
+Terminating processes on user request, this might take some time.
+[Thu Jan 20 10:06:02 2022]
+Error in rule validate_cram:
+    jobid: 15
+    output: output/final_cram/1102781231.final_cram.validation_report
+    shell:
+        
+        module load R/3.5.3  gatk/4.2.0.0 java/1.8.0_211 python/3.7.3 picard/2.22.3
+
+        java -Xms2g -jar $PICARD           ValidateSamFile           INPUT=output/final_cram/1102781231.final.cram           OUTPUT=output/final_cram/1102781231.final_cram.validation_report           REFERENCE_SEQUENCE=/sc/arion/projects/MMAAAS/src/gatk-resources/hg38_20201116/hg38/v0/resources-broad-hg38-v0-Homo_sapiens_assembly38.fasta           MAX_OUTPUT=1000000000           IGNORE=MISSING_TAG_NM           MODE=VERBOSE           SKIP_MATE_VALIDATION=false           IS_BISULFITE_SEQUENCED=false
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job validate_cram since they might be corrupted:
+output/final_cram/1102781231.final_cram.validation_report
+Complete log: /sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/.snakemake/log/2022-01-20T094719.663380.snakemake.log

@@ -1,0 +1,29 @@
+The flag 'directory' used in rule base_recalibrator_report is only valid for outputs, not inputs.
+The flag 'directory' used in rule apply_bqsr is only valid for outputs, not inputs.
+Building DAG of jobs...
+Error: Directory cannot be locked. This usually means that another Snakemake instance is running on this directory. Another possibility is that a previous run exited unexpectedly.
+Job counts:
+	count	jobs
+	2	check_fingerprint
+	2	check_prevalidation
+	1	collect_aggregated_metrics
+	2	convert_to_cram
+	1	main
+	2	validate_cram
+	10
+
+[Wed Jan 19 22:42:12 2022]
+rule convert_to_cram:
+    input: output/final_bam/1102781231.final.bam
+    output: output/final_cram/1102781231.final.cram, output/final_cram/1102781231.final.cram.md5
+    jobid: 15
+    benchmark: benchmarks/final_cram/1102781231.final.cram.txt
+    wildcards: sample=1102781231
+
+RuleException in line 268 of /sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/snakefilecurrent:
+NameError: The name 'print $1' is unknown in this context. Please make sure that you defined that variable. Also note that braces not used for variable access have to be escaped by repeating them, i.e. {{print $1}}
+  File "/hpc/packages/minerva-centos7/py_packages/3.7/lib/python3.7/site-packages/snakemake/executors/__init__.py", line 133, in run_jobs
+  File "/hpc/packages/minerva-centos7/py_packages/3.7/lib/python3.7/site-packages/snakemake/executors/__init__.py", line 138, in run
+  File "/hpc/packages/minerva-centos7/py_packages/3.7/lib/python3.7/site-packages/snakemake/executors/__init__.py", line 149, in _run
+  File "/hpc/packages/minerva-centos7/py_packages/3.7/lib/python3.7/site-packages/snakemake/executors/__init__.py", line 169, in printjob
+  File "/hpc/packages/minerva-centos7/py_packages/3.7/lib/python3.7/site-packages/snakemake/executors/__init__.py", line 155, in printjob

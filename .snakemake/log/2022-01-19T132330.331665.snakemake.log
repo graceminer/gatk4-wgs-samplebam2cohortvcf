@@ -1,0 +1,1456 @@
+The flag 'directory' used in rule base_recalibrator_report is only valid for outputs, not inputs.
+The flag 'directory' used in rule apply_bqsr is only valid for outputs, not inputs.
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 300
+Job counts:
+	count	jobs
+	52	apply_bqsr
+	52	base_recalibrator_report
+	2	collect_aggregated_metrics
+	2	collect_rg_bam_metrics
+	2	gather_bqsr_reports
+	2	gather_recal_bams
+	1	main
+	113
+
+[Wed Jan 19 13:23:30 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102781231/
+    output: output/recalibrated_bam/1102781231.recal_data_08.csv
+    log: logs/recalibrated_bam/1102781231.base_recal_report.gc_log.08.log
+    jobid: 14
+    benchmark: benchmarks/recalibrated_bam/1102781231.bqsr_report.08.txt
+    wildcards: sample=1102781231, intervals=08
+
+
+[Wed Jan 19 13:23:30 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102777134/
+    output: output/recalibrated_bam/1102777134.recal_data_04.csv
+    log: logs/recalibrated_bam/1102777134.base_recal_report.gc_log.04.log
+    jobid: 29
+    benchmark: benchmarks/recalibrated_bam/1102777134.bqsr_report.04.txt
+    wildcards: sample=1102777134, intervals=04
+
+
+[Wed Jan 19 13:23:30 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102777134/
+    output: output/recalibrated_bam/1102777134.recal_data_10.csv
+    log: logs/recalibrated_bam/1102777134.base_recal_report.gc_log.10.log
+    jobid: 44
+    benchmark: benchmarks/recalibrated_bam/1102777134.bqsr_report.10.txt
+    wildcards: sample=1102777134, intervals=10
+
+
+[Wed Jan 19 13:23:30 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102781231/
+    output: output/recalibrated_bam/1102781231.recal_data_11.csv
+    log: logs/recalibrated_bam/1102781231.base_recal_report.gc_log.11.log
+    jobid: 7
+    benchmark: benchmarks/recalibrated_bam/1102781231.bqsr_report.11.txt
+    wildcards: sample=1102781231, intervals=11
+
+
+[Wed Jan 19 13:23:30 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102781231/
+    output: output/recalibrated_bam/1102781231.recal_data_16.csv
+    log: logs/recalibrated_bam/1102781231.base_recal_report.gc_log.16.log
+    jobid: 22
+    benchmark: benchmarks/recalibrated_bam/1102781231.bqsr_report.16.txt
+    wildcards: sample=1102781231, intervals=16
+
+
+[Wed Jan 19 13:23:30 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102777134/
+    output: output/recalibrated_bam/1102777134.recal_data_06.csv
+    log: logs/recalibrated_bam/1102777134.base_recal_report.gc_log.06.log
+    jobid: 37
+    benchmark: benchmarks/recalibrated_bam/1102777134.bqsr_report.06.txt
+    wildcards: sample=1102777134, intervals=06
+
+
+[Wed Jan 19 13:23:30 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102777134/
+    output: output/recalibrated_bam/1102777134.recal_data_17.csv
+    log: logs/recalibrated_bam/1102777134.base_recal_report.gc_log.17.log
+    jobid: 52
+    benchmark: benchmarks/recalibrated_bam/1102777134.bqsr_report.17.txt
+    wildcards: sample=1102777134, intervals=17
+
+
+[Wed Jan 19 13:23:30 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102777134/
+    output: output/recalibrated_bam/1102777134.recal_data_19.csv
+    log: logs/recalibrated_bam/1102777134.base_recal_report.gc_log.19.log
+    jobid: 51
+    benchmark: benchmarks/recalibrated_bam/1102777134.bqsr_report.19.txt
+    wildcards: sample=1102777134, intervals=19
+
+
+[Wed Jan 19 13:23:30 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102781231/
+    output: output/recalibrated_bam/1102781231.recal_data_02.csv
+    log: logs/recalibrated_bam/1102781231.base_recal_report.gc_log.02.log
+    jobid: 15
+    benchmark: benchmarks/recalibrated_bam/1102781231.bqsr_report.02.txt
+    wildcards: sample=1102781231, intervals=02
+
+
+[Wed Jan 19 13:23:30 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102777134/
+    output: output/recalibrated_bam/1102777134.recal_data_24.csv
+    log: logs/recalibrated_bam/1102777134.base_recal_report.gc_log.24.log
+    jobid: 30
+    benchmark: benchmarks/recalibrated_bam/1102777134.bqsr_report.24.txt
+    wildcards: sample=1102777134, intervals=24
+
+
+[Wed Jan 19 13:23:30 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102777134/
+    output: output/recalibrated_bam/1102777134.recal_data_03.csv
+    log: logs/recalibrated_bam/1102777134.base_recal_report.gc_log.03.log
+    jobid: 45
+    benchmark: benchmarks/recalibrated_bam/1102777134.bqsr_report.03.txt
+    wildcards: sample=1102777134, intervals=03
+
+
+[Wed Jan 19 13:23:30 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102781231/
+    output: output/recalibrated_bam/1102781231.recal_data_18.csv
+    log: logs/recalibrated_bam/1102781231.base_recal_report.gc_log.18.log
+    jobid: 8
+    benchmark: benchmarks/recalibrated_bam/1102781231.bqsr_report.18.txt
+    wildcards: sample=1102781231, intervals=18
+
+
+[Wed Jan 19 13:23:30 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102781231/
+    output: output/recalibrated_bam/1102781231.recal_data_14.csv
+    log: logs/recalibrated_bam/1102781231.base_recal_report.gc_log.14.log
+    jobid: 23
+    benchmark: benchmarks/recalibrated_bam/1102781231.bqsr_report.14.txt
+    wildcards: sample=1102781231, intervals=14
+
+
+[Wed Jan 19 13:23:30 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102777134/
+    output: output/recalibrated_bam/1102777134.recal_data_12.csv
+    log: logs/recalibrated_bam/1102777134.base_recal_report.gc_log.12.log
+    jobid: 38
+    benchmark: benchmarks/recalibrated_bam/1102777134.bqsr_report.12.txt
+    wildcards: sample=1102777134, intervals=12
+
+
+[Wed Jan 19 13:23:30 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102781231/
+    output: output/recalibrated_bam/1102781231.recal_data_23.csv
+    log: logs/recalibrated_bam/1102781231.base_recal_report.gc_log.23.log
+    jobid: 1
+    benchmark: benchmarks/recalibrated_bam/1102781231.bqsr_report.23.txt
+    wildcards: sample=1102781231, intervals=23
+
+
+[Wed Jan 19 13:23:30 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102781231/
+    output: output/recalibrated_bam/1102781231.recal_data_09.csv
+    log: logs/recalibrated_bam/1102781231.base_recal_report.gc_log.09.log
+    jobid: 16
+    benchmark: benchmarks/recalibrated_bam/1102781231.bqsr_report.09.txt
+    wildcards: sample=1102781231, intervals=09
+
+
+[Wed Jan 19 13:23:30 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102777134/
+    output: output/recalibrated_bam/1102777134.recal_data_25.csv
+    log: logs/recalibrated_bam/1102777134.base_recal_report.gc_log.25.log
+    jobid: 31
+    benchmark: benchmarks/recalibrated_bam/1102777134.bqsr_report.25.txt
+    wildcards: sample=1102777134, intervals=25
+
+
+[Wed Jan 19 13:23:30 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102777134/
+    output: output/recalibrated_bam/1102777134.recal_data_22.csv
+    log: logs/recalibrated_bam/1102777134.base_recal_report.gc_log.22.log
+    jobid: 46
+    benchmark: benchmarks/recalibrated_bam/1102777134.bqsr_report.22.txt
+    wildcards: sample=1102777134, intervals=22
+
+
+[Wed Jan 19 13:23:30 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102781231/
+    output: output/recalibrated_bam/1102781231.recal_data_15.csv
+    log: logs/recalibrated_bam/1102781231.base_recal_report.gc_log.15.log
+    jobid: 9
+    benchmark: benchmarks/recalibrated_bam/1102781231.bqsr_report.15.txt
+    wildcards: sample=1102781231, intervals=15
+
+
+[Wed Jan 19 13:23:31 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102781231/
+    output: output/recalibrated_bam/1102781231.recal_data_01.csv
+    log: logs/recalibrated_bam/1102781231.base_recal_report.gc_log.01.log
+    jobid: 24
+    benchmark: benchmarks/recalibrated_bam/1102781231.bqsr_report.01.txt
+    wildcards: sample=1102781231, intervals=01
+
+
+[Wed Jan 19 13:23:31 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102777134/
+    output: output/recalibrated_bam/1102777134.recal_data_07.csv
+    log: logs/recalibrated_bam/1102777134.base_recal_report.gc_log.07.log
+    jobid: 39
+    benchmark: benchmarks/recalibrated_bam/1102777134.bqsr_report.07.txt
+    wildcards: sample=1102777134, intervals=07
+
+
+[Wed Jan 19 13:23:31 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102781231/
+    output: output/recalibrated_bam/1102781231.recal_data_05.csv
+    log: logs/recalibrated_bam/1102781231.base_recal_report.gc_log.05.log
+    jobid: 21
+    benchmark: benchmarks/recalibrated_bam/1102781231.bqsr_report.05.txt
+    wildcards: sample=1102781231, intervals=05
+
+
+[Wed Jan 19 13:23:31 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102781231/
+    output: output/recalibrated_bam/1102781231.recal_data_13.csv
+    log: logs/recalibrated_bam/1102781231.base_recal_report.gc_log.13.log
+    jobid: 2
+    benchmark: benchmarks/recalibrated_bam/1102781231.bqsr_report.13.txt
+    wildcards: sample=1102781231, intervals=13
+
+
+[Wed Jan 19 13:23:31 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102781231/
+    output: output/recalibrated_bam/1102781231.recal_data_00.csv
+    log: logs/recalibrated_bam/1102781231.base_recal_report.gc_log.00.log
+    jobid: 17
+    benchmark: benchmarks/recalibrated_bam/1102781231.bqsr_report.00.txt
+    wildcards: sample=1102781231, intervals=00
+
+
+[Wed Jan 19 13:23:31 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102777134/
+    output: output/recalibrated_bam/1102777134.recal_data_21.csv
+    log: logs/recalibrated_bam/1102777134.base_recal_report.gc_log.21.log
+    jobid: 32
+    benchmark: benchmarks/recalibrated_bam/1102777134.bqsr_report.21.txt
+    wildcards: sample=1102777134, intervals=21
+
+
+[Wed Jan 19 13:23:31 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102777134/
+    output: output/recalibrated_bam/1102777134.recal_data_05.csv
+    log: logs/recalibrated_bam/1102777134.base_recal_report.gc_log.05.log
+    jobid: 47
+    benchmark: benchmarks/recalibrated_bam/1102777134.bqsr_report.05.txt
+    wildcards: sample=1102777134, intervals=05
+
+
+[Wed Jan 19 13:23:31 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102781231/
+    output: output/recalibrated_bam/1102781231.recal_data_20.csv
+    log: logs/recalibrated_bam/1102781231.base_recal_report.gc_log.20.log
+    jobid: 10
+    benchmark: benchmarks/recalibrated_bam/1102781231.bqsr_report.20.txt
+    wildcards: sample=1102781231, intervals=20
+
+
+[Wed Jan 19 13:23:31 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102781231/
+    output: output/recalibrated_bam/1102781231.recal_data_19.csv
+    log: logs/recalibrated_bam/1102781231.base_recal_report.gc_log.19.log
+    jobid: 25
+    benchmark: benchmarks/recalibrated_bam/1102781231.bqsr_report.19.txt
+    wildcards: sample=1102781231, intervals=19
+
+
+[Wed Jan 19 13:23:31 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102777134/
+    output: output/recalibrated_bam/1102777134.recal_data_08.csv
+    log: logs/recalibrated_bam/1102777134.base_recal_report.gc_log.08.log
+    jobid: 40
+    benchmark: benchmarks/recalibrated_bam/1102777134.bqsr_report.08.txt
+    wildcards: sample=1102777134, intervals=08
+
+
+[Wed Jan 19 13:23:31 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102781231/
+    output: output/recalibrated_bam/1102781231.recal_data_04.csv
+    log: logs/recalibrated_bam/1102781231.base_recal_report.gc_log.04.log
+    jobid: 3
+    benchmark: benchmarks/recalibrated_bam/1102781231.bqsr_report.04.txt
+    wildcards: sample=1102781231, intervals=04
+
+
+[Wed Jan 19 13:23:31 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102781231/
+    output: output/recalibrated_bam/1102781231.recal_data_10.csv
+    log: logs/recalibrated_bam/1102781231.base_recal_report.gc_log.10.log
+    jobid: 18
+    benchmark: benchmarks/recalibrated_bam/1102781231.bqsr_report.10.txt
+    wildcards: sample=1102781231, intervals=10
+
+
+[Wed Jan 19 13:23:31 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102777134/
+    output: output/recalibrated_bam/1102777134.recal_data_11.csv
+    log: logs/recalibrated_bam/1102777134.base_recal_report.gc_log.11.log
+    jobid: 33
+    benchmark: benchmarks/recalibrated_bam/1102777134.bqsr_report.11.txt
+    wildcards: sample=1102777134, intervals=11
+
+
+[Wed Jan 19 13:23:31 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102777134/
+    output: output/recalibrated_bam/1102777134.recal_data_16.csv
+    log: logs/recalibrated_bam/1102777134.base_recal_report.gc_log.16.log
+    jobid: 48
+    benchmark: benchmarks/recalibrated_bam/1102777134.bqsr_report.16.txt
+    wildcards: sample=1102777134, intervals=16
+
+
+[Wed Jan 19 13:23:31 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102781231/
+    output: output/recalibrated_bam/1102781231.recal_data_06.csv
+    log: logs/recalibrated_bam/1102781231.base_recal_report.gc_log.06.log
+    jobid: 11
+    benchmark: benchmarks/recalibrated_bam/1102781231.bqsr_report.06.txt
+    wildcards: sample=1102781231, intervals=06
+
+
+[Wed Jan 19 13:23:31 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102781231/
+    output: output/recalibrated_bam/1102781231.recal_data_17.csv
+    log: logs/recalibrated_bam/1102781231.base_recal_report.gc_log.17.log
+    jobid: 26
+    benchmark: benchmarks/recalibrated_bam/1102781231.bqsr_report.17.txt
+    wildcards: sample=1102781231, intervals=17
+
+
+[Wed Jan 19 13:23:31 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102777134/
+    output: output/recalibrated_bam/1102777134.recal_data_02.csv
+    log: logs/recalibrated_bam/1102777134.base_recal_report.gc_log.02.log
+    jobid: 41
+    benchmark: benchmarks/recalibrated_bam/1102777134.bqsr_report.02.txt
+    wildcards: sample=1102777134, intervals=02
+
+
+[Wed Jan 19 13:23:31 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102781231/
+    output: output/recalibrated_bam/1102781231.recal_data_03.csv
+    log: logs/recalibrated_bam/1102781231.base_recal_report.gc_log.03.log
+    jobid: 19
+    benchmark: benchmarks/recalibrated_bam/1102781231.bqsr_report.03.txt
+    wildcards: sample=1102781231, intervals=03
+
+
+[Wed Jan 19 13:23:31 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102781231/
+    output: output/recalibrated_bam/1102781231.recal_data_24.csv
+    log: logs/recalibrated_bam/1102781231.base_recal_report.gc_log.24.log
+    jobid: 4
+    benchmark: benchmarks/recalibrated_bam/1102781231.bqsr_report.24.txt
+    wildcards: sample=1102781231, intervals=24
+
+
+[Wed Jan 19 13:23:31 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102777134/
+    output: output/recalibrated_bam/1102777134.recal_data_18.csv
+    log: logs/recalibrated_bam/1102777134.base_recal_report.gc_log.18.log
+    jobid: 34
+    benchmark: benchmarks/recalibrated_bam/1102777134.bqsr_report.18.txt
+    wildcards: sample=1102777134, intervals=18
+
+
+[Wed Jan 19 13:23:31 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102777134/
+    output: output/recalibrated_bam/1102777134.recal_data_14.csv
+    log: logs/recalibrated_bam/1102777134.base_recal_report.gc_log.14.log
+    jobid: 49
+    benchmark: benchmarks/recalibrated_bam/1102777134.bqsr_report.14.txt
+    wildcards: sample=1102777134, intervals=14
+
+
+[Wed Jan 19 13:23:31 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102781231/
+    output: output/recalibrated_bam/1102781231.recal_data_12.csv
+    log: logs/recalibrated_bam/1102781231.base_recal_report.gc_log.12.log
+    jobid: 12
+    benchmark: benchmarks/recalibrated_bam/1102781231.bqsr_report.12.txt
+    wildcards: sample=1102781231, intervals=12
+
+
+[Wed Jan 19 13:23:31 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102777134/
+    output: output/recalibrated_bam/1102777134.recal_data_23.csv
+    log: logs/recalibrated_bam/1102777134.base_recal_report.gc_log.23.log
+    jobid: 27
+    benchmark: benchmarks/recalibrated_bam/1102777134.bqsr_report.23.txt
+    wildcards: sample=1102777134, intervals=23
+
+
+[Wed Jan 19 13:23:31 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102777134/
+    output: output/recalibrated_bam/1102777134.recal_data_09.csv
+    log: logs/recalibrated_bam/1102777134.base_recal_report.gc_log.09.log
+    jobid: 42
+    benchmark: benchmarks/recalibrated_bam/1102777134.bqsr_report.09.txt
+    wildcards: sample=1102777134, intervals=09
+
+
+[Wed Jan 19 13:23:31 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102777134/
+    output: output/recalibrated_bam/1102777134.recal_data_20.csv
+    log: logs/recalibrated_bam/1102777134.base_recal_report.gc_log.20.log
+    jobid: 36
+    benchmark: benchmarks/recalibrated_bam/1102777134.bqsr_report.20.txt
+    wildcards: sample=1102777134, intervals=20
+
+
+[Wed Jan 19 13:23:31 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102781231/
+    output: output/recalibrated_bam/1102781231.recal_data_25.csv
+    log: logs/recalibrated_bam/1102781231.base_recal_report.gc_log.25.log
+    jobid: 5
+    benchmark: benchmarks/recalibrated_bam/1102781231.bqsr_report.25.txt
+    wildcards: sample=1102781231, intervals=25
+
+
+[Wed Jan 19 13:23:31 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102781231/
+    output: output/recalibrated_bam/1102781231.recal_data_22.csv
+    log: logs/recalibrated_bam/1102781231.base_recal_report.gc_log.22.log
+    jobid: 20
+    benchmark: benchmarks/recalibrated_bam/1102781231.bqsr_report.22.txt
+    wildcards: sample=1102781231, intervals=22
+
+
+[Wed Jan 19 13:23:31 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102777134/
+    output: output/recalibrated_bam/1102777134.recal_data_15.csv
+    log: logs/recalibrated_bam/1102777134.base_recal_report.gc_log.15.log
+    jobid: 35
+    benchmark: benchmarks/recalibrated_bam/1102777134.bqsr_report.15.txt
+    wildcards: sample=1102777134, intervals=15
+
+
+[Wed Jan 19 13:23:31 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102777134/
+    output: output/recalibrated_bam/1102777134.recal_data_01.csv
+    log: logs/recalibrated_bam/1102777134.base_recal_report.gc_log.01.log
+    jobid: 50
+    benchmark: benchmarks/recalibrated_bam/1102777134.bqsr_report.01.txt
+    wildcards: sample=1102777134, intervals=01
+
+
+[Wed Jan 19 13:23:31 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102781231/
+    output: output/recalibrated_bam/1102781231.recal_data_07.csv
+    log: logs/recalibrated_bam/1102781231.base_recal_report.gc_log.07.log
+    jobid: 13
+    benchmark: benchmarks/recalibrated_bam/1102781231.bqsr_report.07.txt
+    wildcards: sample=1102781231, intervals=07
+
+
+[Wed Jan 19 13:23:31 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102777134/
+    output: output/recalibrated_bam/1102777134.recal_data_13.csv
+    log: logs/recalibrated_bam/1102777134.base_recal_report.gc_log.13.log
+    jobid: 28
+    benchmark: benchmarks/recalibrated_bam/1102777134.bqsr_report.13.txt
+    wildcards: sample=1102777134, intervals=13
+
+
+[Wed Jan 19 13:23:31 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102777134/
+    output: output/recalibrated_bam/1102777134.recal_data_00.csv
+    log: logs/recalibrated_bam/1102777134.base_recal_report.gc_log.00.log
+    jobid: 43
+    benchmark: benchmarks/recalibrated_bam/1102777134.bqsr_report.00.txt
+    wildcards: sample=1102777134, intervals=00
+
+
+[Wed Jan 19 13:23:31 2022]
+rule base_recalibrator_report:
+    input: output/sorted_bam/1102781231/
+    output: output/recalibrated_bam/1102781231.recal_data_21.csv
+    log: logs/recalibrated_bam/1102781231.base_recal_report.gc_log.21.log
+    jobid: 6
+    benchmark: benchmarks/recalibrated_bam/1102781231.bqsr_report.21.txt
+    wildcards: sample=1102781231, intervals=21
+
+[Wed Jan 19 13:24:10 2022]
+Finished job 30.
+1 of 113 steps (0.88%) done
+[Wed Jan 19 13:24:11 2022]
+Finished job 1.
+2 of 113 steps (2%) done
+[Wed Jan 19 13:24:13 2022]
+Finished job 4.
+3 of 113 steps (3%) done
+[Wed Jan 19 13:24:56 2022]
+Finished job 27.
+4 of 113 steps (4%) done
+[Wed Jan 19 13:27:16 2022]
+Finished job 32.
+5 of 113 steps (4%) done
+[Wed Jan 19 13:27:16 2022]
+Finished job 10.
+6 of 113 steps (5%) done
+[Wed Jan 19 13:27:17 2022]
+Finished job 36.
+7 of 113 steps (6%) done
+[Wed Jan 19 13:27:18 2022]
+Finished job 6.
+8 of 113 steps (7%) done
+[Wed Jan 19 13:27:45 2022]
+Finished job 5.
+9 of 113 steps (8%) done
+[Wed Jan 19 13:27:57 2022]
+Finished job 31.
+10 of 113 steps (9%) done
+[Wed Jan 19 13:28:41 2022]
+Finished job 34.
+11 of 113 steps (10%) done
+[Wed Jan 19 13:28:53 2022]
+Finished job 8.
+12 of 113 steps (11%) done
+[Wed Jan 19 13:29:34 2022]
+Finished job 51.
+13 of 113 steps (12%) done
+[Wed Jan 19 13:29:50 2022]
+Finished job 25.
+14 of 113 steps (12%) done
+[Wed Jan 19 13:30:16 2022]
+Finished job 48.
+15 of 113 steps (13%) done
+[Wed Jan 19 13:30:27 2022]
+Finished job 52.
+16 of 113 steps (14%) done
+[Wed Jan 19 13:30:29 2022]
+Finished job 49.
+17 of 113 steps (15%) done
+[Wed Jan 19 13:30:40 2022]
+Finished job 22.
+18 of 113 steps (16%) done
+[Wed Jan 19 13:30:40 2022]
+Finished job 23.
+19 of 113 steps (17%) done
+[Wed Jan 19 13:30:41 2022]
+Finished job 46.
+20 of 113 steps (18%) done
+[Wed Jan 19 13:30:42 2022]
+Finished job 26.
+21 of 113 steps (19%) done
+[Wed Jan 19 13:30:56 2022]
+Finished job 35.
+22 of 113 steps (19%) done
+[Wed Jan 19 13:31:22 2022]
+Finished job 28.
+23 of 113 steps (20%) done
+[Wed Jan 19 13:31:33 2022]
+Finished job 9.
+24 of 113 steps (21%) done
+[Wed Jan 19 13:31:34 2022]
+Finished job 2.
+25 of 113 steps (22%) done
+[Wed Jan 19 13:32:33 2022]
+Finished job 38.
+26 of 113 steps (23%) done
+[Wed Jan 19 13:32:47 2022]
+Finished job 12.
+27 of 113 steps (24%) done
+[Wed Jan 19 13:33:58 2022]
+Finished job 40.
+28 of 113 steps (25%) done
+[Wed Jan 19 13:34:21 2022]
+Finished job 14.
+29 of 113 steps (26%) done
+[Wed Jan 19 13:35:10 2022]
+Finished job 33.
+30 of 113 steps (27%) done
+[Wed Jan 19 13:35:21 2022]
+Finished job 44.
+31 of 113 steps (27%) done
+[Wed Jan 19 13:35:22 2022]
+Finished job 18.
+32 of 113 steps (28%) done
+[Wed Jan 19 13:35:33 2022]
+Finished job 7.
+33 of 113 steps (29%) done
+[Wed Jan 19 13:35:46 2022]
+Finished job 42.
+34 of 113 steps (30%) done
+[Wed Jan 19 13:35:56 2022]
+Finished job 16.
+35 of 113 steps (31%) done
+[Wed Jan 19 13:36:07 2022]
+Finished job 39.
+36 of 113 steps (32%) done
+[Wed Jan 19 13:36:19 2022]
+Finished job 20.
+37 of 113 steps (33%) done
+[Wed Jan 19 13:36:19 2022]
+Finished job 13.
+38 of 113 steps (34%) done
+[Wed Jan 19 13:37:25 2022]
+Finished job 37.
+39 of 113 steps (35%) done
+[Wed Jan 19 13:37:36 2022]
+Finished job 11.
+40 of 113 steps (35%) done
+[Wed Jan 19 13:37:47 2022]
+Finished job 47.
+41 of 113 steps (36%) done
+[Wed Jan 19 13:38:20 2022]
+Finished job 21.
+42 of 113 steps (37%) done
+[Wed Jan 19 13:39:15 2022]
+Finished job 29.
+43 of 113 steps (38%) done
+[Wed Jan 19 13:39:26 2022]
+Finished job 3.
+44 of 113 steps (39%) done
+[Wed Jan 19 13:40:36 2022]
+Finished job 45.
+45 of 113 steps (40%) done
+[Wed Jan 19 13:40:46 2022]
+Finished job 41.
+46 of 113 steps (41%) done
+[Wed Jan 19 13:40:56 2022]
+Finished job 19.
+47 of 113 steps (42%) done
+[Wed Jan 19 13:41:26 2022]
+Finished job 15.
+48 of 113 steps (42%) done
+[Wed Jan 19 13:43:36 2022]
+Finished job 43.
+49 of 113 steps (43%) done
+[Wed Jan 19 13:44:26 2022]
+Finished job 17.
+50 of 113 steps (44%) done
+[Wed Jan 19 13:44:56 2022]
+Finished job 50.
+51 of 113 steps (45%) done
+[Wed Jan 19 13:45:06 2022]
+Finished job 24.
+52 of 113 steps (46%) done
+
+[Wed Jan 19 13:45:06 2022]
+rule gather_bqsr_reports:
+    input: output/recalibrated_bam/1102781231.recal_data_23.csv, output/recalibrated_bam/1102781231.recal_data_13.csv, output/recalibrated_bam/1102781231.recal_data_04.csv, output/recalibrated_bam/1102781231.recal_data_24.csv, output/recalibrated_bam/1102781231.recal_data_25.csv, output/recalibrated_bam/1102781231.recal_data_21.csv, output/recalibrated_bam/1102781231.recal_data_11.csv, output/recalibrated_bam/1102781231.recal_data_18.csv, output/recalibrated_bam/1102781231.recal_data_15.csv, output/recalibrated_bam/1102781231.recal_data_20.csv, output/recalibrated_bam/1102781231.recal_data_06.csv, output/recalibrated_bam/1102781231.recal_data_12.csv, output/recalibrated_bam/1102781231.recal_data_07.csv, output/recalibrated_bam/1102781231.recal_data_08.csv, output/recalibrated_bam/1102781231.recal_data_02.csv, output/recalibrated_bam/1102781231.recal_data_09.csv, output/recalibrated_bam/1102781231.recal_data_00.csv, output/recalibrated_bam/1102781231.recal_data_10.csv, output/recalibrated_bam/1102781231.recal_data_03.csv, output/recalibrated_bam/1102781231.recal_data_22.csv, output/recalibrated_bam/1102781231.recal_data_05.csv, output/recalibrated_bam/1102781231.recal_data_16.csv, output/recalibrated_bam/1102781231.recal_data_14.csv, output/recalibrated_bam/1102781231.recal_data_01.csv, output/recalibrated_bam/1102781231.recal_data_19.csv, output/recalibrated_bam/1102781231.recal_data_17.csv, output/recalibrated_bam/1102781231.recal_data_23.csv, output/recalibrated_bam/1102781231.recal_data_13.csv, output/recalibrated_bam/1102781231.recal_data_04.csv, output/recalibrated_bam/1102781231.recal_data_24.csv, output/recalibrated_bam/1102781231.recal_data_25.csv, output/recalibrated_bam/1102781231.recal_data_21.csv, output/recalibrated_bam/1102781231.recal_data_11.csv, output/recalibrated_bam/1102781231.recal_data_18.csv, output/recalibrated_bam/1102781231.recal_data_15.csv, output/recalibrated_bam/1102781231.recal_data_20.csv, output/recalibrated_bam/1102781231.recal_data_06.csv, output/recalibrated_bam/1102781231.recal_data_12.csv, output/recalibrated_bam/1102781231.recal_data_07.csv, output/recalibrated_bam/1102781231.recal_data_08.csv, output/recalibrated_bam/1102781231.recal_data_02.csv, output/recalibrated_bam/1102781231.recal_data_09.csv, output/recalibrated_bam/1102781231.recal_data_00.csv, output/recalibrated_bam/1102781231.recal_data_10.csv, output/recalibrated_bam/1102781231.recal_data_03.csv, output/recalibrated_bam/1102781231.recal_data_22.csv, output/recalibrated_bam/1102781231.recal_data_05.csv, output/recalibrated_bam/1102781231.recal_data_16.csv, output/recalibrated_bam/1102781231.recal_data_14.csv, output/recalibrated_bam/1102781231.recal_data_01.csv, output/recalibrated_bam/1102781231.recal_data_19.csv, output/recalibrated_bam/1102781231.recal_data_17.csv, output/recalibrated_bam/1102781231.recal_data_23.csv, output/recalibrated_bam/1102781231.recal_data_13.csv, output/recalibrated_bam/1102781231.recal_data_04.csv, output/recalibrated_bam/1102781231.recal_data_24.csv, output/recalibrated_bam/1102781231.recal_data_25.csv, output/recalibrated_bam/1102781231.recal_data_21.csv, output/recalibrated_bam/1102781231.recal_data_11.csv, output/recalibrated_bam/1102781231.recal_data_18.csv, output/recalibrated_bam/1102781231.recal_data_15.csv, output/recalibrated_bam/1102781231.recal_data_20.csv, output/recalibrated_bam/1102781231.recal_data_06.csv, output/recalibrated_bam/1102781231.recal_data_12.csv, output/recalibrated_bam/1102781231.recal_data_07.csv, output/recalibrated_bam/1102781231.recal_data_08.csv, output/recalibrated_bam/1102781231.recal_data_02.csv, output/recalibrated_bam/1102781231.recal_data_09.csv, output/recalibrated_bam/1102781231.recal_data_00.csv, output/recalibrated_bam/1102781231.recal_data_10.csv, output/recalibrated_bam/1102781231.recal_data_03.csv, output/recalibrated_bam/1102781231.recal_data_22.csv, output/recalibrated_bam/1102781231.recal_data_05.csv, output/recalibrated_bam/1102781231.recal_data_16.csv, output/recalibrated_bam/1102781231.recal_data_14.csv, output/recalibrated_bam/1102781231.recal_data_01.csv, output/recalibrated_bam/1102781231.recal_data_19.csv, output/recalibrated_bam/1102781231.recal_data_17.csv, output/recalibrated_bam/1102781231.recal_data_23.csv, output/recalibrated_bam/1102781231.recal_data_13.csv, output/recalibrated_bam/1102781231.recal_data_04.csv, output/recalibrated_bam/1102781231.recal_data_24.csv, output/recalibrated_bam/1102781231.recal_data_25.csv, output/recalibrated_bam/1102781231.recal_data_21.csv, output/recalibrated_bam/1102781231.recal_data_11.csv, output/recalibrated_bam/1102781231.recal_data_18.csv, output/recalibrated_bam/1102781231.recal_data_15.csv, output/recalibrated_bam/1102781231.recal_data_20.csv, output/recalibrated_bam/1102781231.recal_data_06.csv, output/recalibrated_bam/1102781231.recal_data_12.csv, output/recalibrated_bam/1102781231.recal_data_07.csv, output/recalibrated_bam/1102781231.recal_data_08.csv, output/recalibrated_bam/1102781231.recal_data_02.csv, output/recalibrated_bam/1102781231.recal_data_09.csv, output/recalibrated_bam/1102781231.recal_data_00.csv, output/recalibrated_bam/1102781231.recal_data_10.csv, output/recalibrated_bam/1102781231.recal_data_03.csv, output/recalibrated_bam/1102781231.recal_data_22.csv, output/recalibrated_bam/1102781231.recal_data_05.csv, output/recalibrated_bam/1102781231.recal_data_16.csv, output/recalibrated_bam/1102781231.recal_data_14.csv, output/recalibrated_bam/1102781231.recal_data_01.csv, output/recalibrated_bam/1102781231.recal_data_19.csv, output/recalibrated_bam/1102781231.recal_data_17.csv, output/recalibrated_bam/1102781231.recal_data_23.csv, output/recalibrated_bam/1102781231.recal_data_13.csv, output/recalibrated_bam/1102781231.recal_data_04.csv, output/recalibrated_bam/1102781231.recal_data_24.csv, output/recalibrated_bam/1102781231.recal_data_25.csv, output/recalibrated_bam/1102781231.recal_data_21.csv, output/recalibrated_bam/1102781231.recal_data_11.csv, output/recalibrated_bam/1102781231.recal_data_18.csv, output/recalibrated_bam/1102781231.recal_data_15.csv, output/recalibrated_bam/1102781231.recal_data_20.csv, output/recalibrated_bam/1102781231.recal_data_06.csv, output/recalibrated_bam/1102781231.recal_data_12.csv, output/recalibrated_bam/1102781231.recal_data_07.csv, output/recalibrated_bam/1102781231.recal_data_08.csv, output/recalibrated_bam/1102781231.recal_data_02.csv, output/recalibrated_bam/1102781231.recal_data_09.csv, output/recalibrated_bam/1102781231.recal_data_00.csv, output/recalibrated_bam/1102781231.recal_data_10.csv, output/recalibrated_bam/1102781231.recal_data_03.csv, output/recalibrated_bam/1102781231.recal_data_22.csv, output/recalibrated_bam/1102781231.recal_data_05.csv, output/recalibrated_bam/1102781231.recal_data_16.csv, output/recalibrated_bam/1102781231.recal_data_14.csv, output/recalibrated_bam/1102781231.recal_data_01.csv, output/recalibrated_bam/1102781231.recal_data_19.csv, output/recalibrated_bam/1102781231.recal_data_17.csv, output/recalibrated_bam/1102777134.recal_data_23.csv, output/recalibrated_bam/1102777134.recal_data_13.csv, output/recalibrated_bam/1102777134.recal_data_04.csv, output/recalibrated_bam/1102777134.recal_data_24.csv, output/recalibrated_bam/1102777134.recal_data_25.csv, output/recalibrated_bam/1102777134.recal_data_21.csv, output/recalibrated_bam/1102777134.recal_data_11.csv, output/recalibrated_bam/1102777134.recal_data_18.csv, output/recalibrated_bam/1102777134.recal_data_15.csv, output/recalibrated_bam/1102777134.recal_data_20.csv, output/recalibrated_bam/1102777134.recal_data_06.csv, output/recalibrated_bam/1102777134.recal_data_12.csv, output/recalibrated_bam/1102777134.recal_data_07.csv, output/recalibrated_bam/1102777134.recal_data_08.csv, output/recalibrated_bam/1102777134.recal_data_02.csv, output/recalibrated_bam/1102777134.recal_data_09.csv, output/recalibrated_bam/1102777134.recal_data_00.csv, output/recalibrated_bam/1102777134.recal_data_10.csv, output/recalibrated_bam/1102777134.recal_data_03.csv, output/recalibrated_bam/1102777134.recal_data_22.csv, output/recalibrated_bam/1102777134.recal_data_05.csv, output/recalibrated_bam/1102777134.recal_data_16.csv, output/recalibrated_bam/1102777134.recal_data_14.csv, output/recalibrated_bam/1102777134.recal_data_01.csv, output/recalibrated_bam/1102777134.recal_data_19.csv, output/recalibrated_bam/1102777134.recal_data_17.csv, output/recalibrated_bam/1102777134.recal_data_23.csv, output/recalibrated_bam/1102777134.recal_data_13.csv, output/recalibrated_bam/1102777134.recal_data_04.csv, output/recalibrated_bam/1102777134.recal_data_24.csv, output/recalibrated_bam/1102777134.recal_data_25.csv, output/recalibrated_bam/1102777134.recal_data_21.csv, output/recalibrated_bam/1102777134.recal_data_11.csv, output/recalibrated_bam/1102777134.recal_data_18.csv, output/recalibrated_bam/1102777134.recal_data_15.csv, output/recalibrated_bam/1102777134.recal_data_20.csv, output/recalibrated_bam/1102777134.recal_data_06.csv, output/recalibrated_bam/1102777134.recal_data_12.csv, output/recalibrated_bam/1102777134.recal_data_07.csv, output/recalibrated_bam/1102777134.recal_data_08.csv, output/recalibrated_bam/1102777134.recal_data_02.csv, output/recalibrated_bam/1102777134.recal_data_09.csv, output/recalibrated_bam/1102777134.recal_data_00.csv, output/recalibrated_bam/1102777134.recal_data_10.csv, output/recalibrated_bam/1102777134.recal_data_03.csv, output/recalibrated_bam/1102777134.recal_data_22.csv, output/recalibrated_bam/1102777134.recal_data_05.csv, output/recalibrated_bam/1102777134.recal_data_16.csv, output/recalibrated_bam/1102777134.recal_data_14.csv, output/recalibrated_bam/1102777134.recal_data_01.csv, output/recalibrated_bam/1102777134.recal_data_19.csv, output/recalibrated_bam/1102777134.recal_data_17.csv, output/recalibrated_bam/1102777134.recal_data_23.csv, output/recalibrated_bam/1102777134.recal_data_13.csv, output/recalibrated_bam/1102777134.recal_data_04.csv, output/recalibrated_bam/1102777134.recal_data_24.csv, output/recalibrated_bam/1102777134.recal_data_25.csv, output/recalibrated_bam/1102777134.recal_data_21.csv, output/recalibrated_bam/1102777134.recal_data_11.csv, output/recalibrated_bam/1102777134.recal_data_18.csv, output/recalibrated_bam/1102777134.recal_data_15.csv, output/recalibrated_bam/1102777134.recal_data_20.csv, output/recalibrated_bam/1102777134.recal_data_06.csv, output/recalibrated_bam/1102777134.recal_data_12.csv, output/recalibrated_bam/1102777134.recal_data_07.csv, output/recalibrated_bam/1102777134.recal_data_08.csv, output/recalibrated_bam/1102777134.recal_data_02.csv, output/recalibrated_bam/1102777134.recal_data_09.csv, output/recalibrated_bam/1102777134.recal_data_00.csv, output/recalibrated_bam/1102777134.recal_data_10.csv, output/recalibrated_bam/1102777134.recal_data_03.csv, output/recalibrated_bam/1102777134.recal_data_22.csv, output/recalibrated_bam/1102777134.recal_data_05.csv, output/recalibrated_bam/1102777134.recal_data_16.csv, output/recalibrated_bam/1102777134.recal_data_14.csv, output/recalibrated_bam/1102777134.recal_data_01.csv, output/recalibrated_bam/1102777134.recal_data_19.csv, output/recalibrated_bam/1102777134.recal_data_17.csv, output/recalibrated_bam/1102777134.recal_data_23.csv, output/recalibrated_bam/1102777134.recal_data_13.csv, output/recalibrated_bam/1102777134.recal_data_04.csv, output/recalibrated_bam/1102777134.recal_data_24.csv, output/recalibrated_bam/1102777134.recal_data_25.csv, output/recalibrated_bam/1102777134.recal_data_21.csv, output/recalibrated_bam/1102777134.recal_data_11.csv, output/recalibrated_bam/1102777134.recal_data_18.csv, output/recalibrated_bam/1102777134.recal_data_15.csv, output/recalibrated_bam/1102777134.recal_data_20.csv, output/recalibrated_bam/1102777134.recal_data_06.csv, output/recalibrated_bam/1102777134.recal_data_12.csv, output/recalibrated_bam/1102777134.recal_data_07.csv, output/recalibrated_bam/1102777134.recal_data_08.csv, output/recalibrated_bam/1102777134.recal_data_02.csv, output/recalibrated_bam/1102777134.recal_data_09.csv, output/recalibrated_bam/1102777134.recal_data_00.csv, output/recalibrated_bam/1102777134.recal_data_10.csv, output/recalibrated_bam/1102777134.recal_data_03.csv, output/recalibrated_bam/1102777134.recal_data_22.csv, output/recalibrated_bam/1102777134.recal_data_05.csv, output/recalibrated_bam/1102777134.recal_data_16.csv, output/recalibrated_bam/1102777134.recal_data_14.csv, output/recalibrated_bam/1102777134.recal_data_01.csv, output/recalibrated_bam/1102777134.recal_data_19.csv, output/recalibrated_bam/1102777134.recal_data_17.csv, output/recalibrated_bam/1102777134.recal_data_23.csv, output/recalibrated_bam/1102777134.recal_data_13.csv, output/recalibrated_bam/1102777134.recal_data_04.csv, output/recalibrated_bam/1102777134.recal_data_24.csv, output/recalibrated_bam/1102777134.recal_data_25.csv, output/recalibrated_bam/1102777134.recal_data_21.csv, output/recalibrated_bam/1102777134.recal_data_11.csv, output/recalibrated_bam/1102777134.recal_data_18.csv, output/recalibrated_bam/1102777134.recal_data_15.csv, output/recalibrated_bam/1102777134.recal_data_20.csv, output/recalibrated_bam/1102777134.recal_data_06.csv, output/recalibrated_bam/1102777134.recal_data_12.csv, output/recalibrated_bam/1102777134.recal_data_07.csv, output/recalibrated_bam/1102777134.recal_data_08.csv, output/recalibrated_bam/1102777134.recal_data_02.csv, output/recalibrated_bam/1102777134.recal_data_09.csv, output/recalibrated_bam/1102777134.recal_data_00.csv, output/recalibrated_bam/1102777134.recal_data_10.csv, output/recalibrated_bam/1102777134.recal_data_03.csv, output/recalibrated_bam/1102777134.recal_data_22.csv, output/recalibrated_bam/1102777134.recal_data_05.csv, output/recalibrated_bam/1102777134.recal_data_16.csv, output/recalibrated_bam/1102777134.recal_data_14.csv, output/recalibrated_bam/1102777134.recal_data_01.csv, output/recalibrated_bam/1102777134.recal_data_19.csv, output/recalibrated_bam/1102777134.recal_data_17.csv
+    output: output/recalibrated_bam/1102781231.recal_data.csv
+    jobid: 53
+    benchmark: benchmarks/recalibrated_bam/1102781231.gather_bqsr_reports.txt
+    wildcards: sample=1102781231
+
+
+[Wed Jan 19 13:45:06 2022]
+rule gather_bqsr_reports:
+    input: output/recalibrated_bam/1102781231.recal_data_23.csv, output/recalibrated_bam/1102781231.recal_data_13.csv, output/recalibrated_bam/1102781231.recal_data_04.csv, output/recalibrated_bam/1102781231.recal_data_24.csv, output/recalibrated_bam/1102781231.recal_data_25.csv, output/recalibrated_bam/1102781231.recal_data_21.csv, output/recalibrated_bam/1102781231.recal_data_11.csv, output/recalibrated_bam/1102781231.recal_data_18.csv, output/recalibrated_bam/1102781231.recal_data_15.csv, output/recalibrated_bam/1102781231.recal_data_20.csv, output/recalibrated_bam/1102781231.recal_data_06.csv, output/recalibrated_bam/1102781231.recal_data_12.csv, output/recalibrated_bam/1102781231.recal_data_07.csv, output/recalibrated_bam/1102781231.recal_data_08.csv, output/recalibrated_bam/1102781231.recal_data_02.csv, output/recalibrated_bam/1102781231.recal_data_09.csv, output/recalibrated_bam/1102781231.recal_data_00.csv, output/recalibrated_bam/1102781231.recal_data_10.csv, output/recalibrated_bam/1102781231.recal_data_03.csv, output/recalibrated_bam/1102781231.recal_data_22.csv, output/recalibrated_bam/1102781231.recal_data_05.csv, output/recalibrated_bam/1102781231.recal_data_16.csv, output/recalibrated_bam/1102781231.recal_data_14.csv, output/recalibrated_bam/1102781231.recal_data_01.csv, output/recalibrated_bam/1102781231.recal_data_19.csv, output/recalibrated_bam/1102781231.recal_data_17.csv, output/recalibrated_bam/1102781231.recal_data_23.csv, output/recalibrated_bam/1102781231.recal_data_13.csv, output/recalibrated_bam/1102781231.recal_data_04.csv, output/recalibrated_bam/1102781231.recal_data_24.csv, output/recalibrated_bam/1102781231.recal_data_25.csv, output/recalibrated_bam/1102781231.recal_data_21.csv, output/recalibrated_bam/1102781231.recal_data_11.csv, output/recalibrated_bam/1102781231.recal_data_18.csv, output/recalibrated_bam/1102781231.recal_data_15.csv, output/recalibrated_bam/1102781231.recal_data_20.csv, output/recalibrated_bam/1102781231.recal_data_06.csv, output/recalibrated_bam/1102781231.recal_data_12.csv, output/recalibrated_bam/1102781231.recal_data_07.csv, output/recalibrated_bam/1102781231.recal_data_08.csv, output/recalibrated_bam/1102781231.recal_data_02.csv, output/recalibrated_bam/1102781231.recal_data_09.csv, output/recalibrated_bam/1102781231.recal_data_00.csv, output/recalibrated_bam/1102781231.recal_data_10.csv, output/recalibrated_bam/1102781231.recal_data_03.csv, output/recalibrated_bam/1102781231.recal_data_22.csv, output/recalibrated_bam/1102781231.recal_data_05.csv, output/recalibrated_bam/1102781231.recal_data_16.csv, output/recalibrated_bam/1102781231.recal_data_14.csv, output/recalibrated_bam/1102781231.recal_data_01.csv, output/recalibrated_bam/1102781231.recal_data_19.csv, output/recalibrated_bam/1102781231.recal_data_17.csv, output/recalibrated_bam/1102781231.recal_data_23.csv, output/recalibrated_bam/1102781231.recal_data_13.csv, output/recalibrated_bam/1102781231.recal_data_04.csv, output/recalibrated_bam/1102781231.recal_data_24.csv, output/recalibrated_bam/1102781231.recal_data_25.csv, output/recalibrated_bam/1102781231.recal_data_21.csv, output/recalibrated_bam/1102781231.recal_data_11.csv, output/recalibrated_bam/1102781231.recal_data_18.csv, output/recalibrated_bam/1102781231.recal_data_15.csv, output/recalibrated_bam/1102781231.recal_data_20.csv, output/recalibrated_bam/1102781231.recal_data_06.csv, output/recalibrated_bam/1102781231.recal_data_12.csv, output/recalibrated_bam/1102781231.recal_data_07.csv, output/recalibrated_bam/1102781231.recal_data_08.csv, output/recalibrated_bam/1102781231.recal_data_02.csv, output/recalibrated_bam/1102781231.recal_data_09.csv, output/recalibrated_bam/1102781231.recal_data_00.csv, output/recalibrated_bam/1102781231.recal_data_10.csv, output/recalibrated_bam/1102781231.recal_data_03.csv, output/recalibrated_bam/1102781231.recal_data_22.csv, output/recalibrated_bam/1102781231.recal_data_05.csv, output/recalibrated_bam/1102781231.recal_data_16.csv, output/recalibrated_bam/1102781231.recal_data_14.csv, output/recalibrated_bam/1102781231.recal_data_01.csv, output/recalibrated_bam/1102781231.recal_data_19.csv, output/recalibrated_bam/1102781231.recal_data_17.csv, output/recalibrated_bam/1102781231.recal_data_23.csv, output/recalibrated_bam/1102781231.recal_data_13.csv, output/recalibrated_bam/1102781231.recal_data_04.csv, output/recalibrated_bam/1102781231.recal_data_24.csv, output/recalibrated_bam/1102781231.recal_data_25.csv, output/recalibrated_bam/1102781231.recal_data_21.csv, output/recalibrated_bam/1102781231.recal_data_11.csv, output/recalibrated_bam/1102781231.recal_data_18.csv, output/recalibrated_bam/1102781231.recal_data_15.csv, output/recalibrated_bam/1102781231.recal_data_20.csv, output/recalibrated_bam/1102781231.recal_data_06.csv, output/recalibrated_bam/1102781231.recal_data_12.csv, output/recalibrated_bam/1102781231.recal_data_07.csv, output/recalibrated_bam/1102781231.recal_data_08.csv, output/recalibrated_bam/1102781231.recal_data_02.csv, output/recalibrated_bam/1102781231.recal_data_09.csv, output/recalibrated_bam/1102781231.recal_data_00.csv, output/recalibrated_bam/1102781231.recal_data_10.csv, output/recalibrated_bam/1102781231.recal_data_03.csv, output/recalibrated_bam/1102781231.recal_data_22.csv, output/recalibrated_bam/1102781231.recal_data_05.csv, output/recalibrated_bam/1102781231.recal_data_16.csv, output/recalibrated_bam/1102781231.recal_data_14.csv, output/recalibrated_bam/1102781231.recal_data_01.csv, output/recalibrated_bam/1102781231.recal_data_19.csv, output/recalibrated_bam/1102781231.recal_data_17.csv, output/recalibrated_bam/1102781231.recal_data_23.csv, output/recalibrated_bam/1102781231.recal_data_13.csv, output/recalibrated_bam/1102781231.recal_data_04.csv, output/recalibrated_bam/1102781231.recal_data_24.csv, output/recalibrated_bam/1102781231.recal_data_25.csv, output/recalibrated_bam/1102781231.recal_data_21.csv, output/recalibrated_bam/1102781231.recal_data_11.csv, output/recalibrated_bam/1102781231.recal_data_18.csv, output/recalibrated_bam/1102781231.recal_data_15.csv, output/recalibrated_bam/1102781231.recal_data_20.csv, output/recalibrated_bam/1102781231.recal_data_06.csv, output/recalibrated_bam/1102781231.recal_data_12.csv, output/recalibrated_bam/1102781231.recal_data_07.csv, output/recalibrated_bam/1102781231.recal_data_08.csv, output/recalibrated_bam/1102781231.recal_data_02.csv, output/recalibrated_bam/1102781231.recal_data_09.csv, output/recalibrated_bam/1102781231.recal_data_00.csv, output/recalibrated_bam/1102781231.recal_data_10.csv, output/recalibrated_bam/1102781231.recal_data_03.csv, output/recalibrated_bam/1102781231.recal_data_22.csv, output/recalibrated_bam/1102781231.recal_data_05.csv, output/recalibrated_bam/1102781231.recal_data_16.csv, output/recalibrated_bam/1102781231.recal_data_14.csv, output/recalibrated_bam/1102781231.recal_data_01.csv, output/recalibrated_bam/1102781231.recal_data_19.csv, output/recalibrated_bam/1102781231.recal_data_17.csv, output/recalibrated_bam/1102777134.recal_data_23.csv, output/recalibrated_bam/1102777134.recal_data_13.csv, output/recalibrated_bam/1102777134.recal_data_04.csv, output/recalibrated_bam/1102777134.recal_data_24.csv, output/recalibrated_bam/1102777134.recal_data_25.csv, output/recalibrated_bam/1102777134.recal_data_21.csv, output/recalibrated_bam/1102777134.recal_data_11.csv, output/recalibrated_bam/1102777134.recal_data_18.csv, output/recalibrated_bam/1102777134.recal_data_15.csv, output/recalibrated_bam/1102777134.recal_data_20.csv, output/recalibrated_bam/1102777134.recal_data_06.csv, output/recalibrated_bam/1102777134.recal_data_12.csv, output/recalibrated_bam/1102777134.recal_data_07.csv, output/recalibrated_bam/1102777134.recal_data_08.csv, output/recalibrated_bam/1102777134.recal_data_02.csv, output/recalibrated_bam/1102777134.recal_data_09.csv, output/recalibrated_bam/1102777134.recal_data_00.csv, output/recalibrated_bam/1102777134.recal_data_10.csv, output/recalibrated_bam/1102777134.recal_data_03.csv, output/recalibrated_bam/1102777134.recal_data_22.csv, output/recalibrated_bam/1102777134.recal_data_05.csv, output/recalibrated_bam/1102777134.recal_data_16.csv, output/recalibrated_bam/1102777134.recal_data_14.csv, output/recalibrated_bam/1102777134.recal_data_01.csv, output/recalibrated_bam/1102777134.recal_data_19.csv, output/recalibrated_bam/1102777134.recal_data_17.csv, output/recalibrated_bam/1102777134.recal_data_23.csv, output/recalibrated_bam/1102777134.recal_data_13.csv, output/recalibrated_bam/1102777134.recal_data_04.csv, output/recalibrated_bam/1102777134.recal_data_24.csv, output/recalibrated_bam/1102777134.recal_data_25.csv, output/recalibrated_bam/1102777134.recal_data_21.csv, output/recalibrated_bam/1102777134.recal_data_11.csv, output/recalibrated_bam/1102777134.recal_data_18.csv, output/recalibrated_bam/1102777134.recal_data_15.csv, output/recalibrated_bam/1102777134.recal_data_20.csv, output/recalibrated_bam/1102777134.recal_data_06.csv, output/recalibrated_bam/1102777134.recal_data_12.csv, output/recalibrated_bam/1102777134.recal_data_07.csv, output/recalibrated_bam/1102777134.recal_data_08.csv, output/recalibrated_bam/1102777134.recal_data_02.csv, output/recalibrated_bam/1102777134.recal_data_09.csv, output/recalibrated_bam/1102777134.recal_data_00.csv, output/recalibrated_bam/1102777134.recal_data_10.csv, output/recalibrated_bam/1102777134.recal_data_03.csv, output/recalibrated_bam/1102777134.recal_data_22.csv, output/recalibrated_bam/1102777134.recal_data_05.csv, output/recalibrated_bam/1102777134.recal_data_16.csv, output/recalibrated_bam/1102777134.recal_data_14.csv, output/recalibrated_bam/1102777134.recal_data_01.csv, output/recalibrated_bam/1102777134.recal_data_19.csv, output/recalibrated_bam/1102777134.recal_data_17.csv, output/recalibrated_bam/1102777134.recal_data_23.csv, output/recalibrated_bam/1102777134.recal_data_13.csv, output/recalibrated_bam/1102777134.recal_data_04.csv, output/recalibrated_bam/1102777134.recal_data_24.csv, output/recalibrated_bam/1102777134.recal_data_25.csv, output/recalibrated_bam/1102777134.recal_data_21.csv, output/recalibrated_bam/1102777134.recal_data_11.csv, output/recalibrated_bam/1102777134.recal_data_18.csv, output/recalibrated_bam/1102777134.recal_data_15.csv, output/recalibrated_bam/1102777134.recal_data_20.csv, output/recalibrated_bam/1102777134.recal_data_06.csv, output/recalibrated_bam/1102777134.recal_data_12.csv, output/recalibrated_bam/1102777134.recal_data_07.csv, output/recalibrated_bam/1102777134.recal_data_08.csv, output/recalibrated_bam/1102777134.recal_data_02.csv, output/recalibrated_bam/1102777134.recal_data_09.csv, output/recalibrated_bam/1102777134.recal_data_00.csv, output/recalibrated_bam/1102777134.recal_data_10.csv, output/recalibrated_bam/1102777134.recal_data_03.csv, output/recalibrated_bam/1102777134.recal_data_22.csv, output/recalibrated_bam/1102777134.recal_data_05.csv, output/recalibrated_bam/1102777134.recal_data_16.csv, output/recalibrated_bam/1102777134.recal_data_14.csv, output/recalibrated_bam/1102777134.recal_data_01.csv, output/recalibrated_bam/1102777134.recal_data_19.csv, output/recalibrated_bam/1102777134.recal_data_17.csv, output/recalibrated_bam/1102777134.recal_data_23.csv, output/recalibrated_bam/1102777134.recal_data_13.csv, output/recalibrated_bam/1102777134.recal_data_04.csv, output/recalibrated_bam/1102777134.recal_data_24.csv, output/recalibrated_bam/1102777134.recal_data_25.csv, output/recalibrated_bam/1102777134.recal_data_21.csv, output/recalibrated_bam/1102777134.recal_data_11.csv, output/recalibrated_bam/1102777134.recal_data_18.csv, output/recalibrated_bam/1102777134.recal_data_15.csv, output/recalibrated_bam/1102777134.recal_data_20.csv, output/recalibrated_bam/1102777134.recal_data_06.csv, output/recalibrated_bam/1102777134.recal_data_12.csv, output/recalibrated_bam/1102777134.recal_data_07.csv, output/recalibrated_bam/1102777134.recal_data_08.csv, output/recalibrated_bam/1102777134.recal_data_02.csv, output/recalibrated_bam/1102777134.recal_data_09.csv, output/recalibrated_bam/1102777134.recal_data_00.csv, output/recalibrated_bam/1102777134.recal_data_10.csv, output/recalibrated_bam/1102777134.recal_data_03.csv, output/recalibrated_bam/1102777134.recal_data_22.csv, output/recalibrated_bam/1102777134.recal_data_05.csv, output/recalibrated_bam/1102777134.recal_data_16.csv, output/recalibrated_bam/1102777134.recal_data_14.csv, output/recalibrated_bam/1102777134.recal_data_01.csv, output/recalibrated_bam/1102777134.recal_data_19.csv, output/recalibrated_bam/1102777134.recal_data_17.csv, output/recalibrated_bam/1102777134.recal_data_23.csv, output/recalibrated_bam/1102777134.recal_data_13.csv, output/recalibrated_bam/1102777134.recal_data_04.csv, output/recalibrated_bam/1102777134.recal_data_24.csv, output/recalibrated_bam/1102777134.recal_data_25.csv, output/recalibrated_bam/1102777134.recal_data_21.csv, output/recalibrated_bam/1102777134.recal_data_11.csv, output/recalibrated_bam/1102777134.recal_data_18.csv, output/recalibrated_bam/1102777134.recal_data_15.csv, output/recalibrated_bam/1102777134.recal_data_20.csv, output/recalibrated_bam/1102777134.recal_data_06.csv, output/recalibrated_bam/1102777134.recal_data_12.csv, output/recalibrated_bam/1102777134.recal_data_07.csv, output/recalibrated_bam/1102777134.recal_data_08.csv, output/recalibrated_bam/1102777134.recal_data_02.csv, output/recalibrated_bam/1102777134.recal_data_09.csv, output/recalibrated_bam/1102777134.recal_data_00.csv, output/recalibrated_bam/1102777134.recal_data_10.csv, output/recalibrated_bam/1102777134.recal_data_03.csv, output/recalibrated_bam/1102777134.recal_data_22.csv, output/recalibrated_bam/1102777134.recal_data_05.csv, output/recalibrated_bam/1102777134.recal_data_16.csv, output/recalibrated_bam/1102777134.recal_data_14.csv, output/recalibrated_bam/1102777134.recal_data_01.csv, output/recalibrated_bam/1102777134.recal_data_19.csv, output/recalibrated_bam/1102777134.recal_data_17.csv
+    output: output/recalibrated_bam/1102777134.recal_data.csv
+    jobid: 54
+    benchmark: benchmarks/recalibrated_bam/1102777134.gather_bqsr_reports.txt
+    wildcards: sample=1102777134
+
+[Wed Jan 19 13:45:36 2022]
+Finished job 53.
+53 of 113 steps (47%) done
+[Wed Jan 19 13:45:36 2022]
+Finished job 54.
+54 of 113 steps (48%) done
+
+[Wed Jan 19 13:45:36 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_22.bam
+    jobid: 74
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.22.txt
+    wildcards: sample=1102781231, interval=22
+
+
+[Wed Jan 19 13:45:36 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_25.bam
+    jobid: 59
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.25.txt
+    wildcards: sample=1102781231, interval=25
+
+
+[Wed Jan 19 13:45:36 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_07.bam
+    jobid: 67
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.07.txt
+    wildcards: sample=1102781231, interval=07
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_05.bam
+    jobid: 75
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.05.txt
+    wildcards: sample=1102781231, interval=05
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_21.bam
+    jobid: 60
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.21.txt
+    wildcards: sample=1102781231, interval=21
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_08.bam
+    jobid: 68
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.08.txt
+    wildcards: sample=1102781231, interval=08
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_16.bam
+    jobid: 76
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.16.txt
+    wildcards: sample=1102781231, interval=16
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_02.bam
+    jobid: 69
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.02.txt
+    wildcards: sample=1102781231, interval=02
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_11.bam
+    jobid: 61
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.11.txt
+    wildcards: sample=1102781231, interval=11
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_12.bam
+    jobid: 66
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.12.txt
+    wildcards: sample=1102781231, interval=12
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_14.bam
+    jobid: 77
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.14.txt
+    wildcards: sample=1102781231, interval=14
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_09.bam
+    jobid: 70
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.09.txt
+    wildcards: sample=1102781231, interval=09
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_18.bam
+    jobid: 62
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.18.txt
+    wildcards: sample=1102781231, interval=18
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_23.bam
+    jobid: 55
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.23.txt
+    wildcards: sample=1102781231, interval=23
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_01.bam
+    jobid: 78
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.01.txt
+    wildcards: sample=1102781231, interval=01
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_00.bam
+    jobid: 71
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.00.txt
+    wildcards: sample=1102781231, interval=00
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_15.bam
+    jobid: 63
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.15.txt
+    wildcards: sample=1102781231, interval=15
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_13.bam
+    jobid: 56
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.13.txt
+    wildcards: sample=1102781231, interval=13
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_19.bam
+    jobid: 79
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.19.txt
+    wildcards: sample=1102781231, interval=19
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_10.bam
+    jobid: 72
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.10.txt
+    wildcards: sample=1102781231, interval=10
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_20.bam
+    jobid: 64
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.20.txt
+    wildcards: sample=1102781231, interval=20
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_04.bam
+    jobid: 57
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.04.txt
+    wildcards: sample=1102781231, interval=04
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_17.bam
+    jobid: 80
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.17.txt
+    wildcards: sample=1102781231, interval=17
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_03.bam
+    jobid: 73
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.03.txt
+    wildcards: sample=1102781231, interval=03
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_06.bam
+    jobid: 65
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.06.txt
+    wildcards: sample=1102781231, interval=06
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_24.bam
+    jobid: 58
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.24.txt
+    wildcards: sample=1102781231, interval=24
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_15.bam
+    jobid: 89
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.15.txt
+    wildcards: sample=1102777134, interval=15
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_01.bam
+    jobid: 104
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.01.txt
+    wildcards: sample=1102777134, interval=01
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_00.bam
+    jobid: 97
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.00.txt
+    wildcards: sample=1102777134, interval=00
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_13.bam
+    jobid: 82
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.13.txt
+    wildcards: sample=1102777134, interval=13
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_20.bam
+    jobid: 90
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.20.txt
+    wildcards: sample=1102777134, interval=20
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_19.bam
+    jobid: 105
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.19.txt
+    wildcards: sample=1102777134, interval=19
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_10.bam
+    jobid: 98
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.10.txt
+    wildcards: sample=1102777134, interval=10
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_04.bam
+    jobid: 83
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.04.txt
+    wildcards: sample=1102777134, interval=04
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_17.bam
+    jobid: 106
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.17.txt
+    wildcards: sample=1102777134, interval=17
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_06.bam
+    jobid: 91
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.06.txt
+    wildcards: sample=1102777134, interval=06
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_24.bam
+    jobid: 84
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.24.txt
+    wildcards: sample=1102777134, interval=24
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_03.bam
+    jobid: 99
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.03.txt
+    wildcards: sample=1102777134, interval=03
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_12.bam
+    jobid: 92
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.12.txt
+    wildcards: sample=1102777134, interval=12
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_25.bam
+    jobid: 85
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.25.txt
+    wildcards: sample=1102777134, interval=25
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_22.bam
+    jobid: 100
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.22.txt
+    wildcards: sample=1102777134, interval=22
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_07.bam
+    jobid: 93
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.07.txt
+    wildcards: sample=1102777134, interval=07
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_21.bam
+    jobid: 86
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.21.txt
+    wildcards: sample=1102777134, interval=21
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_05.bam
+    jobid: 101
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.05.txt
+    wildcards: sample=1102777134, interval=05
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_08.bam
+    jobid: 94
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.08.txt
+    wildcards: sample=1102777134, interval=08
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_11.bam
+    jobid: 87
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.11.txt
+    wildcards: sample=1102777134, interval=11
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_09.bam
+    jobid: 96
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.09.txt
+    wildcards: sample=1102777134, interval=09
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_16.bam
+    jobid: 102
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.16.txt
+    wildcards: sample=1102777134, interval=16
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_02.bam
+    jobid: 95
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.02.txt
+    wildcards: sample=1102777134, interval=02
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_18.bam
+    jobid: 88
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.18.txt
+    wildcards: sample=1102777134, interval=18
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_14.bam
+    jobid: 103
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.14.txt
+    wildcards: sample=1102777134, interval=14
+
+
+[Wed Jan 19 13:45:37 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_23.bam
+    jobid: 81
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.23.txt
+    wildcards: sample=1102777134, interval=23
+
+[Wed Jan 19 13:46:04 2022]
+Finished job 58.
+55 of 113 steps (49%) done
+[Wed Jan 19 13:46:05 2022]
+Finished job 84.
+56 of 113 steps (50%) done
+[Wed Jan 19 13:46:18 2022]
+Finished job 55.
+57 of 113 steps (50%) done
+[Wed Jan 19 13:47:46 2022]
+Finished job 81.
+58 of 113 steps (51%) done
+[Wed Jan 19 13:48:38 2022]
+Finished job 60.
+59 of 113 steps (52%) done
+[Wed Jan 19 13:48:41 2022]
+Finished job 86.
+60 of 113 steps (53%) done
+[Wed Jan 19 13:49:08 2022]
+Finished job 90.
+61 of 113 steps (54%) done
+[Wed Jan 19 13:49:21 2022]
+Finished job 64.
+62 of 113 steps (55%) done
+[Wed Jan 19 13:49:35 2022]
+Finished job 62.
+63 of 113 steps (56%) done
+[Wed Jan 19 13:49:52 2022]
+Finished job 88.
+64 of 113 steps (57%) done
+[Wed Jan 19 13:50:59 2022]
+Finished job 79.
+65 of 113 steps (58%) done
+[Wed Jan 19 13:51:00 2022]
+Finished job 105.
+66 of 113 steps (58%) done
+[Wed Jan 19 13:51:12 2022]
+Finished job 76.
+67 of 113 steps (59%) done
+[Wed Jan 19 13:51:15 2022]
+Finished job 100.
+68 of 113 steps (60%) done
+[Wed Jan 19 13:51:26 2022]
+Finished job 77.
+69 of 113 steps (61%) done
+[Wed Jan 19 13:51:27 2022]
+Finished job 80.
+70 of 113 steps (62%) done
+[Wed Jan 19 13:51:29 2022]
+Finished job 102.
+71 of 113 steps (63%) done
+[Wed Jan 19 13:51:41 2022]
+Finished job 106.
+72 of 113 steps (64%) done
+[Wed Jan 19 13:51:42 2022]
+Finished job 103.
+73 of 113 steps (65%) done
+[Wed Jan 19 13:51:53 2022]
+Finished job 63.
+74 of 113 steps (65%) done
+[Wed Jan 19 13:51:53 2022]
+Finished job 56.
+75 of 113 steps (66%) done
+[Wed Jan 19 13:51:54 2022]
+Finished job 82.
+76 of 113 steps (67%) done
+[Wed Jan 19 13:52:06 2022]
+Finished job 89.
+77 of 113 steps (68%) done
+[Wed Jan 19 13:52:54 2022]
+Finished job 59.
+78 of 113 steps (69%) done
+[Wed Jan 19 13:52:56 2022]
+Finished job 92.
+79 of 113 steps (70%) done
+[Wed Jan 19 13:53:07 2022]
+Finished job 66.
+80 of 113 steps (71%) done
+[Wed Jan 19 13:53:56 2022]
+Finished job 85.
+81 of 113 steps (72%) done
+[Wed Jan 19 13:54:19 2022]
+Finished job 68.
+82 of 113 steps (73%) done
+[Wed Jan 19 13:54:21 2022]
+Finished job 94.
+83 of 113 steps (73%) done
+[Wed Jan 19 13:54:45 2022]
+Finished job 87.
+84 of 113 steps (74%) done
+[Wed Jan 19 13:54:55 2022]
+Finished job 61.
+85 of 113 steps (75%) done
+[Wed Jan 19 13:55:08 2022]
+Finished job 98.
+86 of 113 steps (76%) done
+[Wed Jan 19 13:55:19 2022]
+Finished job 70.
+87 of 113 steps (77%) done
+[Wed Jan 19 13:55:19 2022]
+Finished job 72.
+88 of 113 steps (78%) done
+[Wed Jan 19 13:55:31 2022]
+Finished job 67.
+89 of 113 steps (79%) done
+[Wed Jan 19 13:55:32 2022]
+Finished job 93.
+90 of 113 steps (80%) done
+[Wed Jan 19 13:55:32 2022]
+Finished job 96.
+91 of 113 steps (81%) done
+[Wed Jan 19 13:56:04 2022]
+Finished job 74.
+92 of 113 steps (81%) done
+[Wed Jan 19 13:56:38 2022]
+Finished job 91.
+93 of 113 steps (82%) done
+[Wed Jan 19 13:57:00 2022]
+Finished job 101.
+94 of 113 steps (83%) done
+[Wed Jan 19 13:57:10 2022]
+Finished job 75.
+95 of 113 steps (84%) done
+[Wed Jan 19 13:57:10 2022]
+Finished job 65.
+96 of 113 steps (85%) done
+[Wed Jan 19 13:58:05 2022]
+Finished job 83.
+97 of 113 steps (86%) done
+[Wed Jan 19 13:58:16 2022]
+Finished job 57.
+98 of 113 steps (87%) done
+[Wed Jan 19 13:59:06 2022]
+Finished job 99.
+99 of 113 steps (88%) done
+[Wed Jan 19 13:59:26 2022]
+Finished job 69.
+100 of 113 steps (88%) done
+[Wed Jan 19 13:59:26 2022]
+Finished job 73.
+101 of 113 steps (89%) done
+[Wed Jan 19 13:59:36 2022]
+Finished job 95.
+102 of 113 steps (90%) done
+[Wed Jan 19 14:01:46 2022]
+Finished job 78.
+103 of 113 steps (91%) done
+[Wed Jan 19 14:02:17 2022]
+Finished job 104.
+104 of 113 steps (92%) done
+[Wed Jan 19 14:02:47 2022]
+Finished job 71.
+105 of 113 steps (93%) done
+[Wed Jan 19 14:03:27 2022]
+Finished job 97.
+106 of 113 steps (94%) done
+
+[Wed Jan 19 14:03:27 2022]
+rule gather_recal_bams:
+    input: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_23.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_13.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_04.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_24.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_25.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_21.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_11.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_18.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_15.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_20.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_06.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_12.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_07.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_08.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_02.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_09.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_00.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_10.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_03.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_22.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_05.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_16.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_14.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_01.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_19.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_17.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_23.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_13.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_04.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_24.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_25.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_21.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_11.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_18.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_15.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_20.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_06.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_12.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_07.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_08.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_02.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_09.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_00.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_10.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_03.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_22.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_05.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_16.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_14.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_01.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_19.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_17.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_23.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_13.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_04.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_24.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_25.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_21.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_11.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_18.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_15.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_20.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_06.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_12.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_07.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_08.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_02.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_09.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_00.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_10.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_03.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_22.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_05.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_16.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_14.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_01.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_19.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_17.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_23.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_13.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_04.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_24.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_25.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_21.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_11.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_18.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_15.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_20.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_06.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_12.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_07.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_08.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_02.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_09.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_00.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_10.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_03.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_22.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_05.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_16.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_14.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_01.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_19.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_17.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_23.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_13.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_04.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_24.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_25.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_21.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_11.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_18.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_15.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_20.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_06.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_12.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_07.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_08.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_02.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_09.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_00.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_10.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_03.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_22.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_05.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_16.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_14.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_01.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_19.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_17.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_23.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_13.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_04.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_24.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_25.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_21.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_11.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_18.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_15.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_20.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_06.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_12.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_07.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_08.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_02.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_09.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_00.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_10.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_03.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_22.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_05.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_16.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_14.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_01.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_19.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_17.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_23.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_13.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_04.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_24.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_25.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_21.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_11.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_18.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_15.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_20.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_06.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_12.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_07.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_08.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_02.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_09.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_00.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_10.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_03.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_22.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_05.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_16.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_14.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_01.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_19.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_17.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_23.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_13.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_04.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_24.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_25.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_21.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_11.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_18.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_15.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_20.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_06.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_12.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_07.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_08.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_02.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_09.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_00.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_10.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_03.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_22.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_05.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_16.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_14.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_01.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_19.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_17.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_23.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_13.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_04.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_24.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_25.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_21.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_11.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_18.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_15.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_20.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_06.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_12.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_07.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_08.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_02.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_09.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_00.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_10.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_03.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_22.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_05.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_16.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_14.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_01.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_19.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_17.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_23.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_13.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_04.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_24.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_25.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_21.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_11.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_18.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_15.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_20.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_06.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_12.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_07.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_08.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_02.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_09.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_00.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_10.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_03.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_22.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_05.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_16.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_14.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_01.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_19.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_17.bam
+    output: output/final_bam/1102781231.final.bam
+    log: logs/final_bam/1102781231.final.bam.log
+    jobid: 107
+    benchmark: benchmarks/final_bam/1102781231.final.bam.txt
+    wildcards: sample=1102781231
+
+
+[Wed Jan 19 14:03:27 2022]
+rule gather_recal_bams:
+    input: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_23.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_13.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_04.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_24.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_25.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_21.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_11.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_18.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_15.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_20.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_06.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_12.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_07.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_08.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_02.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_09.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_00.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_10.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_03.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_22.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_05.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_16.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_14.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_01.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_19.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_17.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_23.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_13.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_04.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_24.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_25.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_21.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_11.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_18.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_15.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_20.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_06.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_12.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_07.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_08.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_02.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_09.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_00.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_10.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_03.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_22.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_05.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_16.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_14.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_01.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_19.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_17.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_23.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_13.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_04.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_24.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_25.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_21.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_11.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_18.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_15.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_20.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_06.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_12.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_07.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_08.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_02.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_09.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_00.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_10.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_03.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_22.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_05.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_16.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_14.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_01.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_19.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_17.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_23.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_13.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_04.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_24.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_25.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_21.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_11.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_18.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_15.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_20.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_06.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_12.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_07.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_08.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_02.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_09.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_00.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_10.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_03.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_22.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_05.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_16.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_14.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_01.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_19.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_17.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_23.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_13.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_04.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_24.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_25.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_21.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_11.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_18.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_15.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_20.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_06.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_12.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_07.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_08.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_02.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_09.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_00.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_10.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_03.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_22.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_05.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_16.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_14.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_01.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_19.bam, output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_17.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_23.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_13.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_04.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_24.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_25.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_21.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_11.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_18.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_15.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_20.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_06.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_12.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_07.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_08.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_02.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_09.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_00.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_10.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_03.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_22.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_05.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_16.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_14.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_01.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_19.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_17.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_23.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_13.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_04.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_24.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_25.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_21.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_11.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_18.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_15.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_20.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_06.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_12.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_07.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_08.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_02.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_09.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_00.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_10.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_03.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_22.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_05.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_16.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_14.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_01.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_19.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_17.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_23.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_13.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_04.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_24.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_25.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_21.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_11.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_18.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_15.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_20.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_06.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_12.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_07.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_08.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_02.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_09.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_00.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_10.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_03.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_22.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_05.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_16.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_14.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_01.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_19.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_17.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_23.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_13.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_04.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_24.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_25.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_21.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_11.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_18.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_15.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_20.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_06.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_12.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_07.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_08.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_02.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_09.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_00.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_10.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_03.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_22.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_05.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_16.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_14.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_01.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_19.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_17.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_23.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_13.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_04.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_24.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_25.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_21.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_11.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_18.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_15.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_20.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_06.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_12.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_07.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_08.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_02.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_09.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_00.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_10.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_03.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_22.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_05.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_16.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_14.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_01.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_19.bam, output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_17.bam
+    output: output/final_bam/1102777134.final.bam
+    log: logs/final_bam/1102777134.final.bam.log
+    jobid: 108
+    benchmark: benchmarks/final_bam/1102777134.final.bam.txt
+    wildcards: sample=1102777134
+
+[Wed Jan 19 14:38:49 2022]
+Finished job 108.
+107 of 113 steps (95%) done
+
+[Wed Jan 19 14:38:49 2022]
+rule collect_rg_bam_metrics:
+    input: output/final_bam/1102777134.final.bam
+    output: output/final_bam/1102777134.final_bam.collect_rg_metrics
+    jobid: 112
+    benchmark: benchmarks/final_bam/1102777134.collect_rg_metrics.txt
+    wildcards: sample=1102777134
+
+
+[Wed Jan 19 14:38:49 2022]
+rule collect_aggregated_metrics:
+    input: output/final_bam/1102777134.final.bam
+    output: output/final_bam/1102777134.final_bam.agg_metrics
+    jobid: 110
+    benchmark: benchmarks/final_bam/1102777134.collect_aggregated_metrics.txt
+    wildcards: sample=1102777134
+
+[Wed Jan 19 14:39:19 2022]
+Finished job 107.
+108 of 113 steps (96%) done
+
+[Wed Jan 19 14:39:19 2022]
+rule collect_aggregated_metrics:
+    input: output/final_bam/1102781231.final.bam
+    output: output/final_bam/1102781231.final_bam.agg_metrics
+    jobid: 109
+    benchmark: benchmarks/final_bam/1102781231.collect_aggregated_metrics.txt
+    wildcards: sample=1102781231
+
+
+[Wed Jan 19 14:39:19 2022]
+rule collect_rg_bam_metrics:
+    input: output/final_bam/1102781231.final.bam
+    output: output/final_bam/1102781231.final_bam.collect_rg_metrics
+    jobid: 111
+    benchmark: benchmarks/final_bam/1102781231.collect_rg_metrics.txt
+    wildcards: sample=1102781231
+
+[Wed Jan 19 16:12:54 2022]
+Error in rule collect_rg_bam_metrics:
+    jobid: 112
+    output: output/final_bam/1102777134.final_bam.collect_rg_metrics
+    shell:
+        
+        module load R/3.5.3  gatk/4.2.0.0 java/1.8.0_211 python/3.7.3 picard/2.22.3
+
+        java -Xms5000m -jar $PICARD           CollectMultipleMetrics           INPUT=output/final_bam/1102777134.final.bam           REFERENCE_SEQUENCE=/sc/arion/projects/MMAAAS/src/gatk-resources/hg38_20201116/hg38/v0/resources-broad-hg38-v0-Homo_sapiens_assembly38.fasta           OUTPUT=output/final_bam/1102777134.final_bam.collect_rg_metrics           ASSUME_SORTED=true           PROGRAM=null           PROGRAM=CollectAlignmentSummaryMetrics           PROGRAM=CollectGcBiasMetrics           METRIC_ACCUMULATION_LEVEL=null           METRIC_ACCUMULATION_LEVEL=READ_GROUP
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Error executing rule collect_rg_bam_metrics on cluster (jobid: 112, external: 124478, jobscript: /sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/.snakemake/tmp.7iynloo_/snakejob.collect_rg_bam_metrics.112.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Jan 19 16:23:45 2022]
+Error in rule collect_rg_bam_metrics:
+    jobid: 111
+    output: output/final_bam/1102781231.final_bam.collect_rg_metrics
+    shell:
+        
+        module load R/3.5.3  gatk/4.2.0.0 java/1.8.0_211 python/3.7.3 picard/2.22.3
+
+        java -Xms5000m -jar $PICARD           CollectMultipleMetrics           INPUT=output/final_bam/1102781231.final.bam           REFERENCE_SEQUENCE=/sc/arion/projects/MMAAAS/src/gatk-resources/hg38_20201116/hg38/v0/resources-broad-hg38-v0-Homo_sapiens_assembly38.fasta           OUTPUT=output/final_bam/1102781231.final_bam.collect_rg_metrics           ASSUME_SORTED=true           PROGRAM=null           PROGRAM=CollectAlignmentSummaryMetrics           PROGRAM=CollectGcBiasMetrics           METRIC_ACCUMULATION_LEVEL=null           METRIC_ACCUMULATION_LEVEL=READ_GROUP
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Error executing rule collect_rg_bam_metrics on cluster (jobid: 111, external: 124576, jobscript: /sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/.snakemake/tmp.7iynloo_/snakejob.collect_rg_bam_metrics.111.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Jan 19 18:39:03 2022]
+Error in rule collect_aggregated_metrics:
+    jobid: 110
+    output: output/final_bam/1102777134.final_bam.agg_metrics
+    shell:
+        
+        module load R/3.5.3  gatk/4.2.0.0 java/1.8.0_211 python/3.7.3 picard/2.22.3
+
+        java -Xms5000m -jar $PICARD           CollectMultipleMetrics           INPUT=output/final_bam/1102777134.final.bam           REFERENCE_SEQUENCE=/sc/arion/projects/MMAAAS/src/gatk-resources/hg38_20201116/hg38/v0/resources-broad-hg38-v0-Homo_sapiens_assembly38.fasta           OUTPUT=output/final_bam/1102777134.final_bam.agg_metrics           ASSUME_SORTED=true           PROGRAM=null           PROGRAM=CollectAlignmentSummaryMetrics           PROGRAM=CollectInsertSizeMetrics           PROGRAM=CollectSequencingArtifactMetrics           PROGRAM=QualityScoreDistribution           PROGRAM=CollectGcBiasMetrics           METRIC_ACCUMULATION_LEVEL=null           METRIC_ACCUMULATION_LEVEL=SAMPLE           METRIC_ACCUMULATION_LEVEL=LIBRARY
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Error executing rule collect_aggregated_metrics on cluster (jobid: 110, external: 124479, jobscript: /sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/.snakemake/tmp.7iynloo_/snakejob.collect_aggregated_metrics.110.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Jan 19 18:39:33 2022]
+Error in rule collect_aggregated_metrics:
+    jobid: 109
+    output: output/final_bam/1102781231.final_bam.agg_metrics
+    shell:
+        
+        module load R/3.5.3  gatk/4.2.0.0 java/1.8.0_211 python/3.7.3 picard/2.22.3
+
+        java -Xms5000m -jar $PICARD           CollectMultipleMetrics           INPUT=output/final_bam/1102781231.final.bam           REFERENCE_SEQUENCE=/sc/arion/projects/MMAAAS/src/gatk-resources/hg38_20201116/hg38/v0/resources-broad-hg38-v0-Homo_sapiens_assembly38.fasta           OUTPUT=output/final_bam/1102781231.final_bam.agg_metrics           ASSUME_SORTED=true           PROGRAM=null           PROGRAM=CollectAlignmentSummaryMetrics           PROGRAM=CollectInsertSizeMetrics           PROGRAM=CollectSequencingArtifactMetrics           PROGRAM=QualityScoreDistribution           PROGRAM=CollectGcBiasMetrics           METRIC_ACCUMULATION_LEVEL=null           METRIC_ACCUMULATION_LEVEL=SAMPLE           METRIC_ACCUMULATION_LEVEL=LIBRARY
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Error executing rule collect_aggregated_metrics on cluster (jobid: 109, external: 124575, jobscript: /sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/.snakemake/tmp.7iynloo_/snakejob.collect_aggregated_metrics.109.sh). For error details see the cluster log and the log files of the involved rule(s).
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/.snakemake/log/2022-01-19T132330.331665.snakemake.log

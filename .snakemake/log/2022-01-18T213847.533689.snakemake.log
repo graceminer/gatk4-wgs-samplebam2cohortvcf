@@ -1,0 +1,484 @@
+The flag 'directory' used in rule base_recalibrator_report is only valid for outputs, not inputs.
+The flag 'directory' used in rule apply_bqsr is only valid for outputs, not inputs.
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 300
+Job counts:
+	count	jobs
+	52	apply_bqsr
+	2	collect_aggregated_metrics
+	2	collect_rg_bam_metrics
+	2	gather_recal_bams
+	1	main
+	59
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_25.bam
+    jobid: 59
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.25.txt
+    wildcards: sample=1102781231, interval=25
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_22.bam
+    jobid: 74
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.22.txt
+    wildcards: sample=1102781231, interval=22
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_23.bam
+    jobid: 81
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.23.txt
+    wildcards: sample=1102777134, interval=23
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_15.bam
+    jobid: 89
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.15.txt
+    wildcards: sample=1102777134, interval=15
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_07.bam
+    jobid: 67
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.07.txt
+    wildcards: sample=1102781231, interval=07
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_13.bam
+    jobid: 82
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.13.txt
+    wildcards: sample=1102777134, interval=13
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_00.bam
+    jobid: 97
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.00.txt
+    wildcards: sample=1102777134, interval=00
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_01.bam
+    jobid: 104
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.01.txt
+    wildcards: sample=1102777134, interval=01
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_21.bam
+    jobid: 60
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.21.txt
+    wildcards: sample=1102781231, interval=21
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_05.bam
+    jobid: 75
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.05.txt
+    wildcards: sample=1102781231, interval=05
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_20.bam
+    jobid: 90
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.20.txt
+    wildcards: sample=1102777134, interval=20
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_19.bam
+    jobid: 105
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.19.txt
+    wildcards: sample=1102777134, interval=19
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_08.bam
+    jobid: 68
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.08.txt
+    wildcards: sample=1102781231, interval=08
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_04.bam
+    jobid: 83
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.04.txt
+    wildcards: sample=1102777134, interval=04
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_10.bam
+    jobid: 98
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.10.txt
+    wildcards: sample=1102777134, interval=10
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_11.bam
+    jobid: 61
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.11.txt
+    wildcards: sample=1102781231, interval=11
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_16.bam
+    jobid: 76
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.16.txt
+    wildcards: sample=1102781231, interval=16
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_06.bam
+    jobid: 91
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.06.txt
+    wildcards: sample=1102777134, interval=06
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_17.bam
+    jobid: 106
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.17.txt
+    wildcards: sample=1102777134, interval=17
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_02.bam
+    jobid: 69
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.02.txt
+    wildcards: sample=1102781231, interval=02
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_24.bam
+    jobid: 84
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.24.txt
+    wildcards: sample=1102777134, interval=24
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_03.bam
+    jobid: 99
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.03.txt
+    wildcards: sample=1102777134, interval=03
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_18.bam
+    jobid: 62
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.18.txt
+    wildcards: sample=1102781231, interval=18
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_14.bam
+    jobid: 77
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.14.txt
+    wildcards: sample=1102781231, interval=14
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_12.bam
+    jobid: 92
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.12.txt
+    wildcards: sample=1102777134, interval=12
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_09.bam
+    jobid: 70
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.09.txt
+    wildcards: sample=1102781231, interval=09
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_23.bam
+    jobid: 55
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.23.txt
+    wildcards: sample=1102781231, interval=23
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_25.bam
+    jobid: 85
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.25.txt
+    wildcards: sample=1102777134, interval=25
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_22.bam
+    jobid: 100
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.22.txt
+    wildcards: sample=1102777134, interval=22
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_15.bam
+    jobid: 63
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.15.txt
+    wildcards: sample=1102781231, interval=15
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_01.bam
+    jobid: 78
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.01.txt
+    wildcards: sample=1102781231, interval=01
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_07.bam
+    jobid: 93
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.07.txt
+    wildcards: sample=1102777134, interval=07
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_13.bam
+    jobid: 56
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.13.txt
+    wildcards: sample=1102781231, interval=13
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_00.bam
+    jobid: 71
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.00.txt
+    wildcards: sample=1102781231, interval=00
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_21.bam
+    jobid: 86
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.21.txt
+    wildcards: sample=1102777134, interval=21
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_05.bam
+    jobid: 101
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.05.txt
+    wildcards: sample=1102777134, interval=05
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_20.bam
+    jobid: 64
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.20.txt
+    wildcards: sample=1102781231, interval=20
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_19.bam
+    jobid: 79
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.19.txt
+    wildcards: sample=1102781231, interval=19
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_08.bam
+    jobid: 94
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.08.txt
+    wildcards: sample=1102777134, interval=08
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_04.bam
+    jobid: 57
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.04.txt
+    wildcards: sample=1102781231, interval=04
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_10.bam
+    jobid: 72
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.10.txt
+    wildcards: sample=1102781231, interval=10
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_11.bam
+    jobid: 87
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.11.txt
+    wildcards: sample=1102777134, interval=11
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_16.bam
+    jobid: 102
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.16.txt
+    wildcards: sample=1102777134, interval=16
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_06.bam
+    jobid: 65
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.06.txt
+    wildcards: sample=1102781231, interval=06
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_17.bam
+    jobid: 80
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.17.txt
+    wildcards: sample=1102781231, interval=17
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_02.bam
+    jobid: 95
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.02.txt
+    wildcards: sample=1102777134, interval=02
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_24.bam
+    jobid: 58
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.24.txt
+    wildcards: sample=1102781231, interval=24
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_03.bam
+    jobid: 73
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.03.txt
+    wildcards: sample=1102781231, interval=03
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_18.bam
+    jobid: 88
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.18.txt
+    wildcards: sample=1102777134, interval=18
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_09.bam
+    jobid: 96
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.09.txt
+    wildcards: sample=1102777134, interval=09
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102777134/, output/recalibrated_bam/1102777134.recal_data.csv
+    output: output/recalibrated_bam/1102777134.aligned.duplicates_marked.recalibrated_14.bam
+    jobid: 103
+    benchmark: benchmarks/recalibrated_bam/1102777134.apply_bqsr.14.txt
+    wildcards: sample=1102777134, interval=14
+
+
+[Tue Jan 18 21:38:48 2022]
+rule apply_bqsr:
+    input: output/sorted_bam/1102781231/, output/recalibrated_bam/1102781231.recal_data.csv
+    output: output/recalibrated_bam/1102781231.aligned.duplicates_marked.recalibrated_12.bam
+    jobid: 66
+    benchmark: benchmarks/recalibrated_bam/1102781231.apply_bqsr.12.txt
+    wildcards: sample=1102781231, interval=12
+
+Terminating processes on user request, this might take some time.
+Will exit after finishing currently running jobs.
+Complete log: /sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/.snakemake/log/2022-01-18T213847.533689.snakemake.log

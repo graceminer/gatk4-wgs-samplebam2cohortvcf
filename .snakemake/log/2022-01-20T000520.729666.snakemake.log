@@ -1,0 +1,3 @@
+NameError in line 175 of /sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/snakefile1_revertsam:
+name 'CALLING_INTERVAL_LIST' is not defined
+  File "/sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/snakefile1_revertsam", line 175, in <module>

@@ -1,0 +1,5 @@
+The flag 'directory' used in rule mark_duplicates is only valid for outputs, not inputs.
+Building DAG of jobs...
+MissingInputException in line 89 of /sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/snakefilecurrent:
+Missing input files for rule mark_duplicates:
+output/aligned_bam/1102781231/

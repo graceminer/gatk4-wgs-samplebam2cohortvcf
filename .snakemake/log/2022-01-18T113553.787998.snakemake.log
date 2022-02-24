@@ -1,0 +1,4 @@
+The flag 'directory' used in rule base_recalibrator_report is only valid for outputs, not inputs.
+WildcardError in line 100 of /sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/snakefilecurrent:
+No values given for wildcard 'intervals'.
+  File "/sc/arion/projects/MMAAAS/ngs_res/aaa_pilot_20201113/gatk20220113/snakefilecurrent", line 100, in <module>
