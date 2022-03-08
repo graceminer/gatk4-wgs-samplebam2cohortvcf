@@ -1,7 +1,7 @@
 configfile: "config/config.yaml"
 # Singularity with conda wrappers
 
-singularity: "docker://continuumio/miniconda3:4.5.11"
+#singularity: "docker://continuumio/miniconda3:4.5.11"
 from snakemake.utils import min_version
 
 min_version("5.4")
@@ -52,60 +52,27 @@ UNPADDED_INTERVAL_FILE=config["UNPADDED_INTERVAL_FILE"]
 VerifyBamID = config["VerifyBamID"]
 WGS_COVERAGE_INTERVAL_LIST=config["WGS_COVERAGE_INTERVAL_LIST"]
 
-#INTERVAL_LIST = glob.glob("input/scatter_interval_list/*/*.interval_list")
-#INTERVAL_RANGE=range(1,51)
-#INTERVALS =  glob.glob("input/intervals/sequence_grouping_unmapped_newline/sequence_grouping.unmapped_*.list")
-#INTERVALS,= glob_wildcards("output/variant_calling_scatter_interval/{interval}.interval_list")
-#######################################################################################################################################
-
 #########################################################################################################################
-localrules: all, bqsr_intervalreport_aggregate
+localrules: all, bqsr_intervalreport_aggregate, haplotypecaller_intervals_aggregate,genotyping_intervals_aggregate,recal_intervals_aggregate
 
 SAMPLES, = glob_wildcards("input/{sample}.final.bam")
-#(SAMPLES,RGS) = glob_wildcards("output/split_rg/{sample}/{rg}.bam")
 
 rule all:
     input:
-#        expand("input/{sample}.final.bam", sample=SAMPLES),
-#        expand("output/split_rg/{sample}/", sample=SAMPLES),
-#        expand("output/aligned_bam/{sample}/", sample=SAMPLE),
-#        expand("output/sorted_bam/{sample}/{sample}.aligned.duplicates_marked.sorted.crosscheck", zip, sample=SAMPLE),
         expand("output/sorted_bam/{sample}/{sample}.aligned.duplicates_marked.sorted.preBqsr.selfSM", zip, sample=SAMPLES),
-#	expand("output/recalibrated_bam/{sample}.interval_bam_list.txt", sample=SAMPLES),
-#        #expand("output/recalibrated_bam/{sample}/{rg}.aligned.duplicates_marked.recalibrated.bam", zip, sample=SAMPLE, rg=RG),
-#        #expand("output/recalibrated_bam/{sample}/{rg}.recal_data.csv", zip, sample=SAMPLE, rg=RG),
-#
-#        #expand("output/recalibrated_bam/{sample}.recal_data_{interval}.csv", sample=SAMPLE, interval=INTERVALS),
-#        #expand("output/recalibrated_bam/{sample}.recal_data.csv", sample=SAMPLE),
-#        #expand("output/recalibrated_bam/{sample}.aligned.duplicates_marked.recalibrated_{interval}.bam", sample=SAMPLE, interval=INTERVALS),
-#        #expand("output/final_bam/{sample}.final.bam", sample=SAMPLE),
         expand("output/final_bam/{sample}.final_bam.collect_aggregated_metrics.{metrics}", sample=SAMPLES, metrics=["alignment_summary_metrics","bait_bias_detail_metrics","bait_bias_summary_metrics","gc_bias.detail_metrics","gc_bias.pdf","gc_bias.summary_metrics","insert_size_histogram.pdf","insert_size_metrics","pre_adapter_detail_metrics", "pre_adapter_summary_metrics","quality_distribution.pdf","quality_distribution_metrics", "error_summary_metrics"]),
         expand("output/final_bam/{sample}.final_bam.collect_rg_metrics.{metrics}", sample=SAMPLES, metrics=["alignment_summary_metrics","gc_bias.detail_metrics","gc_bias.pdf","gc_bias.summary_metrics"]),
         expand("output/final_bam/{sample}.final_bam.{ext}", sample=SAMPLES,ext=["duplication.csv","chimerism.csv","fingerprinting_detail_metrics","fingerprinting_summary_metrics","read_group_md5","wgs_metrics","raw_wgs_metrics"]),
         expand("output/final_cram/{sample}.final_cram.{ext}", sample=SAMPLES, ext=["validation_report"]),
-#        #expand("output/gvcf/{sample}.{intervals}.g.vcf.gz", sample=SAMPLE, intervals=INTERVALS),
-#        expand("output/merge_gvcf_metrics/{sample}.g.vcf.variant_calling_summary_metrics", sample=SAMPLES),
-#        expand("output/merge_gvcf_metrics/{sample}.validate_gvcf.metrics", sample=SAMPLES),
-#        expand("output/merge_gvcf_metrics/{sample}.g.vcf.variant_calling_detail_metrics", sample=SAMPLES),
-#        "output/merge_gvcf_metrics/check_unique.gvcf.txt",
-#        "output/variant_calling_scatter_interval/",
-#
-#        #expand("output/variant_calling_scatter_interval/{intervals}.interval_list", intervals=INTERVALS),
-#        #expand("output/{callset_name}_{intervals}.txt", callset_name=CALLSET_NAME, intervals=INTERVALS),
-#        #expand("output/genomicsdb/{interval}", interval=INTERVALS),
-#        #expand("output/genotype_gvcfs/{interval}.cohort.vcf.gz", interval=INTERVALS),
-#        #expand("output/interval_vcfs/{interval}.cohort.variant_filtered.vcf.gz", interval=INTERVALS),
-#        #expand("output/interval_vcfs/{interval}.cohort.variant_filtered_sites_only.vcf.gz", interval=INTERVALS),
-#        #expand("output/gather_vcfs/cohort.variant_filtered_sites_only.vcf.gz", interval=INTERVALS),
-#        #"output/gather_vcfs/cohort.indels.recal","output/gather_vcfs/cohort.indels.tranches",
-#        #"output/gather_vcfs/cohort.snps.recal","output/gather_vcfs/cohort.snps.tranches",
-#        #expand("output/recalibrated_vcf_interval/cohort.filtered.{interval}.vcf.gz", interval=INTERVALS),
-#        "output/final_vcf_metrics/cohort.variant_calling_detail_metrics", "output/final_vcf_metrics/cohort.variant_calling_summary_metrics","output/final_vcf_metrics/cohort.fingerprintcheck"
-
-
-
+        expand("output/merge_gvcf_metrics/{sample}.g.vcf.variant_calling_summary_metrics", sample=SAMPLES),
+        expand("output/merge_gvcf_metrics/{sample}.validate_gvcf.metrics", sample=SAMPLES),
+        expand("output/merge_gvcf_metrics/{sample}.g.vcf.variant_calling_detail_metrics", sample=SAMPLES),
+        "output/merge_gvcf_metrics/" + CALLSET_NAME + ".check_unique.gvcf.txt",
+	"output/final_vcf_metrics/" + CALLSET_NAME + ".cohort.variant_calling_detail_metrics",
+        "output/final_vcf_metrics/" + CALLSET_NAME + ".cohort.variant_calling_summary_metrics",
+        "output/final_vcf_metrics/" + CALLSET_NAME + ".cohort.fingerprintcheck"
 
 
 include: "rules/samplebam2sampleubam.smk"
 include: "rules/sampleubam2samplegvcf.smk"
-#include: "rules/samplegvcf2cohortvcf.smk"
+include: "rules/samplegvcf2cohortvcf.smk"

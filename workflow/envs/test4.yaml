@@ -1,0 +1,10 @@
+name: ngs
+channels:
+  - defaults
+dependencies:
+  - picard=2.26.11
+  - gatk4=4.2.5.0
+  - verifybamid2=2.0.1
+  - bwa=0.7.17
+  - singularity
+prefix: /sc/arion/projects/MMAAAS/src/anaconda3/envs/ngs

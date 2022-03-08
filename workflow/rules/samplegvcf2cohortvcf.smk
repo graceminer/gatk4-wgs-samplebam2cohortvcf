@@ -4,8 +4,8 @@ import glob
 import os
 
 rule check_unique:
-    input: expand(rules.merge_interval_gvcfs.output, sample=SAMPLE)
-    output: name_map="output/sample_name_map",stdout="output/merge_gvcf_metrics/check_unique.gvcf.txt"
+    input: expand(rules.merge_interval_gvcfs.output, sample=SAMPLES)
+    output: name_map="output/intervals/sample_name_map",stdout="output/merge_gvcf_metrics/" + CALLSET_NAME + ".check_unique.gvcf.txt"
     shell:
         """
         module load R/3.5.3  gatk/4.2.0.0 java/1.8.0_211 python/3.7.3 picard/2.22.3
@@ -29,7 +29,7 @@ rule check_unique:
 
 checkpoint split_interval_list:
     input: rules.check_unique.output.name_map
-    output: directory("output/variantcalling_interval")
+    output: directory("output/intervals/genotyping_interval")
     #params:
     benchmark: "benchmarks/split_interval_list/var_calling_interval_list.txt"
     shell:
@@ -50,11 +50,11 @@ checkpoint split_interval_list:
         """
 
 rule import_gvcfs:
-    input: "output/variant_calling_scatter_interval/{interval}.interval_list"
-    #input: lambda wildcards: ['output/variant_calling_scatter_interval/{0}.interval_list'.format(interval) \
-#        for interval in {wildcards.interval}]
-    output: directory("output/genomicsdb/{interval}")
-    params: sample_name_map="output/sample_name_map", interval="output/variant_calling_scatter_interval/{intervals}.interval_list"
+    input: sample_name_map=rules.check_unique.output.name_map ,intervals="output/intervals/genotyping_interval/{geno_interval}.interval_list"
+    #input: lambda wildcards: ['output/variant_calling_scatter_interval/{0}.interval_list'.format(geno_interval) \
+#        for interval in {wildcards.geno_interval}]
+    output: directory("output/genomicsdb/{geno_interval}")
+    #params: sample_name_map=rules.check_unique., interval="output/variant_calling_scatter_interval/{geno_interval}.interval_list"
     shell:
         """
         module load R/3.5.3  gatk/4.2.0.0 java/1.8.0_211 python/3.7.3 picard/2.22.3
@@ -78,8 +78,8 @@ rule import_gvcfs:
           GenomicsDBImport \
           --genomicsdb-workspace-path {output} \
           --batch-size {BATCH_SIZE} \
-          -L {params.interval} \
-          --sample-name-map {params.sample_name_map} \
+          -L {input.intervals} \
+          --sample-name-map {input.sample_name_map} \
           --reader-threads 5 \
           --merge-input-intervals \
           --consolidate
@@ -89,18 +89,18 @@ rule import_gvcfs:
         """
 rule genotype_gvcfs:
     input: db=rules.import_gvcfs.output, 
-    #output: "output/genotype_gvcfs/"+CALLSET_NAME+"_{intervals}.vcf.gz"
-    output: "output/genotype_gvcfs/{interval}.cohort.vcf.gz"
-    params:interval="output/variant_calling_scatter_interval/{interval}.interval_list"
-    benchmark: "benchmarks/genotype_gvcfs/genotype_gvcfs_cohort_{interval}.benchmark.txt"
+    #output: "output/genotype_gvcfs/"+CALLSET_NAME+"_{geno_interval}.vcf.gz"
+    output: "output/genotype_gvcfs/" + CALLSET_NAME + ".{geno_interval}.cohort.vcf.gz"
+    params:interval="output/intervals/genotyping_interval/{geno_interval}.interval_list"
+    benchmark: "benchmarks/genotype_gvcfs/genotype_gvcfs_cohort_{geno_interval}.benchmark.txt"
     shell:
         """
         module load R/3.5.3  gatk/4.2.0.0 java/1.8.0_211 python/3.7.3 picard/2.22.3
 
         set -euo pipefail
 
-        #tar -xf output/genomicsdb/{wildcards.interval}
-        #WORKSPACE=$(basename output/genomicsdb/{wildcards.interval} .tar)
+        #tar -xf output/genomicsdb/{wildcards.geno_interval}
+        #WORKSPACE=$(basename output/genomicsdb/{wildcards.geno_interval} .tar)
         #tar -xf {input.db}
         #WORKSPACE=$({input.db})
 
@@ -118,8 +118,10 @@ rule genotype_gvcfs:
         """
 rule hard_filter_make_sites_only_vcf:
     input: rules.genotype_gvcfs.output
-    output: filtered="output/interval_vcfs/{interval}.cohort.variant_filtered.vcf.gz", sites_only="output/interval_vcfs/{interval}.cohort.variant_filtered_sites_only.vcf.gz"
-    benchmark: "benchmarks/interval_vcfs/{interval}.cohort.hard_filter.benchmark.txt"
+    output:
+        filtered="output/interval_vcfs/" + CALLSET_NAME + ".{geno_interval}.cohort.variant_filtered.vcf.gz",
+        sites_only="output/interval_vcfs/" + CALLSET_NAME + ".{geno_interval}.cohort.variant_filtered_sites_only.vcf.gz"
+    benchmark: "benchmarks/interval_vcfs/{geno_interval}.cohort.hard_filter.benchmark.txt"
     shell:
         """
         module load R/3.5.3  gatk/4.2.0.0 java/1.8.0_211 python/3.7.3 picard/2.22.3
@@ -139,9 +141,22 @@ rule hard_filter_make_sites_only_vcf:
           -O {output.sites_only}
 
         """
+#   x=expand("output/interval_vcfs/" + CALLSET_NAME + ".{geno_interval}.cohort.variant_filtered_sites_only.vcf.gz",
+def aggregate_genotyping_intervals(wildcards):
+   checkpoint_output = checkpoints.split_interval_list.get(**wildcards).output[0]
+   x=expand(rules.hard_filter_make_sites_only_vcf.output.sites_only,
+       geno_interval=glob_wildcards(os.path.join(checkpoint_output,"{geno_interval}.interval_list")).geno_interval)
+   print(x)
+   return x
+
+rule genotyping_intervals_aggregate:
+    input: aggregate_genotyping_intervals
+    output: "output/gather_vcfs/" + CALLSET_NAME + ".interval_filtered_sites_only_vcf_list.txt"
+    shell: "ls -v {input} > {output}"
+        
 rule gather_vcfs:
-    input: expand(rules.hard_filter_make_sites_only_vcf.output.sites_only, interval=INTERVALS)
-    output: "output/gather_vcfs/cohort.variant_filtered_sites_only.vcf.gz"
+    input: rules.genotyping_intervals_aggregate.output
+    output: "output/gather_vcfs/" + CALLSET_NAME + ".cohort.variant_filtered_sites_only.vcf.gz"
     benchmark:"benchmarks/gather_vcfs/cohort.gather_vcf.benchmark.txt"
     shell:
         """
@@ -149,9 +164,10 @@ rule gather_vcfs:
 
         set -euo pipefail
 
-        input=$(ls output/interval_vcfs/*.cohort.variant_filtered_sites_only.vcf.gz | sed 's/output/--input output/g')
+        #input=$(ls output/interval_vcfs/*.cohort.variant_filtered_sites_only.vcf.gz | sed 's/output/--input output/g')
+        input=$(cat {input} | sed 's/output/--input output/g')
 
-# --ignore-safety-checks makes a big performance difference so we include it in our invocation.
+        # --ignore-safety-checks makes a big performance difference so we include it in our invocation.
         # This argument disables expensive checks that the file headers contain the same set of
         # genotyped samples and that files are in order by position of first record.
         gatk --java-options "-Xms6000m -Xmx6500m" \
@@ -165,7 +181,9 @@ rule gather_vcfs:
         """
 rule indel_variant_recal:
     input: rules.gather_vcfs.output
-    output: recal="output/gather_vcfs/cohort.indels.recal",tranches="output/gather_vcfs/cohort.indels.tranches"
+    output:
+        recal="output/gather_vcfs/" + CALLSET_NAME + ".cohort.indels.recal",
+        tranches="output/gather_vcfs/" + CALLSET_NAME + ".cohort.indels.tranches"
     params: tranche=' -tranche '.join(INDEL_RECALIBRATION_TRANCHE_VALUES), an=' -an '.join(INDEL_RECALIBRATION_ANNOTATION_VALUES)
     benchmark: "benchmarks/gather_vcfs/cohort.indel_recal.benchmark.txt"
     shell:
@@ -196,8 +214,12 @@ rule indel_variant_recal:
   #~{model_report_arg} #added to variant recal step after -mode SNP
 rule snp_variant_recal_classic_if_numgvcf_lessthan_equalto_snp_recal_thresh20000:
     input: rules.gather_vcfs.output
-    output: recal="output/gather_vcfs/cohort.snps.recal",tranches="output/gather_vcfs/cohort.snps.tranches"
-    params: tranche=' -tranche '.join(SNP_RECALIBRATION_TRANCHE_VALUES), an=' -an '.join(SNP_RECALIBRATION_ANNOTATION_VALUES)
+    output:
+        recal="output/gather_vcfs/" + CALLSET_NAME + ".cohort.snps.recal",
+        tranches="output/gather_vcfs/" + CALLSET_NAME + ".cohort.snps.tranches"
+    params:
+        tranche=' -tranche '.join(SNP_RECALIBRATION_TRANCHE_VALUES),
+        an=' -an '.join(SNP_RECALIBRATION_ANNOTATION_VALUES)
     benchmark: "benchmarks/gather_vcfs/cohort.snps_recal.benchmark.txt"
     shell:
         """
@@ -230,8 +252,9 @@ rule apply_recal:
         indels_recal=rules.indel_variant_recal.output.recal,
         snps_tranches=rules.snp_variant_recal_classic_if_numgvcf_lessthan_equalto_snp_recal_thresh20000.output.tranches,
         snps_recal=rules.snp_variant_recal_classic_if_numgvcf_lessthan_equalto_snp_recal_thresh20000.output.recal
-    output: "output/recalibrated_vcf_interval/cohort.filtered.{interval}.vcf.gz"
-    benchmark: "benchmarks/recalibrated_vcf_interval/cohort.filtered.{interval}.benchmark.txt"
+    output: "output/recalibrated_vcf_interval/" + CALLSET_NAME + ".cohort.filtered.{geno_interval}.vcf.gz"
+    params: "output/recalibrated_vcf_interval/tmp.indel.recalibrated.vcf"
+    benchmark: "benchmarks/recalibrated_vcf_interval/" + CALLSET_NAME + ".cohort.filtered.{geno_interval}.benchmark.txt"
     shell:
         """
         module load R/3.5.3  gatk/4.2.0.0 java/1.8.0_211 python/3.7.3 picard/2.22.3
@@ -240,7 +263,7 @@ rule apply_recal:
 
         gatk --java-options "-Xms5000m -Xmx6500m" \
           ApplyVQSR \
-          -O output/recalibrated_vcf_interval/tmp.indel.recalibrated.vcf \
+          -O {params} \
           -V {input.vcf} \
           --recal-file {input.indels_recal} \
           --tranches-file {input.indels_tranches} \
@@ -251,7 +274,7 @@ rule apply_recal:
         gatk --java-options "-Xms5000m -Xmx6500m" \
           ApplyVQSR \
           -O {output} \
-          -V output/recalibrated_vcf_interval/tmp.indel.recalibrated.vcf \
+          -V {params} \
           --recal-file {input.snps_recal} \
           --tranches-file {input.snps_tranches} \
           --truth-sensitivity-filter-level {SNP_FILTER_LEVEL} \
@@ -261,18 +284,33 @@ rule apply_recal:
         rm output/recalibrated_vcf_interval/tmp.indel.recalibrated.vcf
         rm output/recalibrated_vcf_interval/tmp.indel.recalibrated.vcf.idx
         """
+#   x=expand("output/recalibrated_vcf_interval/" + CALLSET_NAME + ".cohort.filtered.{geno_interval}.vcf.gz",
+def aggregate_recal_intervals(wildcards):
+   checkpoint_output = checkpoints.split_interval_list.get(**wildcards).output[0]
+   x=expand(rules.apply_recal.output,
+       geno_interval=glob_wildcards(os.path.join(checkpoint_output,"{geno_interval}.interval_list")).geno_interval)
+   print(x)
+   return x
+
+rule recal_intervals_aggregate:
+    input: aggregate_recal_intervals
+    output: "output/recalibrated_vcf_interval/" + CALLSET_NAME + "interval_recalibrated_vcf_list.txt"
+    shell: "ls -v {input} > {output}"
+
+
 # if is small callset ie <= 1000 gvcfs or num_gvcfs <= 1000 then can gather VCF intervals and then collect metrics
 # if callset is > 1000 then collect metrics on interval gvcf and gather them later
 rule final_gather_vcf:
-    input: expand(rules.apply_recal.output, interval=INTERVALS)
-    output: "output/recal_final_vcf/cohort.vcf.gz"
+    #input: expand(rules.apply_recal.output, interval=INTERVALS)
+    input: rules.recal_intervals_aggregate.output
+    output: "output/recal_final_vcf/" + CALLSET_NAME + ".cohort.vcf.gz"
     benchmark:"output/recal_final_vcf/benchmark.txt"
     shell:
         """
         module load R/3.5.3  gatk/4.2.0.0 java/1.8.0_211 python/3.7.3 picard/2.22.3 htslib/1.9
 
-        input=$(ls output/recalibrated_vcf_interval/cohort.filtered.*.vcf.gz | sed 's/output/--input output/g')
-        
+        #input=$(ls output/recalibrated_vcf_interval/cohort.filtered.*.vcf.gz | sed 's/output/--input output/g')
+        input=$(cat {input} | sed 's/output/--input output/g')
         set -euo pipefail
 
         # --ignore-safety-checks makes a big performance difference so we include it in our invocation.
@@ -291,8 +329,8 @@ rule final_gather_vcf:
 
 rule collect_final_variant_calling_metrics:
     input: rules.final_gather_vcf.output
-    output: "output/final_vcf_metrics/cohort.variant_calling_detail_metrics","output/final_vcf_metrics/cohort.variant_calling_summary_metrics"
-    params: prefix="output/final_vcf_metrics/cohort",
+    output: "output/final_vcf_metrics/" + CALLSET_NAME + ".cohort.variant_calling_detail_metrics","output/final_vcf_metrics/" + CALLSET_NAME + ".cohort.variant_calling_summary_metrics"
+    params: prefix="output/final_vcf_metrics/" + CALLSET_NAME + ".cohort",
     benchmark:"output/final_vcf_metrics/final_variant_calling_metrics.benchmark.txt"
     shell:
         """
@@ -311,9 +349,12 @@ rule collect_final_variant_calling_metrics:
         """
 
 rule crosscheck_fingerprints_solo:
-    input: expand(rules.apply_recal.output, interval=INTERVALS)
-    output: "output/final_vcf_metrics/cohort.fingerprintcheck"
-    params: sample_name_map="output/sample_name_map"
+    #input: expand(rules.apply_recal.output, interval=INTERVALS)
+    input:
+        vcf_list=rules.recal_intervals_aggregate.output,
+        name_map=rules.check_unique.output.name_map
+    output: "output/final_vcf_metrics/" + CALLSET_NAME + ".cohort.fingerprintcheck"
+    #params: sample_name_map="output/sample_name_map"
     benchmark:"benchmarks/final_vcf_metrics/cohort.fingerprintcheck.benchmark.txt"
     shell:
         """
@@ -321,7 +362,7 @@ rule crosscheck_fingerprints_solo:
         set -eu
 
         
-        num_gvcfs=$(wc -l {params.sample_name_map} | awk '{{print $1}}')
+        num_gvcfs=$(wc -l {input.name_map} | awk '{{print $1}}')
         cpu=$(( $num_gvcfs < 32 ? $num_gvcfs :32))
         memMb=$((1024*$cpu*375/100))
         java=$(($memMb-512))
@@ -329,15 +370,15 @@ rule crosscheck_fingerprints_solo:
         echo $java_mem
 
         
-        cat {params.sample_name_map} | awk '{{print $2}}' > output/final_vcf_metrics/gvcf_inputs.list
-        ls output/recalibrated_vcf_interval/*.filtered.*.vcf.gz > output/final_vcf_metrics/vcf_inputs.list
+        cat {input.name_map} | awk '{{print $2}}' > output/final_vcf_metrics/gvcf_inputs.list
+        cp {input.vcf_list}  output/final_vcf_metrics/vcf_inputs.list
 
         gatk --java-options "-Xms8000m -Xmx8000m"\
           CrosscheckFingerprints \
           --INPUT output/final_vcf_metrics/gvcf_inputs.list \
           --SECOND_INPUT output/final_vcf_metrics/vcf_inputs.list \
           --HAPLOTYPE_MAP {HAPLOTYPE_DATABASE_FILE} \
-          --INPUT_SAMPLE_FILE_MAP {params.sample_name_map} \
+          --INPUT_SAMPLE_FILE_MAP {input.name_map} \
           --CROSSCHECK_BY SAMPLE \
           --CROSSCHECK_MODE CHECK_SAME_SAMPLE \
           --NUM_THREADS $cpu \

@@ -3,136 +3,110 @@ configfile: "config/config.yaml"
 import glob
 import os
 
-# REF_FASTA = config["REF_FASTA"]
-
-# #[minerg01@li03c03 ~]$ ml bwa/0.7.8
-# #[minerg01@li03c03 ~]$ BWA_VERSION=$(bwa 2>&1 |     grep -e '^Version' |     sed 's/Version: //')
-# #[minerg01@li03c03 ~]$ echo $BWA_VERSION
-# #0.7.8-r455
-# # BWA_VERSION = "0.7.8-r455"
-# # COMPRESSION_LEVEL=2   
-
-# # # cross check fingerprints (on the aligned.duplicates_marked.sorted.bam)
-# # LOD_THRESHOLD=-20.0
-# # CROSSCHECK_BY="READGROUP"
-# # HAPLOTYPE_DATABASE_FILE="/sc/arion/projects/MMAAAS/src/gatk-resources/hg38_20201116/hg38/v0/references-hg38-v0-Homo_sapiens_assembly38.haplotype_database.txt"
-
-# # # check contamination
-# # CONTAMINATION_SITES_UD="/sc/arion/projects/MMAAAS/src/gatk-resources/hg38_20201116/hg38/v0/references-hg38-v0-Homo_sapiens_assembly38.contam.UD"
-# # CONTAMINATION_SITES_BED="/sc/arion/projects/MMAAAS/src/gatk-resources/hg38_20201116/hg38/v0/references-hg38-v0-Homo_sapiens_assembly38.contam.bed"
-# # CONTAMINATION_SITES_MU="/sc/arion/projects/MMAAAS/src/gatk-resources/hg38_20201116/hg38/v0/references-hg38-v0-Homo_sapiens_assembly38.contam.mu"
-# # CONTAMINATION_UNDERESTIMATION_FACTOR=0.75
-# # CONTAMINATION_SITES_PREFIX="/sc/arion/projects/MMAAAS/src/gatk-resources/hg38_20201116/hg38/v0/references-hg38-v0-Homo_sapiens_assembly38.contam"
-# # VerifyBamID = config["VerifyBamID"]
-
-# # # base_recalibration_report
-# # REF_DICT=config["REF_DICT"]
-# # DBSNP_VCF=config["DBSNP_VCF"]
-
-# # #INTERVALS = glob.glob("input/sequence_grouping/sequence_grouping_*.list")
-# # INTERVALS =  glob.glob("input/intervals/sequence_grouping_unmapped_newline/sequence_grouping.unmapped_*.list")
-# # #known_indels_sites_vcfs
-# # KNOWN_SITES_MILLS1000G="/sc/arion/projects/MMAAAS/src/gatk-resources/hg38_20201116/hg38/v0/resources-broad-hg38-v0-Mills_and_1000G_gold_standard.indels.hg38.vcf.gz"
-# # KNOWN_SITES_HOMOSAPIENS="/sc/arion/projects/MMAAAS/src/gatk-resources/hg38_20201116/hg38/v0/resources-broad-hg38-v0-Homo_sapiens_assembly38.known_indels.vcf.gz"
-
-
-
-##SNPEFF = config["SNPEFF"]
-#SNPSIFT = config["SNPSIFT"]
-##GNOMAD = config["GNOMAD"]
-#MAGMA = config["MAGMA"]
-##SNPSIFT_FILTER_IMPACT = config["SNPSIFT_FILTER_IMPACT"]
-#SNPSIFT_FILTER_IMPACT_TWO="(((ANN[0].IMPACT = 'HIGH') | (ANN[0].IMPACT = 'MODERATE')) & !(ANN[0].EFFECT = 'sequence_feature'))"
-#SNPSIFT_FILTER_BIOTYPE_PROTEIN_CODING = "(ANN[0].BIOTYPE = 'protein_coding')"
-#DATE=20201204
-#PHENO_COVARS_ALL = "output/modules/pca_final/pheno_covars_all"
-#GENOME = config["GENOME"]
-#NAME = "1096013095.final.bam"
-#UBAM = ["A","B","C"] #,"D", "E" ,"F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U"]
-#CHROMOSOMES = range(1, 23) # ["all"]
-#PATH1 = os.getcwd()
-
-
-
-#(SAMPLE,RG) = glob_wildcards("output/split_rg/{sample}/{rg}.bam")
-
-
-# scattergather:
-#     split=25
-    
-wildcard_constraints:
-    chr="\d+"
-    
-#localrules: main
-#ruleorder: revertsam > sortsam    
-
-#rule main2:
-#    input:
-#        expand("output/unmapped_bam/{sample}/{rg}.unmapped.bam",zip, sample=SAMPLE,rg=RG), #default combinatorial function is product, which can be replaced with other functions in this case "zip()" to create a tuple so that expand doesnt create all combos of sample and rg which ends up swapping sample dirs and rg and producing all possible cobinations as opposed to sampleA/sampleA_rg_bam
-#	expand("output/unmapped_bam/{sample}/{rg}.quality_yield_metrics",zip, sample=SAMPLE,rg=RG),
-#	expand("output/aligned_bam/{sample}/{rg}.aligned.unsorted.bam",zip, sample=SAMPLE,rg=RG),
-#	expand("output/aligned_bam/{sample}/{rg}.aligned.unsorted.bwa.stderr.log",zip, sample=SAMPLE,rg=RG),
-
-
-        
-# rule sortsam2:
-#     input: lambda wildcards: [os.path.join('output/','split_rg/',SAMPLE[i], x + '.bam') for i,x in enumerate(RG) if x == wildcards.rg]
-#     output: "output/unmapped_bam/{sample}/{rg}.unmapped.bam"
+# rule create_fastq:
+#     input: "output/unmapped_bam/{sample}/{rg}.unmapped.bam"
+#     output: "output/unmapped_bam/{sample}/{rg}.interleaved.fastq"
+#     benchmark: "benchmarks/create_fq.{sample}.{rg}.txt"
+#     #conda: "../envs/test6.yaml"
 #     shell:
 #         """
-#         module load java/1.8.0_211  python/3.7.3  gatk/4.2.0.0
-        
-# 	gatk --java-options "-Xmx3g" \
-#         SortSam \
-#             --INPUT {input} \
-#             --OUTPUT {output} \
-#             --SORT_ORDER queryname \
-#             --MAX_RECORDS_IN_RAM 1000000
-
-#         module unload java/1.8.0_211  python/3.7.3 gatk/4.2.0.0
+# 	module load python/3.8.2  java/1.8.0_211 bwa/0.7.8  picard/2.22.3  R/3.5.3 #python/3.7.3
+# 	java -Xms1000m -Xmx1000m -jar $PICARD \
+#           SamToFastq \
+#           INPUT={input} \
+#           FASTQ={output} \
+#           INTERLEAVE=true \
+#           NON_PF=true
 #         """
-
-# rule collect_quality_yield_metrics:
-#     input: rules.sortsam.output
-#     output: "output/unmapped_bam/{sample}/{rg}.quality_yield_metrics"
-#     #output: "output/{sample}/{rg}.unmapped.bam.quality_yield_metrics"
+# rule bwa_mem_alignment:
+#     input: rules.create_fastq.output
+#     output:
+#         bam="output/aligned_bam/{sample}/{rg}.aligned.unsorted.bam",
+#         bwalog="output/aligned_bam/{sample}/{rg}.aligned.unsorted.bwa.stderr.log"
 #     shell:
 #         """
-#         module load java/1.8.0_211  python/3.7.3 picard/2.22.3
-		
-#      	java -Xms2000m -jar $PICARD \
-#              CollectQualityYieldMetrics \
-#              INPUT={input} \
-#              OQ=true  \
-#              OUTPUT={output}
-# 	 module unload java/1.8.0_211  python/3.7.3 picard/2.22.3
+#         module load java/1.8.0_211 bwa/0.7.8 python/3.8.2  picard/2.22.3 R/3.5.3 # python/3.5.0
+#         set -o pipefail
+#         set -e
+
+#         bwa mem -p -v 3 -t 16 {REF_FASTA} /dev/stdin - 2> >(tee {output.bwalog} >&2) | \
+#         java -Dsamjdk.compression_level=2 -Xms1000m -Xmx1000m -jar $PICARD \
+#           MergeBamAlignment \
+#           VALIDATION_STRINGENCY=SILENT \
+#           EXPECTED_ORIENTATIONS=FR \
+#           ATTRIBUTES_TO_RETAIN=X0 \
+#           ATTRIBUTES_TO_REMOVE=NM \
+#           ATTRIBUTES_TO_REMOVE=MD \
+#           ALIGNED_BAM=/dev/stdin \
+#           UNMAPPED_BAM={input} \
+#           OUTPUT={output.bam} \
+#           REFERENCE_SEQUENCE={REF_FASTA} \
+#           PAIRED_RUN=true \
+#           SORT_ORDER="unsorted" \
+#           IS_BISULFITE_SEQUENCE=false \
+#           ALIGNED_READS_ONLY=false \
+#           CLIP_ADAPTERS=false \
+#           MAX_RECORDS_IN_RAM=2000000 \
+#           ADD_MATE_CIGAR=true \
+#           MAX_INSERTIONS_OR_DELETIONS=-1 \
+#           PRIMARY_ALIGNMENT_STRATEGY=MostDistant \
+#           PROGRAM_RECORD_ID="bwamem" \
+#           PROGRAM_GROUP_VERSION={BWA_VERSION} \
+#           PROGRAM_GROUP_COMMAND_LINE="bwa mem -p -v 3 -t 16 {REF_FASTA}" \
+#           PROGRAM_GROUP_NAME="bwamem" \
+#           UNMAPPED_READ_STRATEGY=COPY_TO_TAG \
+#           ALIGNER_PROPER_PAIR_FLAGS=true \
+#           UNMAP_CONTAMINANT_READS=true \
+#           ADD_PG_TAG_TO_READS=false        
 #         """
-#REDO THE align_bam_bwa rule so that the log files are part of the output (they arent erased on job fail)
-#separatte the lines of the sam2fq and merge alignment steps to clean up
+            
 rule align_bam_bwa:
     input: "output/unmapped_bam/{sample}/{rg}.unmapped.bam"
     output: bam="output/aligned_bam/{sample}/{rg}.aligned.unsorted.bam",bwalog="output/aligned_bam/{sample}/{rg}.aligned.unsorted.bwa.stderr.log"
     shell:
         """
 	module load R/3.5.3 java/1.8.0_211 bwa/0.7.8  python/3.7.3 picard/2.22.3
-	echo "modules loaded"	
-	#mkdir -p ./output/{wildcards.sample}/aligned_bam
- 
-	#BWA_VERSION=$(bwa 2>&1 | grep -e '^Version' | sed 's/Version: //')
-	#echo $BWA_VERSION
+	set -o pipefail
+      set -e
 	
-	#set -o pipefail
-    	#set -e
-
-    	#if [-z $BWA_VERSION]; then
-        #    exit 1;
-    	#fi
-	
-	java -Xms1000m -Xmx1000m -jar $PICARD SamToFastq INPUT={input} FASTQ=/dev/stdout INTERLEAVE=true NON_PF=true | bwa mem -p -v 3 -t 16 /{REF_FASTA} /dev/stdin - 2> >(tee {output.bwalog} >&2) | java -Dsamjdk.compression_level=2 -Xms1000m -Xmx1000m -jar $PICARD MergeBamAlignment VALIDATION_STRINGENCY=SILENT EXPECTED_ORIENTATIONS=FR ATTRIBUTES_TO_RETAIN=X0 ATTRIBUTES_TO_REMOVE=NM ATTRIBUTES_TO_REMOVE=MD ALIGNED_BAM=/dev/stdin UNMAPPED_BAM={input} OUTPUT={output.bam} REFERENCE_SEQUENCE={REF_FASTA} PAIRED_RUN=true SORT_ORDER="unsorted" IS_BISULFITE_SEQUENCE=false ALIGNED_READS_ONLY=false CLIP_ADAPTERS=false MAX_RECORDS_IN_RAM=2000000 ADD_MATE_CIGAR=true MAX_INSERTIONS_OR_DELETIONS=-1 PRIMARY_ALIGNMENT_STRATEGY=MostDistant PROGRAM_RECORD_ID="bwamem" PROGRAM_GROUP_VERSION={BWA_VERSION} PROGRAM_GROUP_COMMAND_LINE="bwa mem -p -v 3 -t 16 {REF_FASTA}" PROGRAM_GROUP_NAME="bwamem" UNMAPPED_READ_STRATEGY=COPY_TO_TAG ALIGNER_PROPER_PAIR_FLAGS=true UNMAP_CONTAMINANT_READS=true ADD_PG_TAG_TO_READS=false
+	java -Xms1000m -Xmx1000m -jar $PICARD \
+          SamToFastq \
+          INPUT={input} \
+          FASTQ=/dev/stdout \
+          INTERLEAVE=true NON_PF=true | \
+        bwa mem -p -v 3 -t 16 {REF_FASTA} /dev/stdin - 2> >(tee {output.bwalog} >&2) | \
+        java -Dsamjdk.compression_level=2 -Xms1000m -Xmx1000m -jar $PICARD \
+          MergeBamAlignment \
+          VALIDATION_STRINGENCY=SILENT \
+          EXPECTED_ORIENTATIONS=FR \
+          ATTRIBUTES_TO_RETAIN=X0 \
+          ATTRIBUTES_TO_REMOVE=NM \
+          ATTRIBUTES_TO_REMOVE=MD \
+          ALIGNED_BAM=/dev/stdin \
+          UNMAPPED_BAM={input} \
+          OUTPUT={output.bam} \
+          REFERENCE_SEQUENCE={REF_FASTA} \
+          PAIRED_RUN=true \
+          SORT_ORDER="unsorted" \
+          IS_BISULFITE_SEQUENCE=false \
+          ALIGNED_READS_ONLY=false \
+          CLIP_ADAPTERS=false \
+          MAX_RECORDS_IN_RAM=2000000 \
+          ADD_MATE_CIGAR=true \
+          MAX_INSERTIONS_OR_DELETIONS=-1 \
+          PRIMARY_ALIGNMENT_STRATEGY=MostDistant \
+          PROGRAM_RECORD_ID="bwamem" \
+          PROGRAM_GROUP_VERSION={BWA_VERSION} \
+          PROGRAM_GROUP_COMMAND_LINE="bwa mem -p -v 3 -t 16 {REF_FASTA}" \
+          PROGRAM_GROUP_NAME="bwamem" \
+          UNMAPPED_READ_STRATEGY=COPY_TO_TAG \
+          ALIGNER_PROPER_PAIR_FLAGS=true \
+          UNMAP_CONTAMINANT_READS=true \
+          ADD_PG_TAG_TO_READS=false
 
         java -Xms5000m -jar $PICARD \
           CollectMultipleMetrics \
-          INPUT={input.bam} \
+          INPUT={output.bam} \
           OUTPUT={output.bam} \
           ASSUME_SORTED=true \
           PROGRAM=null \
@@ -191,7 +165,7 @@ rule sort_bam:
         """
 	module load java/1.8.0_211 python/3.7.3 picard/2.22.3
 
-        java -Dsamjdk.compression_level={COMPRESSION_LEVEL} -Xms10g -jar $PICARD \
+        java -Dsamjdk.compression_level={COMPRESSION_LEVEL} -Xms20g -jar $PICARD \
           SortSam \
           INPUT={input} \
           OUTPUT={output.bam} \
@@ -257,7 +231,8 @@ with open('{output}') as selfSM:
 CODE     
 	"""
 checkpoint create_sequence_grouping_bqsr:
-    input: "/sc/arion/projects/MMAAAS/src/gatk-resources/hg38_20201116/hg38/v0/resources-broad-hg38-v0-Homo_sapiens_assembly38.dict"
+    input: {REF_DICT}
+    #input: "/sc/arion/projects/MMAAAS/src/gatk-resources/hg38_20201116/hg38/v0/resources-broad-hg38-v0-Homo_sapiens_assembly38.dict"
     #output: sg="output/intervals/bqsr/sequence_grouping.tsv",sg_unmapped="output/intervals/bqsr/sequence_grouping.unmapped.tsv"
     output: directory("output/intervals/bqsr")
     #params: sg="output/intervals/bqsr/sequence_grouping.tsv",sg_unmapped="output/intervals/bqsr/sequence_grouping.unmapped.tsv"
@@ -650,9 +625,9 @@ rule convert_to_cram:
         md5sum | awk '{{print $1}}' > {output.md5}
 
         # Create REF_CACHE. Used when indexing a CRAM
-        seq_cache_populate.pl -root ./ref/cache {REF_FASTA}
+        seq_cache_populate.pl -root ./output/ref/cache {REF_FASTA}
         export REF_PATH=:
-        export REF_CACHE=./ref/cache/%2s/%2s/%s
+        export REF_CACHE=./output/ref/cache/%2s/%2s/%s
 
         samtools index {output.cram}
         
@@ -677,15 +652,27 @@ rule validate_cram:
           SKIP_MATE_VALIDATION=false \
           IS_BISULFITE_SEQUENCED=false
         """
+# java -Xms1g -jar $PICARD \
+#           IntervalListTools \
+#           SCATTER_COUNT=50 \
+#           SUBDIVISION_MODE=BALANCING_WITHOUT_INTERVAL_SUBDIVISION_WITH_OVERFLOW \
+#           UNIQUE=true \
+#           SORT=true \
+#           BREAK_BANDS_AT_MULTIPLES_OF=1000000 \
+#           INPUT=/sc/arion/projects/MMAAAS/src/gatk-resources/hg38_20201116/hg38/v0/resources-broad-hg38-v0-wgs_calling_regions.hg38.interval_lis \
+#           OUTPUT="test/hc_interval"
+
+
 checkpoint haplotypecaller_interval:
-    #input: {CALLING_INTERVAL_LIST}
-    input: "/sc/arion/projects/MMAAAS/src/gatk-resources/hg38_20201116/hg38/v0/resources-broad-hg38-v0-wgs_calling_regions.hg38.interval_list"
-    output: directory("output/intervals/haplotype_caller/scatter_interval_list")
+    input: {CALLING_INTERVAL_LIST}
+    #input: "/sc/arion/projects/MMAAAS/src/gatk-resources/hg38_20201116/hg38/v0/resources-broad-hg38-v0-wgs_calling_regions.hg38.interval_list"
+    #output: "output/intervals/hc_interval_list/{hc_interval}/scattered.interval_list"
+    output: directory("output/intervals/hc_interval_list")
     benchmark: "benchmarks/scatter_interval_list/scatter_interval_list.txt"
     shell:
         """
         module load R/3.5.3  gatk/4.2.0.0 java/1.8.0_211 python/3.7.3 picard/2.22.3
-
+        mkdir -p {output}
         set -e
         java -Xms1g -jar $PICARD \
           IntervalListTools \
@@ -700,7 +687,7 @@ checkpoint haplotypecaller_interval:
         python3 <<CODE
 import glob, os
 # Works around a JES limitation where multiples files with the same name overwrite each other when globbed
-intervals = sorted(glob.glob("{output}*/*.interval_list"))
+intervals = sorted(glob.glob("{output}/*/scatter.interval_list"))
 for i, interval in enumerate(intervals):
   (directory, filename) = os.path.split(interval)
   newName = os.path.join(directory, str(i + 1) + filename)
@@ -708,8 +695,11 @@ for i, interval in enumerate(intervals):
 print(len(intervals))
 CODE
         """
+
 rule gatk4_haplotype_caller:
-    input: bam="output/final_bam/{sample}.final.bam", interval="output/intervals/haplotype_caller/scatter_interval_list/*/{hc_interval}scattered.interval_list"
+    input:
+        bam=rules.gather_recal_bams.output,  
+        interval="output/intervals/hc_interval_list/{hc_interval}/scattered.interval_list"
     output: "output/gvcf/{sample}.{hc_interval}.g.vcf.gz"
     #params: interval_file="output/intervals/scatter_interval_list/*/{hc_interval}scattered.interval_list"        
     benchmark: "benchmarks/gvcf/{sample}.gvcf.{hc_interval}.txt"
@@ -717,7 +707,7 @@ rule gatk4_haplotype_caller:
         """
         module load R/3.5.3  gatk/4.2.0.0 java/1.8.0_211 python/3.7.3 picard/2.22.3
         #this also works and uses $interval_file as opposed to params
-        #interval_file=$(ls input/scatter_interval_list/*/{wildcards.intervals}scattered.interval_list)
+        #interval_file=$(ls input/scatter_interval_list/{wildcards.hc_interval}/scattered.interval_list)
         set -e
         gatk --java-options "-Xms5g -XX:GCTimeLimit=50 -XX:GCHeapFreeLimit=10" \
           HaplotypeCaller \
@@ -729,70 +719,81 @@ rule gatk4_haplotype_caller:
           -G StandardAnnotation -G StandardHCAnnotation -G AS_StandardAnnotation \
           -new-qual \
           -GQB 10 -GQB 20 -GQB 30 -GQB 40 -GQB 50 -GQB 60 -GQB 70 -GQB 80 -GQB 90 \
-          -ERC GVCF 
+           -ERC GVCF 
         """
-# def aggregate_haplotypecaller_intervals(wildcards):
-#    checkpoint_output = checkpoints.haplotypecaller_interval.get(**wildcards).output[0]
-#    x=expand("output/gvcf/{sample}.{hc_interval}.g.vcf.gz",
+
+def aggregate_haplotypecaller_intervals(wildcards):
+   checkpoint_output = checkpoints.haplotypecaller_interval.get(**wildcards).output[0]
+   x=expand("output/gvcf/{sample}.{hc_interval}.g.vcf.gz",
+       sample=wildcards.sample,
+       hc_interval=glob_wildcards(os.path.join(checkpoint_output,"{hc_interval}","scattered.interval_list")).hc_interval)
+   print(x)
+   return x
+
+rule haplotypecaller_intervals_aggregate:
+    input: aggregate_haplotypecaller_intervals
+    output: "output/gvcf/{sample}.interval.list"
+    shell: "ls -v {input} > {output}"
+# def aggregate_bqsr_bam_intervals(wildcards):
+#    checkpoint_output = checkpoints.create_sequence_grouping_bqsr.get(**wildcards).output[0]
+#    x=expand("output/recalibrated_bam/{sample}.aligned.duplicates_marked.recalibrated_{bqsr_interval}.bam",
 #        sample=wildcards.sample,
-#        hc_interval=glob_wildcards(os.path.join(checkpoint_output,"*/{hc_interval}scattered.interval_list").bqsr_interval)
+#        bqsr_interval=glob_wildcards(os.path.join(checkpoint_output,"{bqsr_interval}.bqsr_interval.list")).bqsr_interval)
 #    print(x)
 #    return x
 
-# rule haplotypecaller_intervals_aggregate:
-#     input: aggregate_haplotypecaller_intervals
-#     output: "output/gvcf/{sample}.interval_list.txt"
-#     shell: "ls {input} > {output}"
-            
-# rule merge_interval_gvcfs:
-#     input: rules.haplotypecaller_intervals_aggregate.output
-#     output: "output/merge_gvcf/{sample}.g.vcf.gz"
-#     params: "output/gvcf/{sample}.*.g.vcf.gz"
-#     benchmark: "benchmarks/merge_gvcf/{sample}.merge_interval_gvcf.txt"
-#     shell:
-#         """
-#         module load R/3.5.3  gatk/4.2.0.0 java/1.8.0_211 python/3.7.3 picard/2.22.3
+# rule bam_intervals_aggregate:
+#     input: aggregate_bqsr_bam_intervals
+#     output: "output/recalibrated_bam/{sample}.interval_bam_list.txt"
+#     shell: "ls -v {input} > {output}"    
+           
+rule merge_interval_gvcfs:
+    input: rules.haplotypecaller_intervals_aggregate.output
+    output: "output/merge_gvcf/{sample}.g.vcf.gz"
+    benchmark: "benchmarks/merge_gvcf/{sample}.merge_interval_gvcf.txt"
+    shell:
+        """
+        module load R/3.5.3  gatk/4.2.0.0 java/1.8.0_211 python/3.7.3 picard/2.22.3
 
-#         #input=$(ls {params} | sed 's/output/INPUT=output/g')
-#         input=$(cat {input} | sed 's/output/INPUT=output/g')
-#         java -Xms2000m -jar $PICARD \
-#           MergeVcfs \
-#           $input \
-#           OUTPUT={output}
-#         """
-# rule validate_gvcf:
-#     input: rules.merge_interval_gvcfs.output  
-#     output: "output/merge_gvcf_metrics/{sample}.validate_gvcf.metrics"
-#     benchmark: "benchmarks/merge_gvcf/{sample}.validate_gvcf.txt"
-#     shell:
-#         """
-#         module load R/3.5.3  gatk/4.2.0.0 java/1.8.0_211 python/3.7.3 picard/2.22.3
+        #input=$(cat {input} | sed 's/output/INPUT=output/g')
+        java -Xms2000m -jar $PICARD \
+          MergeVcfs \
+          I={input} \
+          O={output}
+        """
+rule validate_gvcf:
+    input: rules.merge_interval_gvcfs.output  
+    output: "output/merge_gvcf_metrics/{sample}.validate_gvcf.metrics"
+    benchmark: "benchmarks/merge_gvcf/{sample}.validate_gvcf.txt"
+    shell:
+        """
+        module load R/3.5.3  gatk/4.2.0.0 java/1.8.0_211 python/3.7.3 picard/2.22.3
         
-#         gatk --java-options -Xms6000m \
-#           ValidateVariants \
-#           -V {input} \
-#           -R {REF_FASTA} \
-#           -L {CALLING_INTERVAL_LIST} \
-#           --validate-GVCF \
-#           --validation-type-to-exclude ALLELES \
-#           --dbsnp {DBSNP_VCF}  \
-#         | tee {output}
-#         """
-# rule collect_variant_calling_metrics:
-#     input: rules.merge_interval_gvcfs.output 
-#     output: "output/merge_gvcf_metrics/{sample}.g.vcf.variant_calling_summary_metrics","output/merge_gvcf_metrics/{sample}.g.vcf.variant_calling_detail_metrics"
-#     params: "output/merge_gvcf_metrics/{sample}.g.vcf"
-#     benchmark: "benchmarks/merge_gvcf_metrics/{sample}.variant_calling_summary_metrics.txt"
-#     shell:
-#         """
-#         module load R/3.5.3  gatk/4.2.0.0 java/1.8.0_211 python/3.7.3 picard/2.22.3
+        gatk --java-options -Xms6000m \
+          ValidateVariants \
+          -V {input} \
+          -R {REF_FASTA} \
+          -L {CALLING_INTERVAL_LIST} \
+          --validate-GVCF \
+          --validation-type-to-exclude ALLELES \
+          --dbsnp {DBSNP_VCF}  \
+        | tee {output}
+        """
+rule collect_variant_calling_metrics:
+    input: rules.merge_interval_gvcfs.output 
+    output: "output/merge_gvcf_metrics/{sample}.g.vcf.variant_calling_summary_metrics","output/merge_gvcf_metrics/{sample}.g.vcf.variant_calling_detail_metrics"
+    params: "output/merge_gvcf_metrics/{sample}.g.vcf"
+    benchmark: "benchmarks/merge_gvcf_metrics/{sample}.variant_calling_summary_metrics.txt"
+    shell:
+        """
+        module load R/3.5.3  gatk/4.2.0.0 java/1.8.0_211 python/3.7.3 picard/2.22.3
 
-#         java -Xms2000m -jar $PICARD \
-#           CollectVariantCallingMetrics \
-#           INPUT={input} \
-#           OUTPUT={params} \
-#           DBSNP={DBSNP_VCF} \
-#           SEQUENCE_DICTIONARY={REF_DICT} \
-#           TARGET_INTERVALS={EVALUATION_INTERVAL_LIST} \
-#           GVCF_INPUT=true
-#         """
+        java -Xms2000m -jar $PICARD \
+          CollectVariantCallingMetrics \
+          INPUT={input} \
+          OUTPUT={params} \
+          DBSNP={DBSNP_VCF} \
+          SEQUENCE_DICTIONARY={REF_DICT} \
+          TARGET_INTERVALS={EVALUATION_INTERVAL_LIST} \
+          GVCF_INPUT=true
+        """
