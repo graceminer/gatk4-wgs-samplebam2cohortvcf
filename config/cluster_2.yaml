@@ -8,12 +8,12 @@ __default__:
 revertsam:
   time: ' 02:00'
 sortsam:
-  mem: 7000
+  mem: 1500
   time: '01:00'
 collect_quality_yield_metrics:
   mem: 1000
 align_bam_bwa:
-  mem: 4000
+  mem: 2500
   time: '08:00'
 mark_duplicates:
   time: '08:00'
@@ -28,58 +28,33 @@ crosscheck_fingerprints:
   time: '09:00'
 base_recalibrator_report:
   mem: 800
-gather_bqsr_reports:
-  mem: 500
-  time: '02:00'
 apply_bqsr:
   mem: 800
-gather_recal_bams:
-  time: '02:00'
-collect_rg_bam_metrics:
-  mem: 1500
-  time: '02:00'
 collect_aggregated_metrics:
   time: '05:00'
-  mem: 1500
 collect_wgs_metrics:
   time: '05:00'
-  mem: 750
 collect_raw_wgs_metrics:
   time: '05:00'
-  mem: 750
 convert_to_cram:
   time: '06:00'
 validate_cram:
   time: '3:45'
-  mem: 750
-gatk4_haplotype_caller:
-  mem: 1000
-  time: '03:00'
-merge_interval_gvcfs:
-  mem: 500
-  time: '01:00'
-validate_gvcf:
-  mem: 750
-  time: '01:00'
-collect_variant_calling_metrics:
-  mem: 500
-  time: '01:30'
 import_gvcfs:
-  mem: 2000
+  mem: 1500
   time: '02:00'
 genotype_gvcfs:
   time: '3:00'
   mem: 2000
-  cores: 4 
+  cores: 3 
 hard_filter_make_sites_only_vcf:
-  mem: 500
   time: '5:00'
 indel_variant_recal:
   mem: 2500
 snp_variant_recal_classic_if_numgvcf_lessthan_equalto_snp_recal_thresh20000:
   mem: 3000
 apply_recal:
-  mem: 2000
+  mem: 800
 collect_final_variant_calling_metrics:
   mem: 1000
   time: '01:00'
