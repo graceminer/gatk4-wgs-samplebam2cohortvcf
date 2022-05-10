@@ -6,28 +6,32 @@ __default__:
   himem: ''
   time: '00:30'
 revertsam:
-  time: ' 02:00'
+  mem: 2000
+  time: '04:00'
 sortsam:
-  mem: 7000
-  time: '01:00'
+  mem: 8000
+  time: '01:30'
 collect_quality_yield_metrics:
   mem: 1000
 align_bam_bwa:
-  mem: 4000
-  time: '08:00'
+  mem: 8000
+  time: '09:00'
 mark_duplicates:
   time: '08:00'
-  cores: 5
-  mem: 8000
+  cores: 6
+  mem: 10000
 sort_bam:
-  time: '02:00'
+  time: '04:00'
   mem: '100000'
   cores: 4
 #  himem: '-R himem'
+check_contamination:
+  time: '01:00'
 crosscheck_fingerprints:
   time: '09:00'
 base_recalibrator_report:
   mem: 800
+  time: '1:30'
 gather_bqsr_reports:
   mem: 500
   time: '02:00'
@@ -37,10 +41,10 @@ gather_recal_bams:
   time: '02:00'
 collect_rg_bam_metrics:
   mem: 1500
-  time: '02:00'
+  time: '04:00'
 collect_aggregated_metrics:
-  time: '05:00'
-  mem: 1500
+  time: '06:00'
+  mem: 1750
 collect_wgs_metrics:
   time: '05:00'
   mem: 750
@@ -65,11 +69,11 @@ collect_variant_calling_metrics:
   mem: 500
   time: '01:30'
 import_gvcfs:
-  mem: 2000
+  mem: 3000
   time: '02:00'
 genotype_gvcfs:
   time: '3:00'
-  mem: 2000
+  mem: 4500
   cores: 4 
 hard_filter_make_sites_only_vcf:
   mem: 500
@@ -84,4 +88,4 @@ collect_final_variant_calling_metrics:
   mem: 1000
   time: '01:00'
 crosscheck_fingerprints_solo:
-  mem: 800
+  mem: 1000

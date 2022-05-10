@@ -60,6 +60,17 @@ VerifyBamID: /sc/arion/projects/MMAAAS/src/VerifyBamID/bin/VerifyBamID
 # cd VerifyBamID \ mkdir build \ cd build \ cmake .. \ make \make test 
 # then add bin file to .bashrc Path
 WGS_COVERAGE_INTERVAL_LIST: resources/hg38/v0/intervals_wgs_coverage_regions.hg38.interval_list
+
+### THIS WORKFLOW STARTS WITH FINAL RECAL DEDUP BAMFILES AND REVERTS THEM AND REALIGNS THEM
+#### EACH BAM FILE GETS ASSIGNED TO A CERTAIN IDENTIFIER. THE ORDER MUST MATCH, I.E.
+### FIRST PATIENT ID SHOULD MATCH THE FIRST BAM FILE. BAM FILES HAVE TO BE INDEXED, I.E. WITH SAMTOOLS INDEX
+#patient_id:
+#  - AB50564417
+#
+#  bam_files:
+#    - /input/AB50564417.final.bam
+#
+
 ############################################################################
 
 ##PICARD: /hpc/users/marcoe02/src/picard/picard.jar
