@@ -56,6 +56,10 @@ WGS_COVERAGE_INTERVAL_LIST=config["WGS_COVERAGE_INTERVAL_LIST"]
 localrules: all, bqsr_intervalreport_aggregate, haplotypecaller_intervals_aggregate,genotyping_intervals_aggregate,recal_intervals_aggregate
 
 SAMPLES, = glob_wildcards("input/{sample}.final.bam")
+#SAMPLES, = {}
+#for i in range(len(patient_id)):
+#    samples[patient_id[i]] = [bam_files[i]]
+
 
 rule all:
     input:

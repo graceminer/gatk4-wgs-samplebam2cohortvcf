@@ -253,7 +253,7 @@ rule apply_recal:
         snps_tranches=rules.snp_variant_recal_classic_if_numgvcf_lessthan_equalto_snp_recal_thresh20000.output.tranches,
         snps_recal=rules.snp_variant_recal_classic_if_numgvcf_lessthan_equalto_snp_recal_thresh20000.output.recal
     output: "output/recalibrated_vcf_interval/" + CALLSET_NAME + ".cohort.filtered.{geno_interval}.vcf.gz"
-    params: "output/recalibrated_vcf_interval/tmp.indel.recalibrated.vcf"
+    params: "output/recalibrated_vcf_interval/tmp.{geno_interval}.indel.recalibrated.vcf"
     benchmark: "benchmarks/recalibrated_vcf_interval/" + CALLSET_NAME + ".cohort.filtered.{geno_interval}.benchmark.txt"
     shell:
         """
@@ -281,9 +281,11 @@ rule apply_recal:
           --create-output-variant-index true \
           -mode SNP
 
-        rm output/recalibrated_vcf_interval/tmp.indel.recalibrated.vcf
-        rm output/recalibrated_vcf_interval/tmp.indel.recalibrated.vcf.idx
-        """
+        #rm output/recalibrated_vcf_interval/tmp.{wildcards.geno_interval}.indel.recalibrated.vcf
+        #rm output/recalibrated_vcf_interval/tmp.{wildcards.geno_interval}.indel.recalibrated.vcf.idx
+        rm {params}
+	rm {params}.idx
+	"""
 #   x=expand("output/recalibrated_vcf_interval/" + CALLSET_NAME + ".cohort.filtered.{geno_interval}.vcf.gz",
 def aggregate_recal_intervals(wildcards):
    checkpoint_output = checkpoints.split_interval_list.get(**wildcards).output[0]
